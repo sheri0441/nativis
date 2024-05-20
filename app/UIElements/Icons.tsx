@@ -44,3 +44,59 @@ export const Cart = ({ color }: { color: string }) => {
     </svg>
   );
 };
+
+export const MenuBurger = ({ color }: { color: string }) => {
+  return (
+    <svg
+      id="Layer_1"
+      data-name="Layer 1"
+      viewBox="0 0 24 24"
+      width="512"
+      height="512"
+      fill={color}
+    >
+      <rect y="11" width="24" height="2" />
+      <rect y="4" width="24" height="2" />
+      <rect y="18" width="24" height="2" />
+    </svg>
+  );
+};
+
+export const User = ({ color }: { color: string }) => {
+  return (
+    <svg
+      id="Layer_1"
+      data-name="Layer 1"
+      viewBox="0 0 24 24"
+      width="512"
+      height="512"
+      fill={color}
+    >
+      <path d="M16.043,14H7.957A4.963,4.963,0,0,0,3,18.957V24H21V18.957A4.963,4.963,0,0,0,16.043,14Z" />
+      <circle cx="12" cy="6" r="6" />
+    </svg>
+  );
+};
+
+export const Cross = ({ color }: { color: string }) => {
+  return (
+    <svg
+      id="Layer_1"
+      data-name="Layer 1"
+      viewBox="0 0 24 24"
+      width="512"
+      height="512"
+      fill={color}
+    >
+      <polygon points="18.707 6.707 17.293 5.293 12 10.586 6.707 5.293 5.293 6.707 10.586 12 5.293 17.293 6.707 18.707 12 13.414 17.293 18.707 18.707 17.293 13.414 12 18.707 6.707" />
+    </svg>
+  );
+};
+
+export const Trash = ({ color }: { color: string }) => {
+  return (
+    <svg id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24" fill={color}>
+      <path d="m17,4v-2c0-1.103-.897-2-2-2h-6c-1.103,0-2,.897-2,2v2H1v2h1.644l1.703,15.331c.169,1.521,1.451,2.669,2.982,2.669h9.304c1.531,0,2.813-1.147,2.981-2.669l1.703-15.331h1.682v-2h-6Zm-8-2h6v2h-6v-2Zm6.957,14.543l-1.414,1.414-2.543-2.543-2.543,2.543-1.414-1.414,2.543-2.543-2.543-2.543,1.414-1.414,2.543,2.543,2.543-2.543,1.414,1.414-2.543,2.543,2.543,2.543Z" />
+    </svg>
+  );
+};
