@@ -3,21 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
   --color-primary: #283618
   --color-secondary:#606C38
   --color-neutral:#FEFAE0
   --color-accent:#BC6C25
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
 }
 
 svg {
@@ -25,34 +14,31 @@ svg {
   height: 100%;
 }
 
-/* .sh_logo-animation > svg  > #firstDot, .sh_logo-animation > svg  > #secDot{
-  transform-box:fill-box;
-  transform-origin: center center;
-  animation: scaling 1s linear infinite ;
+*{
+  scroll-behavior: smooth;
 }
 
-.sh_logo-animation > svg  > #firstDot{
-  animation-direction: alternate;
-}
-.sh_logo-animation > svg  > #secDot{
-  animation-direction: alternate-reverse;
-} */
 
+/* custom scroll bar  */
 
-
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+*::-webkit-scrollbar {
+  width: 4px;
+  background-color: #FEFAE0;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+*::-webkit-scrollbar-button{
+  display: none;
+} 
+
+*::-webkit-scrollbar-thumb{
+  background-color: #BC6C25;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-corner{
+  display: none;
+}
+
+*::-webkit-resizer{
+  display: none;
 }

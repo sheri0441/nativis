@@ -14,7 +14,7 @@ const Navigation = ({
   return (
     <div
       className={`fixed top-0 left-0 inset-0 z-10 bg-primary  transition-all duration-500 ease-in-out ${
-        !showMenu && " -translate-y-full"
+        !showMenu && " -translate-y-full opacity-0 pointer-events-none"
       }`}
     >
       <div className="container text-center mx-auto pt-12 sm:pt-16 text-neutral uppercase">

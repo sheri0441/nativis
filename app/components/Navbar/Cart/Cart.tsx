@@ -15,14 +15,22 @@ const CartList = ({
   return (
     <div
       className={`fixed top-0 left-0  inset-0 bg-primary z-10 transition-all duration-500 ease-in-out h-screen min-h-fit ${
-        !showCart && "-translate-y-[150%]"
+        !showCart && "-translate-y-full opacity-0 pointer-events-none"
       }`}
     >
       <div className="w-full max-w-[640px] text-center mx-auto pt-12 sm:pt-14">
         <span className="text-xl sm:text-3xl font-medium text-neutral uppercase">
           Shopping Cart
         </span>
-        <div className="w-full px-4 sm:px-0 mt-10 sm:mt-12 mx-auto flex flex-col gap-3">
+        <div className="w-full px-4 sm:px-0 mt-10 sm:mt-12 mx-auto flex flex-col gap-3 max-h-[420px] overflow-y-scroll ">
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
+          <CartItem />
           <CartItem />
           <CartItem />
           <CartItem />
