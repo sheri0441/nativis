@@ -14,10 +14,9 @@ const config: Config = {
       accent: "#BC6C25",
     },
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      gridTemplateRows: {
+        "custom-layout":
+          "min-content minmax(0px, 40%) min-content min-content min-content min-content",
       },
     },
   },

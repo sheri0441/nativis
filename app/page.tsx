@@ -33,7 +33,7 @@ export default function Home() {
           </p>
         </div>
 
-        <button className="p-4 border-2 border-neutral rounded-full mt-4 hover:bg-neutral hover:text-primary transition-colors duration-500 ease-in-out mb-10">
+        <button className="py-4 px-5 border-2 border-neutral rounded-full mt-4 hover:bg-neutral hover:text-primary transition-colors duration-500 ease-in-out mb-10">
           Explore Our Products
         </button>
       </div>
