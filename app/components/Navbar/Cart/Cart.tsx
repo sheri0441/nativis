@@ -1,4 +1,4 @@
-import { Cross, Trash } from "@/app/UIElements/Icons";
+import { Cross } from "@/app/UIElements/Icons";
 import IconsBtn from "@/app/UIElements/IconsBtn";
 import { color } from "@/app/UIElements/colors";
 import React from "react";
