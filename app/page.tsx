@@ -1,13 +1,11 @@
 import { Metadata } from "next";
 import HeroSection from "./components/Home/HeroSection";
-import Image from "next/image";
-import productImage from "./assets/productImage.png";
+
 import ProductCart from "./UIElements/ProductCart";
 import Link from "next/link";
 import HomeSection from "./components/Home/HomeSection";
-import TimerButton from "./components/Home/TimerButton";
-import { Facial, Natural, Quality } from "./UIElements/Illustrations";
-import AnimationIllustrations from "./components/Home/AnimationIllustrations";
+
+import WhySection from "./components/Home/WhySection";
 
 export const metadata: Metadata = {
   title: "Nativis | Home",
@@ -37,27 +35,7 @@ export default function Home() {
             View All
           </Link>
         </HomeSection>
-        <HomeSection
-          title="Why Choose Nativis?"
-          subtitle="Experience the Difference of Natural Beauty Solutions"
-        >
-          <div className="flex flex-col mx-auto gap-4 w-fit mt-4 sm:flex-row sm:mt-5 lg:mt-7">
-            <TimerButton innerText="Natural Beauty" />
-            <TimerButton innerText="Trusted Quality" />
-            <TimerButton innerText="Well-being" />
-          </div>
-          <div>
-            <AnimationIllustrations>
-              <Natural />
-            </AnimationIllustrations>
-            <AnimationIllustrations>
-              <Quality />
-            </AnimationIllustrations>
-            <AnimationIllustrations>
-              <Facial />
-            </AnimationIllustrations>
-          </div>
-        </HomeSection>
+        <WhySection />
       </div>
     </main>
   );
