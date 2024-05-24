@@ -1,0 +1,17 @@
+.sh_card > div:first-child {
+  box-shadow: 0px 0px 4px 0px #283618;
+}
+
+.sh_card:hover > div:first-child {
+  box-shadow: 0px 0px 4px 0px #bc6c25;
+}
+
+@media (min-width: 1024px) {
+  .sh_card > div:first-child {
+    box-shadow: 0px 0px 8px 0px #283618;
+  }
+
+  .sh_card:hover > div:first-child {
+    box-shadow: 0px 0px 8px 0px #bc6c25;
+  }
+}

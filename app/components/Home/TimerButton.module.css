@@ -1,0 +1,46 @@
+.active > span {
+  z-index: 0;
+  background-image: conic-gradient(#bc6c25 0%, #fefae0 0%);
+  animation: timer 10s steps(10) infinite;
+}
+
+.active {
+  background-color: #283618;
+  color: #fefae0;
+}
+
+@keyframes timer {
+  0% {
+    background-image: conic-gradient(#bc6c25 0%, #fefae0 0%);
+  }
+  10% {
+    background-image: conic-gradient(#bc6c25 10%, #fefae0 0%);
+  }
+  20% {
+    background-image: conic-gradient(#bc6c25 20%, #fefae0 0%);
+  }
+  30% {
+    background-image: conic-gradient(#bc6c25 30%, #fefae0 0%);
+  }
+  40% {
+    background-image: conic-gradient(#bc6c25 40%, #fefae0 0%);
+  }
+  50% {
+    background-image: conic-gradient(#bc6c25 50%, #fefae0 0%);
+  }
+  60% {
+    background-image: conic-gradient(#bc6c25 60%, #fefae0 0%);
+  }
+  70% {
+    background-image: conic-gradient(#bc6c25 70%, #fefae0 0%);
+  }
+  80% {
+    background-image: conic-gradient(#bc6c25 80%, #fefae0 0%);
+  }
+  90% {
+    background-image: conic-gradient(#bc6c25 90%, #fefae0 0%);
+  }
+  100% {
+    background-image: conic-gradient(#bc6c25 100%, #fefae0 0%);
+  }
+}

@@ -14,10 +14,10 @@ const config: Config = {
       accent: "#BC6C25",
     },
     extend: {
-      gridTemplateRows: {
-        "custom-layout":
-          "min-content minmax(0px, 40%) min-content min-content min-content min-content",
-      },
+      // gridTemplateRows: {
+      //   "custom-layout":
+      //     "min-content minmax(0px, 40%) min-content min-content min-content min-content",
+      // },
     },
   },
   plugins: [],
