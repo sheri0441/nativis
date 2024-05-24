@@ -20,7 +20,7 @@ const CartList = ({
     >
       <div
         className={
-          "w-full max-w-[640px] text-center mx-auto mt-12 sm:mt-16 grid gap-4 grid-rows-custom-layout "
+          "w-full max-w-[640px] text-center mx-auto mt-12 sm:mt-16 grid gap-4 grid-rows-custom-cart-layout "
         }
       >
         <span className="text-xl sm:text-3xl font-medium text-neutral uppercase row-start-1">
