@@ -4,7 +4,7 @@
 }
 
 .sh_illustration_animation > svg > g > #Cloudleft {
-  animation: cloudleft 10s linear;
+  animation: cloudleft 10s linear alternate infinite;
 }
 
 @keyframes cloudleft {
@@ -17,7 +17,7 @@
 }
 
 .sh_illustration_animation > svg > g > #Cloudright {
-  animation: cloudright 10s linear;
+  animation: cloudright 10s linear alternate infinite;
 }
 
 @keyframes cloudright {
@@ -30,7 +30,7 @@
 }
 
 .sh_illustration_animation > svg > g > #CloudCenter {
-  animation: cloudcenter 10s linear;
+  animation: cloudcenter 10s linear alternate infinite;
 }
 
 @keyframes cloudcenter {
@@ -42,7 +42,7 @@
   }
 }
 .sh_illustration_animation > svg > g > #CloudBottom {
-  animation: cloudbottom 10s linear;
+  animation: cloudbottom 10s linear alternate infinite;
 }
 
 @keyframes cloudbottom {

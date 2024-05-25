@@ -5,10 +5,10 @@ import style from "./ProductCart.module.css";
 
 const ProductCart = () => {
   return (
-    <div className={"w-32 sm:w-60  cursor-pointer " + style.sh_card}>
+    <div className={"w-full  cursor-pointer " + style.sh_card}>
       <div className="aspect-square rounded overflow-hidden ">
         <Image
-          className="object-cover h-full"
+          className="object-cover h-full transition-transform duration-500 ease-in-out"
           src={productImage}
           alt="product image"
         />
