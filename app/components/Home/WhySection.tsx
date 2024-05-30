@@ -76,21 +76,21 @@ const WhySection = () => {
           description="Experience the difference with Nativis natural skincare solutions,
             meticulously crafted with the power of neem for radiant, healthy
             skin."
-          isActive={true}
+          isActive={showSlide === 1}
         >
           <Natural />
         </WhySectionCard>
         <WhySectionCard
           title="Trusted Quality"
           description="Our products are formulated with high-quality ingredients and backed by years of research, ensuring effective results you can trust."
-          isActive={true}
+          isActive={showSlide === 2}
         >
           <Quality />
         </WhySectionCard>
         <WhySectionCard
           title="Your Skin's Well-being"
           description="At Nativis, we're dedicated to providing your skin with the care it deserves, delivering gentle yet powerful skincare solutions that promote overall skin health."
-          isActive={true}
+          isActive={showSlide === 3}
         >
           <Facial />
         </WhySectionCard>

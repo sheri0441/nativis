@@ -16,7 +16,9 @@ const WhySectionCard = ({
 }) => {
   return (
     <div
-      className={`w-full mx-auto px-4 sm:px-0  sm:grid-cols-2 items-center max-w-[880px] mt-3 sm:mt-10 transition-opacity duration-500 ease-in-out  sm:grid
+      className={`w-full mx-auto px-4 sm:px-0  sm:grid-cols-2 items-center max-w-[880px] mt-3 sm:mt-10 transition-opacity duration-500 ease-in opacity-0  sm:grid ${
+        isActive && "opacity-100"
+      }
       `}
     >
       <AnimationIllustrations>{children}</AnimationIllustrations>
