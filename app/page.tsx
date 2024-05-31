@@ -6,6 +6,10 @@ import Link from "next/link";
 import HomeSection from "./components/Home/HomeSection";
 
 import WhySection from "./components/Home/WhySection";
+import Image from "next/image";
+import blogImage from "./assets/blogImage.jpg";
+import { BookMarkIcon, HeartIcon } from "./UIElements/Icons";
+import BlogCart from "./UIElements/BlogCart";
 
 export const metadata: Metadata = {
   title: "Nativis | Home",
@@ -36,6 +40,23 @@ export default function Home() {
           </Link>
         </HomeSection>
         <WhySection />
+        <HomeSection
+          title="Our Informative Articles"
+          subtitle="Stay informed with our curated selection of articles on neem, skincare tips, and more"
+        >
+          <div className="max-w-72 mx-auto grid grid-cols-1 gap-4 mt-5 sm:max-w-[680px] sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:mt-8 lg:max-w-full lg:grid-cols-4">
+            <BlogCart />
+            <BlogCart />
+            <BlogCart />
+            <BlogCart />
+          </div>
+          <Link
+            href={"/"}
+            className="text-primary hover:bg-primary hover:text-neutral transition-colors duration-500 ease-in-out border rounded-full py-2 px-4 block w-fit mx-auto mt-8"
+          >
+            View All
+          </Link>
+        </HomeSection>
       </div>
     </main>
   );

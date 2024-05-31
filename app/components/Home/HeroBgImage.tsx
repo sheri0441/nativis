@@ -18,7 +18,6 @@ const HeroBgImage = () => {
         scrub: true,
       },
       scale: 2,
-      // duration: 200,
       ease: "power2.out",
     });
   }, []);
