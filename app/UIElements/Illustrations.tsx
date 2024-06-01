@@ -51,8 +51,8 @@ export const Natural = () => {
                   opacity="0.5"
                   d="M229.58 166.25C229.58 166.25 243.2 150.63 263.07 150.63C263.07 150.63 263.73 138.51 277.29 135.89C290.85 133.27 293.48 145.38 293.48 145.38C293.48 145.38 303.48 140.06 316.96 145.38C330.44 150.7 327.68 166.2 327.68 166.2C327.68 166.2 366.5 164.94 373.16 172.05H198.71C198.71 172.05 202.23 163.35 229.58 166.25Z"
                   stroke="#263238"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </g>
             </g>
@@ -61,8 +61,8 @@ export const Natural = () => {
             id="Vector_6"
             d="M229.58 166.25C229.58 166.25 243.2 150.63 263.07 150.63C263.07 150.63 263.73 138.51 277.29 135.89C290.85 133.27 293.48 145.38 293.48 145.38C293.48 145.38 303.48 140.06 316.96 145.38C330.44 150.7 327.68 166.2 327.68 166.2C327.68 166.2 366.5 164.94 373.16 172.05H198.71C198.71 172.05 202.23 163.35 229.58 166.25Z"
             stroke="#263238"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
         <g id="Cloudright">
@@ -91,8 +91,8 @@ export const Natural = () => {
                   opacity="0.5"
                   d="M342.13 73.6399C342.13 73.6399 331.26 61.1899 315.42 61.1899C315.42 61.1899 314.89 51.5199 304.08 49.4299C293.27 47.3399 291.16 56.9999 291.16 56.9999C291.16 56.9999 283.16 52.7599 272.44 56.9999C261.72 61.2399 263.88 73.6099 263.88 73.6099C263.88 73.6099 232.88 72.6099 227.61 78.2699H366.75C366.75 78.2699 363.94 71.3299 342.13 73.6399Z"
                   stroke="#263238"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </g>
             </g>
@@ -101,8 +101,8 @@ export const Natural = () => {
             id="Vector_9"
             d="M342.13 73.6399C342.13 73.6399 331.26 61.1899 315.42 61.1899C315.42 61.1899 314.89 51.5199 304.08 49.4299C293.27 47.3399 291.16 56.9999 291.16 56.9999C291.16 56.9999 283.16 52.7599 272.44 56.9999C261.72 61.2399 263.88 73.6099 263.88 73.6099C263.88 73.6099 232.88 72.6099 227.61 78.2699H366.75C366.75 78.2699 363.94 71.3299 342.13 73.6399Z"
             stroke="#263238"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
         <g id="Cloudleft">
@@ -131,8 +131,8 @@ export const Natural = () => {
                   opacity="0.5"
                   d="M89.9 116.91C89.9 116.91 96.35 109.51 105.77 109.51C105.947 107.758 106.707 106.117 107.927 104.848C109.147 103.579 110.757 102.756 112.5 102.51C118.92 101.27 120.17 107 120.17 107C121.925 106.24 123.817 105.848 125.73 105.848C127.643 105.848 129.535 106.24 131.29 107C137.67 109.52 136.38 116.87 136.38 116.87C136.38 116.87 154.76 116.27 157.92 119.64H75.28C75.28 119.64 76.94 115.53 89.9 116.91Z"
                   stroke="#263238"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </g>
             </g>
@@ -141,8 +141,8 @@ export const Natural = () => {
             id="Vector_12"
             d="M89.9 116.91C89.9 116.91 96.35 109.51 105.77 109.51C105.947 107.758 106.707 106.117 107.927 104.848C109.147 103.579 110.757 102.756 112.5 102.51C118.92 101.27 120.17 107 120.17 107C121.925 106.24 123.817 105.848 125.73 105.848C127.643 105.848 129.535 106.24 131.29 107C137.67 109.52 136.38 116.87 136.38 116.87C136.38 116.87 154.76 116.27 157.92 119.64H75.28C75.28 119.64 76.94 115.53 89.9 116.91Z"
             stroke="#263238"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
         <g id="CloudBottom">
@@ -171,8 +171,8 @@ export const Natural = () => {
                   opacity="0.5"
                   d="M188.72 287.92C188.72 287.92 195.17 280.52 204.59 280.52C204.766 278.768 205.524 277.126 206.745 275.856C207.965 274.587 209.576 273.764 211.32 273.52C217.74 272.3 219 278 219 278C220.755 277.24 222.647 276.848 224.56 276.848C226.473 276.848 228.365 277.24 230.12 278C236.5 280.51 235.21 287.87 235.21 287.87C235.21 287.87 253.59 287.27 256.75 290.64H174.1C174.1 290.64 175.76 286.54 188.72 287.92Z"
                   stroke="#263238"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </g>
             </g>
@@ -181,177 +181,177 @@ export const Natural = () => {
             id="Vector_15"
             d="M188.72 287.92C188.72 287.92 195.17 280.52 204.59 280.52C204.766 278.768 205.524 277.126 206.745 275.856C207.965 274.587 209.576 273.764 211.32 273.52C217.74 272.3 219 278 219 278C220.755 277.24 222.647 276.848 224.56 276.848C226.473 276.848 228.365 277.24 230.12 278C236.5 280.51 235.21 287.87 235.21 287.87C235.21 287.87 253.59 287.27 256.75 290.64H174.1C174.1 290.64 175.76 286.54 188.72 287.92Z"
             stroke="#263238"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </g>
         <path
           id="Vector_16"
           d="M114.41 194.12L114.31 178.52C114.273 177.981 114.033 177.477 113.639 177.109C113.244 176.74 112.725 176.536 112.185 176.536C111.645 176.536 111.126 176.74 110.731 177.109C110.337 177.477 110.097 177.981 110.06 178.52V183.63"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_17"
           d="M109.94 198.29L109.9 204.02"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_18"
           d="M115.3 332.69L114.51 209.9"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_19"
           d="M109.83 214.81L109.08 332.69"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_20"
           d="M166 205L120.59 195.31L118.09 198.83L116.28 198.64L97.07 152.64C96.9392 152.324 96.6917 152.071 96.379 151.932C96.0663 151.794 95.7124 151.782 95.3906 151.897C95.0689 152.013 94.8042 152.249 94.6514 152.554C94.4985 152.86 94.4694 153.213 94.57 153.54L107.85 198.04L112.14 198.53L112.82 200.16L82.38 239.73C82.1936 240 82.1133 240.329 82.1547 240.654C82.196 240.979 82.356 241.278 82.6039 241.492C82.8519 241.707 83.1703 241.822 83.4981 241.816C83.8259 241.81 84.14 241.683 84.38 241.46L116.44 207.86L114.74 203.86L115.87 202.4L165.6 207.64C165.773 207.666 165.95 207.658 166.12 207.616C166.291 207.574 166.451 207.499 166.592 207.395C166.733 207.291 166.852 207.16 166.943 207.01C167.034 206.86 167.094 206.693 167.12 206.52C167.146 206.347 167.138 206.17 167.096 206C167.054 205.83 166.979 205.669 166.875 205.528C166.771 205.387 166.64 205.268 166.49 205.177C166.34 205.086 166.173 205.026 166 205Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_21"
           d="M115.3 201.53C116.018 201.53 116.6 200.948 116.6 200.23C116.6 199.512 116.018 198.93 115.3 198.93C114.582 198.93 114 199.512 114 200.23C114 200.948 114.582 201.53 115.3 201.53Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_22"
           d="M156.22 248.05L156.14 235.7C156.14 235.254 155.963 234.827 155.648 234.512C155.333 234.197 154.906 234.02 154.46 234.02C154.014 234.02 153.587 234.197 153.272 234.512C152.957 234.827 152.78 235.254 152.78 235.7V239.75"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_23"
           d="M152.68 251.35L152.65 255.87"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_24"
           d="M156.92 357.66L156.3 260.53"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_25"
           d="M152.6 264.41L152 357.66"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_26"
           d="M197.06 256.68L161.13 249L159.13 251.79L157.69 251.64L142.5 215.24C142.453 215.108 142.379 214.988 142.283 214.886C142.187 214.785 142.071 214.705 141.942 214.651C141.812 214.597 141.674 214.571 141.534 214.574C141.394 214.578 141.256 214.61 141.13 214.67C140.89 214.772 140.695 214.959 140.583 215.195C140.47 215.43 140.448 215.699 140.52 215.95L151.03 251.15L154.42 251.54L154.96 252.83L130.86 284.11C130.678 284.322 130.588 284.598 130.61 284.876C130.632 285.155 130.763 285.414 130.975 285.595C131.187 285.777 131.463 285.867 131.741 285.845C132.02 285.824 132.278 285.692 132.46 285.48L157.81 258.9L156.47 255.76L157.36 254.6L196.7 258.74C196.838 258.763 196.98 258.756 197.116 258.721C197.251 258.685 197.378 258.621 197.487 258.534C197.597 258.446 197.686 258.336 197.75 258.212C197.815 258.087 197.852 257.95 197.86 257.81C197.886 257.557 197.82 257.303 197.673 257.095C197.525 256.887 197.308 256.739 197.06 256.68Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_27"
           d="M158 252.88C158 253.078 157.941 253.271 157.831 253.435C157.722 253.6 157.565 253.728 157.383 253.804C157.2 253.879 156.999 253.899 156.805 253.861C156.611 253.822 156.433 253.727 156.293 253.587C156.153 253.447 156.058 253.269 156.019 253.075C155.981 252.881 156 252.68 156.076 252.497C156.152 252.314 156.28 252.158 156.444 252.048C156.609 251.939 156.802 251.88 157 251.88C157.265 251.88 157.52 251.985 157.707 252.173C157.895 252.36 158 252.615 158 252.88Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_28"
           d="M375.59 194.12L375.69 178.52C375.727 177.981 375.967 177.477 376.361 177.109C376.756 176.74 377.275 176.536 377.815 176.536C378.355 176.536 378.874 176.74 379.269 177.109C379.663 177.477 379.903 177.981 379.94 178.52V183.63"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_29"
           d="M380.06 198.29L380.1 204.02"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_30"
           d="M374.7 332.69L375.49 209.9"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_31"
           d="M380.17 214.81L380.92 332.69"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_32"
           d="M324 205L369.41 195.31L371.91 198.83L373.72 198.64L392.93 152.64C393.061 152.324 393.308 152.071 393.621 151.932C393.934 151.794 394.288 151.782 394.609 151.897C394.931 152.013 395.196 152.249 395.349 152.554C395.501 152.86 395.531 153.213 395.43 153.54L382.15 198.04L377.86 198.53L377.18 200.16L407.65 239.71C407.836 239.98 407.917 240.309 407.875 240.634C407.834 240.959 407.674 241.258 407.426 241.472C407.178 241.687 406.86 241.802 406.532 241.796C406.204 241.79 405.89 241.663 405.65 241.44L373.59 207.84L375.29 203.84L374.16 202.38L324.43 207.62C324.093 207.654 323.756 207.559 323.487 207.353C323.218 207.147 323.037 206.847 322.983 206.512C322.928 206.178 323.002 205.836 323.191 205.555C323.381 205.274 323.67 205.075 324 205Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_33"
           d="M374.7 201.53C375.418 201.53 376 200.948 376 200.23C376 199.512 375.418 198.93 374.7 198.93C373.982 198.93 373.4 199.512 373.4 200.23C373.4 200.948 373.982 201.53 374.7 201.53Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_34"
           d="M333.78 248.05L333.86 235.7C333.86 235.254 334.037 234.827 334.352 234.512C334.667 234.197 335.094 234.02 335.54 234.02C335.986 234.02 336.413 234.197 336.728 234.512C337.043 234.827 337.22 235.254 337.22 235.7V239.75"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_35"
           d="M337.32 251.35L337.35 255.87"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_36"
           d="M333.08 357.66L333.7 260.53"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_37"
           d="M337.4 264.41L338 357.66"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_38"
           d="M292.94 256.68L328.87 249L330.87 251.79L332.31 251.64L347.5 215.24C347.547 215.108 347.621 214.988 347.717 214.886C347.813 214.785 347.929 214.705 348.058 214.651C348.188 214.597 348.326 214.571 348.466 214.574C348.606 214.578 348.744 214.61 348.87 214.67C349.11 214.772 349.305 214.959 349.417 215.195C349.53 215.43 349.552 215.699 349.48 215.95L338.97 251.15L335.58 251.54L335.04 252.83L359.14 284.11C359.322 284.322 359.412 284.598 359.39 284.876C359.369 285.155 359.237 285.414 359.025 285.595C358.813 285.777 358.537 285.867 358.259 285.845C357.98 285.824 357.722 285.692 357.54 285.48L332.19 258.9L333.53 255.76L332.64 254.6L293.3 258.74C293.162 258.763 293.02 258.756 292.885 258.721C292.749 258.685 292.622 258.621 292.513 258.534C292.404 258.446 292.314 258.336 292.25 258.212C292.185 258.087 292.148 257.95 292.14 257.81C292.114 257.557 292.18 257.303 292.327 257.095C292.475 256.887 292.692 256.739 292.94 256.68Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_39"
           d="M332.05 252.88C332.05 253.078 332.109 253.271 332.219 253.435C332.328 253.6 332.485 253.728 332.667 253.804C332.85 253.879 333.051 253.899 333.245 253.861C333.439 253.822 333.617 253.727 333.757 253.587C333.897 253.447 333.992 253.269 334.031 253.075C334.069 252.881 334.05 252.68 333.974 252.497C333.898 252.314 333.77 252.158 333.606 252.048C333.441 251.939 333.248 251.88 333.05 251.88C332.785 251.88 332.53 251.985 332.343 252.173C332.155 252.36 332.05 252.615 332.05 252.88Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_40"
@@ -388,22 +388,22 @@ export const Natural = () => {
                 id="Vector_43"
                 d="M128.85 349.791C128.85 349.791 145.5 364.171 154.85 364.641"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="Vector_44"
                 d="M80 366.46C91.87 372.23 109.28 378.68 115.61 381.98"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="Vector_45"
                 d="M125.52 298.65C128.74 305.304 132.538 311.662 136.87 317.65"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
           </g>
@@ -412,8 +412,8 @@ export const Natural = () => {
           id="Vector_46"
           d="M30.84 318.11C30.84 318.11 32.78 323.23 38.84 331.11C46.67 341.37 61.47 356.3 88 370.62C134.8 395.92 164.42 437.96 164.42 437.96L191.65 351.17C191.65 351.17 179.54 350.29 162.5 338.17C150.87 330 137 316.58 123.14 294.76C88.86 240.85 53 229.16 53 229.16"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_47"
@@ -450,22 +450,22 @@ export const Natural = () => {
                 id="Vector_50"
                 d="M350.43 326.78C350.43 326.78 342.3 339.99 321.29 348.28"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="Vector_51"
                 d="M413.52 360.53C408.52 362.62 387.8 369.13 383.05 372.46"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="Vector_52"
                 d="M373.56 296.67C373.56 296.67 378.29 279.67 385.22 269.37"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
           </g>
@@ -474,8 +474,8 @@ export const Natural = () => {
           id="Vector_53"
           d="M465.6 310.11C465.6 310.11 463.66 315.23 457.6 323.11C449.74 333.37 434.94 348.3 408.46 362.62C361.66 387.92 332.04 429.96 332.04 429.96L304.81 343.17C304.81 343.17 316.92 342.29 333.96 330.17C345.54 321.95 359.4 308.56 373.27 286.74C407.55 232.83 443.42 221.14 443.42 221.14"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_54"
@@ -498,50 +498,50 @@ export const Natural = () => {
           id="Vector_57"
           d="M135.05 400.88C136.62 404.53 147.83 402.42 147.83 402.42C147.83 402.42 154.32 390.53 159.25 386.1C164.18 381.67 184.59 375.44 184.59 375.44L213.82 371.94L200.35 344.31C200.35 344.31 178.66 337.92 168.61 339.75C158.56 341.58 154.45 347.75 154.45 347.75C154.45 347.75 136.19 355.86 132.99 358.43C129.79 361 128.65 373.62 128.88 376.43C129.11 379.24 133.88 386.1 133.88 386.1C133.88 386.1 132.76 395.57 135.05 400.88Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_58"
           d="M135.5 398.42C135.5 398.42 137.33 388.15 146.01 384.42C146.01 384.42 146.92 378.3 144.64 375.48C142.36 372.66 135.73 378.14 135.5 384.42C135.27 390.7 135.5 398.42 135.5 398.42Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_59"
           d="M154.45 360.53C154.45 360.53 169.68 367.37 161.72 384.38"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_60"
           d="M159.85 357.33C159.85 357.33 172.79 368.49 163.28 382.54"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_61"
           d="M177.46 355.06C176.731 359.993 176.731 365.007 177.46 369.94"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_62"
           d="M139.16 372.46C139.16 372.46 136.42 373.77 134.59 380.62"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_63"
           d="M136.87 360.53C136.87 360.53 132.99 361.06 130.94 368.74"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_64"
@@ -558,57 +558,57 @@ export const Natural = () => {
           id="Vector_66"
           d="M278.89 356.18C278.89 356.18 284.7 347.05 299.15 340.89C313.6 334.73 331.15 330.84 339.74 333.58C348.33 336.32 359.95 351.16 361.74 356.18C363.53 361.2 364.94 369.88 361.74 371.94C358.54 374 356.86 378.29 356.86 378.29C356.86 378.29 357.46 386.1 356.86 388.15C356.26 390.2 351.92 394.09 348.5 391.92C345.08 389.75 343.3 381.76 334.42 378.29"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_67"
           d="M344 372.4C344 372.4 344.69 363.49 349 363.95C353.31 364.41 356.59 373.77 356.9 384.38C356.89 384.38 352.19 375.14 344 372.4Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_68"
           d="M329.81 375.44C329.81 375.44 324.81 359.38 335.51 353.22"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_69"
           d="M328.63 344.31C328.63 344.31 324.49 358.09 328.63 365.81C328.63 365.81 318.85 358.47 311.43 361.66"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_70"
           d="M320 361.55C320 361.55 318.59 356.18 318.82 353.22C319.05 350.26 315.09 346.82 316.61 343.17"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_71"
           d="M314.05 349.79C314.05 349.79 317.32 357.23 319.34 358.42"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_72"
           d="M321.29 367.37C321.29 367.37 325.41 365.55 328.64 367.37"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_73"
           d="M353.1 354.11C353.1 354.11 359.72 353.55 361.32 366.97"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_74"
@@ -640,7 +640,7 @@ export const Natural = () => {
                 opacity="0.3"
                 d="M307.1 171.7C302.62 180.21 288.83 190.95 273.68 216.79C266.272 229.715 260.104 243.312 255.26 257.4C252.85 255.62 243.1 246.62 250.48 222.4C250.77 231 253.82 235.83 253.82 235.83C252.86 202.38 307.1 171.7 307.1 171.7Z"
                 fill="black"
-                fill-opacity="0.7"
+                fillOpacity="0.7"
               />
             </g>
           </g>
@@ -649,36 +649,36 @@ export const Natural = () => {
           id="Vector_77"
           d="M255.78 257.76C255.78 257.76 239.85 248.58 252.9 215.41C265.95 182.24 305.18 172.18 314.05 162.18C314.05 162.18 310.47 264.05 255.78 257.76Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_78"
           d="M257.25 216.79C257.25 216.79 254.77 234.52 260.47 246.07L263.32 238.68C263.32 238.68 283.1 238.15 293.38 225.49"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_79"
           d="M268.07 201.76C268.07 201.76 263.58 218.37 266.75 229.98L268.07 224.18C268.07 224.18 292.86 217.76 298.13 210.11"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_80"
           d="M280.91 191C280.91 191 274.91 203.39 275.05 213.68L277.98 208.68C277.98 208.68 298.92 204.68 302.62 198.13"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_81"
           d="M293.38 180.3C289.01 186.3 283.82 199.85 283.82 199.85L288.6 194.41C288.6 194.41 300.42 191.33 304.84 185.56"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_82"
@@ -710,7 +710,7 @@ export const Natural = () => {
                 opacity="0.3"
                 d="M236.79 345.25C236.79 345.25 243.59 225.49 301.3 180.25C301.3 180.25 247.76 224.48 245 345.25H236.79Z"
                 fill="black"
-                fill-opacity="0.7"
+                fillOpacity="0.7"
               />
             </g>
           </g>
@@ -719,8 +719,8 @@ export const Natural = () => {
           id="Vector_85"
           d="M236.79 345.25C236.79 345.25 243.59 225.49 301.3 180.25C301.3 180.25 247.76 224.48 245 345.25H236.79Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_86"
@@ -752,7 +752,7 @@ export const Natural = () => {
                 opacity="0.3"
                 d="M234 182.51C233.378 180.908 232.625 179.359 231.75 177.88C229.96 174.88 234.47 183.77 234.56 190.95C234.625 192.746 234.281 194.533 233.556 196.177C232.83 197.82 231.741 199.278 230.37 200.44C229.47 195.74 228.98 190.81 226.73 186.58C215.27 164.94 188.51 145.33 184.26 142.1C184.72 142.68 199.37 161.1 208.04 171.7C212.69 177.41 215.78 184.61 218.84 191.24C222.72 199.67 226.2 208.24 229.65 216.88C230.13 218.09 230.65 219.29 231.1 220.49C234.98 218.07 237.1 213.57 238 209.08C239.48 201.41 237.72 193.48 235.27 186.08C234.88 184.87 234.47 183.68 234 182.51Z"
                 fill="black"
-                fill-opacity="0.7"
+                fillOpacity="0.7"
               />
             </g>
           </g>
@@ -761,36 +761,36 @@ export const Natural = () => {
           id="Vector_89"
           d="M231.39 220.41C231.39 220.41 245.64 212.2 233.96 182.53C222.28 152.86 187.2 143.86 179.27 134.92C179.27 134.92 182.47 226 231.39 220.41Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_90"
           d="M230.07 183.77C230.07 183.77 232.29 199.62 227.19 209.95L224.64 203.34C224.64 203.34 206.95 202.87 197.75 191.55"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_91"
           d="M220.4 170.32C220.4 170.32 224.4 185.18 221.58 195.56L220.4 190.37C220.4 190.37 198.22 184.63 193.51 177.79"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_92"
           d="M208.91 160.65C208.91 160.65 214.27 171.74 214.15 180.94L211.53 176.45C211.53 176.45 192.8 172.91 189.53 167.02"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_93"
           d="M197.75 151.12C201.67 156.53 206.31 168.61 206.31 168.61L202 163.75C202 163.75 191.43 160.99 187.48 155.83"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_94"
@@ -822,7 +822,7 @@ export const Natural = () => {
                 opacity="0.3"
                 d="M246 293.81C246 293.81 242.3 191.55 190.69 151.05C190.69 151.05 240.38 195.56 241.11 310.1C241.11 310.1 242.73 310.42 243.6 307.78"
                 fill="black"
-                fill-opacity="0.7"
+                fillOpacity="0.7"
               />
             </g>
           </g>
@@ -831,8 +831,8 @@ export const Natural = () => {
           id="Vector_97"
           d="M246 293.81C246 293.81 242.3 191.55 190.69 151.05C190.69 151.05 240.38 195.56 241.11 310.1C241.11 310.1 242.73 310.42 243.6 307.78"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_98"
@@ -844,32 +844,32 @@ export const Natural = () => {
           opacity="0.4"
           d="M213.66 344C214.88 344.32 216.66 344.24 216.81 343C216.784 342.718 216.805 342.435 216.87 342.16C217.19 341.42 218.33 341.99 219.12 341.81C219.71 341.67 220.07 341.09 220.5 340.67C221.051 340.164 221.762 339.867 222.509 339.83C223.256 339.793 223.992 340.02 224.59 340.47C225.28 341.03 225.74 341.89 226.53 342.29C228.01 343.03 230.44 342.2 230.99 343.75"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_100"
           opacity="0.4"
           d="M234.75 351.81C235.092 352.029 235.48 352.168 235.883 352.217C236.287 352.265 236.696 352.222 237.081 352.09C237.465 351.959 237.815 351.742 238.104 351.456C238.393 351.17 238.614 350.823 238.75 350.44C238.86 350.04 238.9 349.57 239.24 349.32C239.76 348.95 240.46 349.45 241.1 349.51C242.37 349.64 243.1 348.16 243.93 347.21C244.433 346.646 245.078 346.227 245.797 345.996C246.516 345.764 247.284 345.729 248.022 345.893C248.759 346.057 249.44 346.415 249.993 346.929C250.547 347.444 250.953 348.096 251.17 348.82L258.71 350.82"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_101"
           opacity="0.4"
           d="M247.65 335.93C248.942 335.517 250.294 335.324 251.65 335.36C251.472 334.939 251.433 334.473 251.539 334.029C251.644 333.585 251.89 333.186 252.238 332.891C252.587 332.596 253.02 332.421 253.476 332.39C253.931 332.359 254.385 332.475 254.77 332.72C255.09 332.428 255.468 332.208 255.88 332.074C256.292 331.94 256.727 331.895 257.158 331.942C257.588 331.989 258.004 332.128 258.377 332.348C258.749 332.568 259.071 332.866 259.32 333.22L259.62 334.48C261.589 335.133 263.418 336.151 265.01 337.48"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_102"
           opacity="0.4"
           d="M268.58 345.33L270.58 345.92C270.25 345.4 270.87 344.76 271.48 344.64C272.09 344.641 272.696 344.536 273.27 344.33C273.87 343.97 274.05 343.21 274.44 342.63C274.83 342.05 275.81 341.72 276.14 342.33C276.06 341.69 276.77 341.17 277.42 341.19C278.072 341.276 278.686 341.547 279.19 341.97L284.31 345.53"
           stroke="white"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_103"
@@ -892,101 +892,101 @@ export const Natural = () => {
           id="Vector_106"
           d="M255.78 452.68L254.78 452.93C251.285 453.87 247.854 455.036 244.51 456.42C238.72 458.86 231.42 459.16 226.51 456.42C226.51 456.42 217.38 458.79 211.29 458.36C205.2 457.93 188.76 457.63 182.98 456.12C176.605 454.271 170.396 451.889 164.42 449C160.079 446.507 156.5 442.877 154.07 438.5C152.25 434.8 148.9 433.6 143.73 427.35C138.56 421.1 145.85 402.41 145.85 402.41C145.85 402.41 146.24 401.71 146.97 400.56C148.97 397.33 153.63 390.56 159.25 386.1C166.86 380 172.34 372.21 179.04 363.93C185.74 355.65 195.48 345.15 200.35 344.31C205.22 343.47 216.18 345.04 217.4 355.06C217.4 355.06 224.85 346.06 235.28 352.36C242.11 356.51 242.28 363.04 241.53 367.04C241.317 368.245 240.982 369.424 240.53 370.56C240.78 370.47 244.4 369.11 246.68 370.56C248.96 372.01 254.9 442.34 255.68 451.65C255.74 452.32 255.78 452.68 255.78 452.68Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_107"
           d="M217.4 355.06C214.05 357.78 195.78 392.26 192.4 396.37C189.02 400.48 179.61 412.19 175.5 416.5C172.604 419.785 170.146 423.432 168.19 427.35C165.569 429.985 162.747 432.412 159.75 434.61"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_108"
           d="M240.53 370.57C237.567 375.589 234.896 380.774 232.53 386.1C229.53 393.17 220.96 411.21 217.39 418.1C213.82 424.99 208.1 440.7 203.99 443.22C199.88 445.74 193.94 451.44 190.29 450.98"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_109"
           d="M193.5 453C193.5 453 192.5 450.76 193.5 450.24"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_110"
           d="M229.1 454.1C229.1 454.1 237.33 446.23 238.47 440.48C239.61 434.73 255.77 389.48 255.77 389.48"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_111"
           d="M198.06 352.36C198.06 352.36 207.43 351.75 212.45 358.42C212.45 358.42 204.91 377.19 195.78 372.42C186.65 367.65 198.06 352.36 198.06 352.36Z"
           fill="white"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_112"
           d="M222.5 358.42C222.5 358.42 231.91 358.09 239.3 364.33C239.3 364.33 234.37 385.41 222.5 382.21C210.63 379.01 218.61 365.22 222.5 358.42Z"
           fill="white"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_113"
           d="M242.82 376.43C242.82 376.43 237.56 384.35 238.25 390.13C238.94 395.91 246.69 394.84 246.69 394.84"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_114"
           d="M203.54 396.37C203.54 396.37 210 401.15 216.25 402.42"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_115"
           d="M149.43 405.05C149.43 405.05 150.35 416.05 152.63 419.89C154.91 423.73 170.26 423.54 170.26 423.54"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_116"
           d="M174.09 431.07C176.633 435.562 180.558 439.115 185.28 441.2C193.28 444.77 198.82 443.2 198.82 443.2"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_117"
           d="M212.45 447.05C212.45 447.05 224.55 452.6 231.86 448.23"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_118"
           d="M178.66 378.29C178.66 378.29 181.24 384.29 186.46 385.67"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_119"
           d="M229.1 416.5C231.665 418.616 234.866 419.81 238.19 419.89"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_120"
@@ -1021,124 +1021,124 @@ export const Natural = () => {
           id="Vector_125"
           d="M344.65 423.08C344.65 423.08 337.34 436.32 329.58 439.98C321.82 443.64 315.42 442.27 310.86 444.98C306.3 447.69 298.53 449.09 288.03 450.92C277.53 452.75 266.95 455.03 259.45 453.66C251.95 452.29 244.88 447.03 238.45 440.46C232.83 434.68 236.4 423.53 242.79 422.15C242.79 422.15 231.84 413.47 230.02 409.36C228.2 405.25 228.64 397.95 235.02 391.55C236.855 389.686 239.066 388.235 241.506 387.292C243.946 386.349 246.558 385.936 249.17 386.08C249.17 386.08 239.39 378.08 243.23 368.72C244.62 365.34 247.1 360.87 254.65 359.59C265.46 357.76 271.55 363.93 271.55 363.93C271.55 363.93 269.84 353.21 280.74 350.93C291.64 348.65 315.42 366 320 368.29C323.55 370.07 329.3 374.29 334.46 377.4C335.8 378.2 337.11 378.93 338.32 379.51C343.97 383.62 345.68 390.11 348.53 391.92C349.334 392.373 350.25 392.587 351.171 392.537C352.092 392.488 352.98 392.176 353.73 391.64C353.92 391.93 354.1 392.21 354.25 392.48C356.52 396.59 362 414 344.65 423.08Z"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_126"
           d="M271.58 364C273.11 367.52 287 380 293 383.66C299 387.32 315.73 405.58 320.6 408C325.47 410.42 329.73 418.05 335.51 419.88"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_127"
           d="M249.21 386.1C257.58 393.1 267.02 404.97 271.58 408.32C276.14 411.67 286.5 423.24 291.07 429.02C295.64 434.8 298.68 438.76 316.64 441.2"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_128"
           d="M323 423.54C323 423.54 321.79 434.54 305 436.63"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_129"
           d="M343.13 391.92C343.13 391.92 347.69 404.97 335.51 409.84"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_130"
           d="M242.82 422.17C242.82 422.17 254.63 432.06 259.45 434.8C264.27 437.54 270.67 444.85 275.54 446.37C278.727 447.252 282.093 447.252 285.28 446.37"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_131"
           d="M297.9 435.81C296.644 437.916 294.977 439.749 293 441.2"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_132"
           d="M249.21 379.47C250.496 376.295 252.508 373.465 255.086 371.207C257.663 368.95 260.733 367.327 264.05 366.47C264.05 366.47 275.24 374.23 275.24 380.63C275.24 387.03 270.92 391.96 262.92 389.49C254.92 387.02 249.21 379.47 249.21 379.47Z"
           fill="white"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_133"
           d="M277.06 364C277.06 364 281.64 358.06 288.71 356.23C288.71 356.23 303.45 367.42 297.9 373.36C292.35 379.3 279.35 371.71 277.06 364Z"
           fill="white"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_134"
           d="M235.28 407.56C235.28 407.56 240.91 398.73 249.21 396.37C249.21 396.37 266.33 406.04 257.66 413.65C248.99 421.26 237.34 411.67 235.28 407.56Z"
           fill="white"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_135"
           d="M239.3 436.2C239.3 436.2 247.24 434.59 249.19 427.35C249.19 427.35 257.31 433.62 252.63 438.5C245.75 445.69 239.3 436.2 239.3 436.2Z"
           fill="white"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_136"
           d="M308.8 388.15C310.192 387.379 311.389 386.3 312.299 384.994C313.209 383.689 313.808 382.193 314.05 380.62"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_137"
           d="M294.42 396.37C294.42 396.37 292.65 406.37 282.92 408.01"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_138"
           d="M270 419.89C270 419.89 266 425.68 260.12 427.35"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_139"
           d="M273.6 445.52C271.955 447.905 269.676 449.783 267.02 450.94"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_140"
           d="M280.78 447.05C280.883 447.732 280.848 448.428 280.676 449.097C280.504 449.765 280.199 450.392 279.78 450.94"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           id="Vector_141"
           d="M252.41 449C254.378 448.836 256.283 448.227 257.982 447.221C259.681 446.215 261.13 444.837 262.22 443.19"
           stroke="#263238"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
@@ -1956,732 +1956,732 @@ export const Facial = () => {
               d="M43.3863 15.4297H-69.5791V313.909H43.3863V15.4297Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_4"
               d="M40.0845 21.8203H-66.2988V307.519H40.0845V21.8203Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_5"
               d="M162.776 15.4297H49.811V313.909H162.776V15.4297Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_6"
               d="M159.474 21.8203H53.0903V307.519H159.474V21.8203Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_7"
               d="M282.166 15.4297H169.2V313.909H282.166V15.4297Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_8"
               d="M278.863 21.8203H172.48V307.519H278.863V21.8203Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_9"
               d="M172.886 121.272C194.176 111.41 215.286 103.239 235.483 97.8066"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_10"
               d="M53.0679 190.879C85.933 168.552 122.281 146.146 158.55 128.147"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_11"
               d="M-66.209 281.168C-66.209 281.168 -26.4462 246.286 39.3629 200.324"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_12"
               d="M-22.7832 247.3C-22.7832 247.3 -11.738 171.674 9.78888 111.76"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_13"
               d="M204.071 108.322C222.894 104.488 242.447 106.726 259.917 114.713"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_14"
               d="M69.7032 180.454C69.7032 180.454 67.3702 118.218 76.0937 80.9907"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_15"
               d="M70.2778 136.78C70.2778 136.78 124.377 65.7754 142.41 46.0293"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_16"
               d="M53.0903 234.249C71.9799 236.334 93.1236 240.932 113.332 250.208"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_17"
               d="M-8.24414 235.083C7.62333 232.816 23.6803 232.17 39.6785 233.156"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_18"
               d="M263.547 109.968C264.136 108.714 264.441 107.346 264.441 105.961C264.441 104.576 264.136 103.208 263.547 101.954C261.541 97.6038 255.86 99.2831 254.857 103.622C253.854 107.961 257.866 109.63 257.528 110.971C257.19 112.312 252.851 110.295 250.18 112.639C247.509 114.983 246.179 117.981 247.182 118.646C248.836 120.126 250.969 120.959 253.189 120.99C256.57 120.99 258.204 116.651 258.824 117.609C259.444 118.567 256.818 122.625 257.483 124.631C258.148 126.637 260.492 128.012 262.825 129.308C265.158 130.604 269.509 124.958 267.841 121.96C266.173 118.962 263.502 119.615 264.46 117.947C265.418 116.279 266.454 117.947 269.802 118.95C273.149 119.953 275.144 114.938 274.806 112.605C274.468 110.272 271.132 109.224 268.799 110.261C266.466 111.298 263.547 109.968 263.547 109.968Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_19"
               d="M259.591 109.145L259.974 111.253"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_20"
               d="M263.637 111.839L261.901 113.372"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_21"
               d="M264.786 114.724L262.093 116.449"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_22"
               d="M258.633 116.065L254.981 116.449"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_23"
               d="M255.939 113.18L258.441 113.755"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_24"
               d="M260.751 118.184L260.943 120.878"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_25"
               d="M239.45 91.1231C240.486 90.204 241.306 89.0681 241.854 87.7962C242.401 86.5242 242.662 85.1474 242.617 83.7634C242.493 78.9846 236.61 78.2746 233.972 81.8699C231.335 85.4652 234.367 88.6323 233.533 89.6692C232.699 90.7061 229.498 87.2122 226.117 88.2942C222.736 89.3761 220.324 91.6753 220.977 92.6333C221.919 94.6394 223.551 96.2396 225.576 97.1416C228.641 98.4715 231.899 95.1354 232.113 96.3188C232.327 97.5023 228.292 100.128 228.112 102.236C227.931 104.344 229.554 106.496 231.177 108.649C232.8 110.802 239.067 107.296 238.684 103.881C238.3 100.466 235.618 100.016 237.196 98.8773C238.774 97.7389 239.033 99.6662 241.704 101.909C244.375 104.152 248.207 100.342 248.816 98.0545C249.424 95.7666 246.765 93.5463 244.217 93.5463C241.67 93.5463 239.45 91.1231 239.45 91.1231Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_26"
               d="M236.148 88.8125L235.663 90.9088"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_27"
               d="M238.785 92.8818L236.587 93.6032"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_28"
               d="M238.706 95.981L235.55 96.5107"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_29"
               d="M232.519 94.7861L229.014 93.6929"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_30"
               d="M231.188 91.0781L233.262 92.5884"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_31"
               d="M233.623 97.5698L232.744 100.117"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_32"
               d="M146.073 43.4373C147.109 42.5182 147.929 41.3823 148.477 40.1103C149.024 38.8384 149.285 37.4616 149.24 36.0776C149.116 31.2988 143.244 30.5888 140.607 34.1728C137.969 37.7569 140.99 40.9352 140.156 41.9834C139.322 43.0315 136.121 39.5264 132.751 40.6083C129.381 41.6903 126.958 43.9895 127.612 44.9475C128.554 46.9536 130.186 48.5538 132.21 49.4558C135.276 50.7744 138.522 47.4496 138.747 48.633C138.973 49.8164 134.926 52.4425 134.746 54.5501C134.566 56.6577 136.189 58.8104 137.8 60.9631C139.412 63.1158 145.69 59.6106 145.307 56.1956C144.923 52.7806 142.241 52.3298 143.83 51.1915C145.419 50.0531 145.667 51.9804 148.338 54.2232C151.01 56.4661 154.83 52.6566 155.45 50.3687C156.07 48.0808 153.399 45.8605 150.852 45.8605C148.305 45.8605 146.073 43.4373 146.073 43.4373Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_33"
               d="M142.771 41.1157L142.286 43.2121"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_34"
               d="M145.419 45.1958L143.222 45.9171"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_35"
               d="M145.34 48.2949L142.173 48.8246"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_36"
               d="M139.153 47.1001L135.637 46.0068"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_37"
               d="M137.823 43.3921L139.886 44.9024"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_38"
               d="M140.258 49.8838L139.367 52.431"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_39"
               d="M82.1126 77.1028C83.1483 76.1837 83.9689 75.0478 84.5163 73.7759C85.0636 72.5039 85.3242 71.1271 85.2796 69.7431C85.1556 64.9643 79.2837 64.2543 76.6463 67.8383C74.009 71.4224 77.0295 74.6007 76.1955 75.6489C75.3615 76.6971 72.1606 73.1806 68.7907 74.2739C65.4208 75.3671 62.9976 77.5987 63.6513 78.6131C64.5965 80.6167 66.2277 82.2159 68.2497 83.1213C71.3153 84.44 74.5613 81.1151 74.7867 82.2986C75.0121 83.482 70.9659 86.108 70.7856 88.2156C70.6053 90.3232 72.2282 92.4759 73.8399 94.6173C75.4516 96.7588 81.7294 93.2761 81.3462 89.8499C80.963 86.4236 78.2806 85.984 79.8697 84.857C81.4589 83.7299 81.7068 85.6459 84.378 87.8888C87.0491 90.1316 90.8699 86.3109 91.4897 84.0342C92.1096 81.7576 89.4385 79.526 86.8913 79.526C84.3442 79.526 82.1126 77.1028 82.1126 77.1028Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_40"
               d="M78.8098 74.7812L78.3252 76.8776"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_41"
               d="M81.4585 78.8496L79.2607 79.5822"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_42"
               d="M81.3799 81.96L78.2241 82.4897"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_43"
               d="M75.1922 80.7656L71.6758 79.6724"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_44"
               d="M73.8623 77.0464L75.9248 78.5679"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_45"
               d="M76.2966 83.5493L75.4062 86.0965"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_46"
               d="M76.1278 134.245C77.1634 133.326 77.9841 132.19 78.5314 130.918C79.0788 129.646 79.3394 128.269 79.2948 126.885C79.1708 122.106 73.2988 121.396 70.6615 124.98C68.0242 128.564 71.0447 131.743 70.2107 132.791C69.3767 133.839 66.1758 130.323 62.8059 131.416C59.436 132.509 57.0015 134.741 57.6665 135.755C58.6084 137.761 60.2406 139.361 62.2649 140.263C65.3305 141.582 68.5764 138.257 68.8018 139.441C69.0273 140.624 64.9698 143.25 64.8008 145.358C64.6317 147.465 66.2322 149.618 67.8551 151.771C69.4781 153.923 75.7446 150.418 75.3614 146.992C74.9782 143.566 72.2957 143.137 73.8849 141.999C75.474 140.861 75.722 142.788 78.3931 145.031C81.0643 147.274 84.885 143.464 85.5049 141.176C86.1248 138.888 83.4537 136.668 80.9065 136.668C78.3593 136.668 76.1278 134.245 76.1278 134.245Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_47"
               d="M72.8367 131.957L72.3521 134.053"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_48"
               d="M75.4849 136.037L73.2871 136.758"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_49"
               d="M75.4063 139.136L72.2393 139.665"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_50"
               d="M69.2186 137.941L65.7021 136.848"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_51"
               d="M67.8774 134.222L69.9512 135.744"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_52"
               d="M70.323 140.725L69.4326 143.272"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_53"
               d="M115.44 253.905C116.386 254.916 117.543 255.706 118.828 256.22C120.114 256.735 121.496 256.96 122.879 256.88C127.657 256.621 128.209 250.727 124.547 248.191C120.884 245.655 117.852 248.754 116.725 247.954C115.598 247.154 119.08 243.851 117.852 240.504C116.623 237.157 114.369 234.869 113.344 235.489C111.362 236.489 109.803 238.163 108.948 240.211C107.708 243.31 111.123 246.478 109.951 246.725C108.779 246.973 106.04 243.006 103.933 242.882C101.825 242.758 99.7174 244.449 97.6098 246.117C95.5022 247.785 99.1651 253.939 102.58 253.499C105.995 253.06 106.356 250.321 107.539 251.876C108.723 253.431 106.795 253.736 104.631 256.463C102.467 259.191 106.378 262.921 108.678 263.474C110.977 264.026 113.186 261.298 113.073 258.751C112.96 256.204 115.44 253.905 115.44 253.905Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_54"
               d="M117.66 250.546L115.553 250.118"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_55"
               d="M113.67 253.296L112.881 251.121"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_56"
               d="M110.559 253.308L109.951 250.163"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_57"
               d="M111.585 247.086L112.577 243.547"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_58"
               d="M115.259 245.655L113.805 247.762"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_59"
               d="M108.835 248.269L106.265 247.458"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_60"
               d="M14.3757 114.995C15.3236 116.006 16.4825 116.795 17.7701 117.308C19.0577 117.82 20.4424 118.042 21.8256 117.959C26.5931 117.711 27.1453 111.816 23.4824 109.281C19.8194 106.745 16.7877 109.844 15.6719 109.044C14.5561 108.244 18.0162 104.941 16.7989 101.594C15.5817 98.2467 13.3163 95.8911 12.2907 96.5786C10.307 97.5753 8.74721 99.2511 7.89514 101.301C6.66665 104.4 10.0816 107.556 8.89823 107.804C7.71481 108.052 4.98731 104.096 2.8797 103.972C0.772099 103.848 -1.33551 105.527 -3.44311 107.207C-5.55072 108.886 -1.87649 115.017 1.52723 114.578C4.93096 114.138 5.3029 111.411 6.48632 112.955C7.66973 114.499 5.74245 114.826 3.57849 117.553C1.41454 120.281 5.32544 124 7.62464 124.552C9.92385 125.105 12.1329 122.377 12.0202 119.841C11.9075 117.305 14.3757 114.995 14.3757 114.995Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_61"
               d="M16.6072 111.625L14.4883 111.208"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_62"
               d="M12.6068 114.386L11.8179 112.211"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_63"
               d="M9.49583 114.386L8.88721 111.252"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_64"
               d="M10.521 108.176L11.5241 104.637"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_65"
               d="M14.2069 106.744L12.7417 108.852"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_66"
               d="M7.77136 109.359L5.20166 108.536"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_67"
               d="M-5.0208 95.3947C-4.07297 96.4057 -2.91406 97.1954 -1.62646 97.7077C-0.338854 98.22 1.04582 98.4423 2.42908 98.3589C7.20782 98.1109 7.76008 92.2164 4.09713 89.6805C0.434177 87.1446 -2.60889 90.244 -3.72468 89.4438C-4.84048 88.6436 -1.36912 85.3413 -2.59762 81.9939C-3.82612 78.6466 -6.08024 76.291 -7.10587 76.9785C-9.08952 77.9752 -10.6493 79.651 -11.5014 81.7009C-12.7412 84.8003 -9.32618 87.9561 -10.4983 88.2153C-11.6705 88.4746 -14.4205 84.496 -16.5281 84.372C-18.6357 84.2481 -20.7433 85.9274 -22.8509 87.6067C-24.9585 89.286 -21.2843 95.4173 -17.8693 94.9777C-14.4543 94.5381 -14.0936 91.8107 -12.9102 93.366C-11.7268 94.9213 -13.6541 95.2257 -15.8181 97.9531C-17.982 100.681 -14.0711 104.4 -11.7832 104.963C-9.49523 105.527 -7.27493 102.777 -7.38764 100.241C-7.50034 97.7052 -5.0208 95.3947 -5.0208 95.3947Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_68"
               d="M-1.23359 175.811C-0.285843 176.822 0.872767 177.613 2.16018 178.127C3.4476 178.642 4.83232 178.866 6.21629 178.786C10.995 178.527 11.536 172.632 7.87307 170.096C4.21012 167.56 1.17831 170.66 0.062522 169.86C-1.05327 169.059 2.41808 165.757 1.18958 162.41C-0.0389136 159.062 -2.29304 156.718 -3.31866 157.394C-5.30231 158.391 -6.86213 160.067 -7.7142 162.117C-8.95397 165.216 -5.53896 168.383 -6.72238 168.631C-7.90579 168.879 -10.6333 164.912 -12.7409 164.788C-14.8485 164.664 -16.9561 166.355 -19.0637 168.023C-21.1713 169.691 -17.4971 175.844 -14.0934 175.405C-10.6896 174.965 -10.3064 172.227 -9.12303 173.782C-7.93961 175.337 -9.86688 175.642 -12.0421 178.369C-14.2173 181.096 -10.2952 184.827 -7.99596 185.379C-5.69676 185.932 -3.48772 183.204 -3.60043 180.657C-3.71314 178.11 -1.23359 175.811 -1.23359 175.811Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_69"
               d="M0.997737 172.452L-1.10986 172.024"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_70"
               d="M126.214 69.3596C127.16 70.3696 128.317 71.1588 129.603 71.6712C130.889 72.1835 132.271 72.4063 133.653 72.3237C138.432 72.0758 138.984 66.1812 135.321 63.6454C131.658 61.1095 128.626 64.2089 127.499 63.4087C126.372 62.6085 129.855 59.3062 128.626 55.9588C127.398 52.6114 125.144 50.2559 124.118 50.9434C122.137 51.9433 120.578 53.618 119.722 55.6658C118.483 58.7652 121.898 61.9209 120.726 62.1802C119.553 62.4394 116.815 58.4609 114.707 58.3369C112.599 58.2129 110.492 59.8922 108.384 61.5716C106.277 63.2509 109.94 69.3821 113.355 68.9425C116.77 68.503 117.13 65.7755 118.314 67.3308C119.497 68.8862 117.57 69.1905 115.406 71.918C113.242 74.6455 117.153 78.3648 119.452 78.9283C121.751 79.4918 123.96 76.7418 123.847 74.2059C123.735 71.67 126.214 69.3596 126.214 69.3596Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_71"
               d="M128.434 66.0015L126.327 65.5732"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_72"
               d="M124.445 68.7509L123.656 66.5757"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_73"
               d="M121.334 68.7622L120.726 65.6177"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_74"
               d="M122.359 62.5409L123.351 59.002"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_75"
               d="M126.034 61.1094L124.58 63.217"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_76"
               d="M119.61 63.7246L117.04 62.9019"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_77"
               d="M92.2332 119.694C93.1824 120.704 94.3416 121.492 95.6288 122.004C96.9161 122.516 98.3 122.74 99.683 122.659C104.462 122.399 105.003 116.505 101.34 113.969C97.6769 111.433 94.6451 114.533 93.5293 113.732C92.4135 112.932 95.8736 109.641 94.6563 106.294C93.4391 102.946 91.1737 100.591 90.1481 101.267C88.1693 102.27 86.6114 103.944 85.7525 105.989C84.5241 109.1 87.939 112.256 86.7556 112.504C85.5722 112.752 82.8447 108.785 80.7371 108.661C78.6295 108.537 76.5219 110.227 74.4143 111.895C72.3067 113.563 75.9809 119.717 79.3847 119.277C82.7884 118.838 83.1716 116.11 84.3437 117.654C85.5159 119.199 83.6111 119.514 81.4359 122.253C79.2607 124.992 83.1829 128.7 85.4821 129.252C87.7813 129.804 89.9903 127.077 89.8776 124.53C89.7649 121.982 92.2332 119.694 92.2332 119.694Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_78"
               d="M94.465 116.324L92.3574 115.896"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_79"
               d="M90.4637 119.074L89.6748 116.899"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_80"
               d="M87.3533 119.086L86.7446 115.941"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_81"
               d="M88.3789 112.864L89.382 109.325"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_82"
               d="M92.0643 111.433L90.5991 113.541"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_83"
               d="M85.6401 114.047L83.0591 113.236"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_84"
               d="M209.189 113.011C210.138 114.02 211.297 114.808 212.584 115.321C213.872 115.833 215.256 116.056 216.639 115.975C221.406 115.716 221.958 109.821 218.295 107.285C214.632 104.75 211.601 107.86 210.485 107.049C209.369 106.237 212.829 102.957 211.612 99.6101C210.395 96.2627 208.129 93.9072 207.104 94.5834C205.122 95.5833 203.564 97.2581 202.708 99.3058C201.48 102.416 204.895 105.572 203.711 105.82C202.528 106.068 199.8 102.101 197.693 101.988C195.585 101.876 193.477 103.544 191.37 105.223C189.262 106.902 192.936 113.033 196.34 112.594C199.744 112.154 200.116 109.427 201.299 110.971C202.483 112.515 200.555 112.831 198.391 115.569C196.228 118.308 200.138 122.016 202.438 122.568C204.737 123.121 206.946 120.393 206.833 117.846C206.72 115.299 209.189 113.011 209.189 113.011Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_85"
               d="M211.42 109.641L209.301 109.212"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_86"
               d="M207.419 112.402L206.63 110.216"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_87"
               d="M204.309 112.402L203.7 109.258"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_88"
               d="M205.334 106.181L206.337 102.642"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_89"
               d="M209.02 104.75L207.555 106.857"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_90"
               d="M202.584 107.364L200.015 106.553"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_91"
               d="M92.8084 242.713C93.7561 243.725 94.9148 244.516 96.2022 245.03C97.4896 245.544 98.8743 245.769 100.258 245.688C105.037 245.429 105.578 239.535 101.915 236.999C98.2521 234.463 95.2203 237.562 94.1045 236.762C92.9887 235.962 96.4601 232.66 95.2316 229.312C94.0031 225.965 91.749 223.677 90.7233 224.297C88.7397 225.293 87.1799 226.969 86.3278 229.019C85.088 232.119 88.503 235.286 87.3196 235.534C86.1362 235.782 83.4087 231.814 81.3011 231.69C79.1935 231.566 77.0859 233.257 74.9783 234.925C72.8707 236.593 76.5449 242.747 79.9486 242.307C83.3523 241.868 83.7356 239.129 84.919 240.684C86.1024 242.24 84.1751 242.544 81.9999 245.271C79.8247 247.999 83.7468 251.729 86.046 252.282C88.3452 252.834 90.5543 250.107 90.4416 247.559C90.3289 245.012 92.8084 242.713 92.8084 242.713Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_92"
               d="M95.0397 239.354L92.9321 238.926"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_93"
               d="M91.0389 242.104L90.25 239.929"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_94"
               d="M87.928 242.116L87.3193 238.971"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_95"
               d="M88.9648 235.894L89.9567 232.355"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_96"
               d="M92.639 234.463L91.1738 236.57"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_97"
               d="M86.2148 237.078L83.6338 236.266"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_98"
               d="M435.007 247.886H395.345V314.134H435.007V247.886Z"
               fill="#E3E3E3"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_99"
               d="M420.039 237.799C420.039 232.287 415.17 227.824 415.17 227.824C415.17 227.824 410.301 232.332 410.301 237.799C410.301 243.265 412.477 247.773 415.17 247.773C417.864 247.773 420.039 243.31 420.039 237.799Z"
               fill="#606C38"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_100"
               d="M417.729 241.856C417.729 244.234 416.602 246.15 415.17 246.15C413.739 246.15 412.623 244.234 412.623 241.856C412.623 239.478 413.75 237.573 415.17 237.573C416.59 237.573 417.729 239.489 417.729 241.856Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_101"
               d="M480.247 262.042H440.585V314.134H480.247V262.042Z"
               fill="#BFBFBF"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_102"
               d="M465.291 251.955C465.291 246.444 460.422 241.98 460.422 241.98C460.422 241.98 455.542 246.489 455.542 251.955C455.542 257.421 457.728 261.929 460.422 261.929C463.115 261.929 465.291 257.466 465.291 251.955Z"
               fill="#606C38"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="Vector_103">
               <path d="M561.654 450.419V319.443H321.917V448.165" fill="white" />
               <path
                 d="M561.654 450.419V319.443H321.917V448.165"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
@@ -2689,113 +2689,113 @@ export const Facial = () => {
               d="M561.654 319.443H321.917V324.459H561.654V319.443Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_105"
               d="M547.668 327.435H338.564V370.049H547.668V327.435Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_106"
               d="M475.975 345.388H410.267V352.094H475.975V345.388Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_107"
               d="M547.668 379.38H338.564V421.995H547.668V379.38Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_108"
               d="M475.975 397.335H410.267V404.041H475.975V397.335Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_109"
               d="M566.376 313.447H317.183V319.578H566.376V313.447Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_110"
               d="M98.0153 75.1411C98.0153 75.1411 75.8572 84.7549 75.6994 106.034C75.5427 118.252 76.3605 130.463 78.1452 142.551L75.6093 141.424C76.3937 143.074 77.2938 144.667 78.3029 146.191C78.7763 146.507 73.7045 145.875 74.6513 147.138C75.598 148.4 75.1246 148.727 78.4608 150.519C80.3642 151.435 81.8415 153.05 82.5858 155.027C82.5858 155.027 78.4607 154.069 77.0294 155.027C75.598 155.985 85.1442 170.31 103.076 170.49C121.007 170.671 117.84 159.693 124.828 147.634C131.816 135.574 163.407 126.355 168.964 126.513C174.52 126.67 185.949 130.322 193.094 120.641C200.24 110.959 195.799 104.76 195.799 104.76C195.799 104.76 197.073 107.296 198.053 106.034C199.034 104.772 196.768 96.3862 182.004 83.053C167.239 69.7199 137.868 60.5118 118.336 64.4565C98.8042 68.4012 98.0153 75.1411 98.0153 75.1411Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_111"
               d="M161.638 109.674C162.933 108.359 164.068 106.895 165.019 105.312"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_112"
               d="M92.0645 136.352C106.685 133.932 121.087 130.336 135.129 125.6C143.042 122.985 150.454 119.049 157.051 113.958"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_113"
               d="M85.73 137.344C85.73 137.344 86.9472 137.186 89.1112 136.848"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_114"
               d="M137.079 101.977C130.925 110.723 118.392 123.954 95.6143 131.201"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_115"
               d="M142.061 93.2983C141.432 94.7822 140.701 96.2207 139.874 97.6037"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_116"
               d="M111.63 112.244C111.63 112.244 93.4729 124.8 86.8345 128.023"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_117"
               d="M181.046 105.042C181.046 105.042 186.681 97.5698 186.681 91.6865"
               stroke="white"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_118"
               d="M139.976 179.033C139.976 179.033 159.62 180.634 169.279 193.325C178.938 206.015 180.708 232.174 180.708 242.577C180.708 252.98 195.19 306.515 195.19 306.515L157.05 317.549C157.05 317.549 164.703 263.912 158.11 246.387C151.517 228.861 134.442 197.134 132.469 187.779C130.497 178.425 139.976 179.033 139.976 179.033Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="Vector_119">
               <path
@@ -2805,8 +2805,8 @@ export const Facial = () => {
               <path
                 d="M167.994 244.618C174.019 243.903 179.916 242.364 185.52 240.042C185.52 240.042 182.725 206.23 174.34 196.086C165.954 185.943 152.768 180.634 147.944 180.634H143.12C143.12 180.634 140.584 210.084 142.861 211.065C146.254 212.539 149.732 213.811 153.275 214.874"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
@@ -2814,8 +2814,8 @@ export const Facial = () => {
               d="M184.945 234.553C179.031 237.067 172.825 238.831 166.473 239.805L167.994 244.629C174.018 243.915 179.916 242.375 185.52 240.053C185.52 240.053 185.34 237.934 184.945 234.553Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="Vector_121">
               <path
@@ -2825,8 +2825,8 @@ export const Facial = () => {
               <path
                 d="M-24.846 444.569C-25.2292 433.659 -26.7169 375.289 -13.812 348.341C0.411473 318.643 20.507 316.715 18.7601 310.224C17.0131 303.732 15.9086 225.694 30.8872 204.28C45.8659 182.866 84.31 180.611 84.31 180.611L115.992 180.442C115.992 180.442 142.218 176.689 149.375 185.21C153.916 194.416 156.455 204.48 156.825 214.739L160.623 219.101C165.864 232.084 172.57 260.937 168.254 270.844C165.537 277.054 161.942 282.464 153.714 298.187C146.186 312.545 133.044 425.545 130.824 445.031"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
@@ -2834,16 +2834,16 @@ export const Facial = () => {
               d="M101.149 172.181C101.149 172.181 83.2171 174.03 79.0019 179.304C74.7866 184.579 74.2569 202.499 76.8942 217.264C79.5316 232.028 79.2611 242.578 83.2171 241.789C87.173 241 98.5113 225.176 104.045 225.176C109.579 225.176 102.726 226.754 107.426 232.817C112.126 238.881 124.039 243.107 124.039 243.107L133.8 240.2C133.8 240.2 140.122 237.833 141.182 233.088C142.241 228.343 139.074 223.068 141.712 221.479C144.349 219.89 155.157 223.068 158.054 222.539C160.951 222.009 161.435 214.367 156.476 197.495C151.517 180.623 148.587 176.926 130.103 173.23C111.619 169.533 101.149 172.181 101.149 172.181Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_123"
               d="M99.5709 175.607C99.5709 175.607 90.5544 178.989 89.2808 184.624C88.0072 190.259 99.0412 214.953 109.85 228.399C120.658 241.845 124.355 250.546 127.781 249.757C131.208 248.968 142.805 214.423 144.394 202.826C145.983 191.228 148.08 189.639 140.168 180.149C132.256 170.66 112.746 169.285 99.5709 175.607Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="Vector_124">
               <path
@@ -2853,25 +2853,25 @@ export const Facial = () => {
               <path
                 d="M131.602 207.504C129.471 198.07 134.645 185.289 134.645 185.289C137.505 187.775 141.204 189.081 144.991 188.941C153.85 188.682 158.065 183.463 164.151 174.639C170.237 165.814 175.422 156.989 176.019 151.523C176.616 146.056 178.758 143.306 180.584 133.873C182.41 124.439 179.367 106.823 179.367 106.823C179.367 106.823 175.411 113.822 166.281 121.126C157.152 128.429 163.847 117.17 163.847 117.17C163.847 117.17 157.152 122.039 135.253 129.038C113.354 136.037 102.084 140.308 100.314 140.906C98.5449 141.503 98.8041 143.644 100.619 147.6C101.511 149.792 103.12 151.616 105.183 152.774C105.183 152.774 100.01 174.672 94.8481 182.28"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
               id="Vector_125"
               d="M155.484 134.087C155.484 134.087 145.34 128.451 136.042 133.782"
               stroke="#263238"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_126"
               d="M167.126 133.692C170.52 131.829 174.36 130.932 178.228 131.1"
               stroke="#263238"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="Vector_127">
               <path
@@ -2881,8 +2881,8 @@ export const Facial = () => {
               <path
                 d="M165.166 136.633C165.166 136.633 161.908 142.032 161.908 146.01C161.908 149.989 164.163 161.361 162.235 163.063C160.308 164.765 149.511 162.499 149.511 162.499"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
@@ -2899,24 +2899,24 @@ export const Facial = () => {
               id="Vector_130"
               d="M155.022 171.55C155.022 171.55 146.862 173.5 140.663 167.628"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_131"
               d="M113.028 134.537C113.028 134.537 116.184 138.076 116.973 137.918C117.761 137.761 117.953 134.537 117.953 134.537C117.953 134.537 119.723 128.045 113.028 134.537Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_132"
               d="M134.644 185.255L127.003 178.786C127.003 178.786 128.31 193.314 131.128 200.989C131.128 200.989 131.038 190.598 134.644 185.255Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="Vector_133">
               <path
@@ -2926,8 +2926,8 @@ export const Facial = () => {
               <path
                 d="M105.126 152.706L106.738 152.435C107.845 152.125 108.903 151.662 109.883 151.06C110.21 153.01 110.739 154.922 111.461 156.763"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <g id="Vector_134">
@@ -2938,8 +2938,8 @@ export const Facial = () => {
               <path
                 d="M-1.72959 448.199C-1.72959 448.199 -16.3814 394.968 15.8864 375.639C48.1542 356.31 103.177 351.768 152.148 345.76C188.845 341.252 226.884 349.074 256.108 372.517C277.748 389.885 290.833 417.475 298.576 443.679"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
@@ -2947,40 +2947,40 @@ export const Facial = () => {
               d="M150.243 307.631C150.243 307.631 149.894 312.951 147.414 314.394C144.935 315.836 141.384 308.375 134.656 312.624C127.927 316.873 129.021 323.962 128.288 325.732C127.555 327.501 122.968 325.022 120.139 328.922C117.31 332.821 122.619 347.687 122.619 347.687C122.619 347.687 136.786 348.397 160.522 353.007C184.258 357.617 205.142 369.304 205.142 369.304C205.142 369.304 211.172 368.233 209.752 358.676C208.332 349.119 201.953 338.84 185.667 331.401C169.381 323.962 150.243 307.631 150.243 307.631Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_136"
               d="M255.263 289.779C255.263 289.779 262.611 290.704 263.231 295.291C263.959 299.673 263.747 304.16 262.611 308.455C261.394 312.433 249.143 314.575 249.143 314.575C249.143 314.575 254.068 293.6 255.263 289.779Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_137"
               d="M264.448 312.173C264.181 314.128 263.771 316.061 263.22 317.955C262.6 319.477 260.763 322.847 259.23 322.847C257.697 322.847 258.013 321.934 258.621 320.097C259.23 318.259 261.382 312.444 261.382 312.444L264.448 312.173Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_138"
               d="M265.981 306.358C265.78 308.365 265.262 310.328 264.449 312.174C263.231 314.619 251.6 319.511 251.6 319.511C251.6 319.511 249.447 318.598 251.284 316.13C253.122 313.661 265.981 306.358 265.981 306.358Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_139"
               d="M263.84 299.923C263.84 299.923 266.894 304.217 265.981 306.358C265.068 308.5 255.837 314.924 253.741 315.533C251.645 316.141 249.92 312.85 251.904 311.87C253.888 310.889 263.84 299.923 263.84 299.923Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="Vector_140">
               <path
@@ -2990,8 +2990,8 @@ export const Facial = () => {
               <path
                 d="M255.263 289.779L265.406 293.454C265.406 293.454 267.244 298.356 266.928 299.573C266.612 300.791 254.992 308.15 253.155 308.455C251.318 308.759 252.547 304.476 253.471 303.248C254.395 302.019 260.233 296.215 260.233 296.215"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
@@ -2999,69 +2999,69 @@ export const Facial = () => {
               d="M253.437 285.271C255.448 285.892 257.491 286.403 259.557 286.804C260.47 286.804 263.231 289.554 265.981 288.641C268.731 287.728 271.493 290.162 269.362 292.619C268.631 293.527 267.695 294.249 266.632 294.727C265.568 295.205 264.407 295.425 263.242 295.369C261.405 295.369 254.666 293.532 254.666 293.532L253.437 285.271Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_142"
               d="M224.212 261.376C224.212 261.376 218.509 266.753 214.722 267.384C210.935 268.015 207.757 263.912 197.952 264.228C188.146 264.544 172.908 269.863 164.286 281.821C146.107 307.056 149.556 315.464 148.924 316.76C148.293 318.056 147.662 334.151 155.563 338.58C163.463 343.01 164.421 344.272 169.482 341.747C174.542 339.223 184.348 336.112 186.253 338.896C188.157 341.68 187.831 347.439 189.408 348.386C190.986 349.332 194.785 344.587 197.952 348.386C200.014 351.084 201.423 354.225 202.065 357.56C202.381 358.507 206.495 360.727 206.495 360.727C206.495 360.727 190.355 371.164 190.04 394.539C189.724 417.914 206.495 437.243 206.495 437.243C206.495 437.243 265.958 375.559 299.489 358.788C333.019 342.018 337.809 341.398 337.809 341.398C337.809 341.398 305.811 327.129 292.208 327.129C278.604 327.129 258.734 328.425 257.787 328.425C256.841 328.425 254.812 321.46 253.921 310.866C253.031 300.271 258.734 290.782 256.514 286.07C254.293 281.359 249.56 280.379 243.868 277.843C239.627 276.044 235.297 274.46 230.896 273.098C230.896 273.098 229.949 264.882 228.044 262.346C226.139 259.81 224.212 261.376 224.212 261.376Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_143"
               d="M231.797 276.559C230.12 278.059 228.633 279.758 227.368 281.619C226.106 283.873 222.939 286.68 221.676 286.68"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_144"
               d="M194.897 283.253C194.897 283.253 195.562 278.609 197.997 276.614C200.431 274.62 202.201 274.845 203.305 274.36C204.41 273.876 200.871 276.355 199.101 278.339C197.332 280.322 194.897 283.253 194.897 283.253Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_145"
               d="M187.605 280.379C187.605 280.379 185.351 277.731 188.733 272.862C192.114 267.993 198.245 268.218 198.245 268.218C198.245 268.218 197.794 265.784 193.376 267.553C188.958 269.323 184.946 272.873 187.605 280.379Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_146"
               d="M262.51 358.191C263.479 358.53 264.426 358.901 265.35 359.318"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_147"
               d="M232.699 355.881C232.699 355.881 247.171 353.954 259.749 357.324"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_148"
               d="M203.767 336.597C188.473 326.036 175.129 306.843 174.295 288.494C173.866 278.993 175.67 273.448 177.518 270.303C172.325 273.139 167.811 277.069 164.286 281.822C146.107 307.057 149.556 315.465 148.924 316.761C148.293 318.057 147.662 334.151 155.563 338.581C163.463 343.01 164.421 344.272 169.482 341.748C174.542 339.223 184.348 336.112 186.253 338.896C188.157 341.68 187.831 347.439 189.408 348.386C190.986 349.333 194.785 344.588 197.952 348.386C200.014 351.085 201.423 354.225 202.065 357.56C202.381 358.507 206.495 360.727 206.495 360.727C216.165 355.915 228.799 354.968 228.799 354.968C228.799 354.968 219.061 347.169 203.767 336.597Z"
               fill="#606C38"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_149"
               d="M257.743 328.437C257.743 328.437 261.811 335.853 274.04 341.455C286.269 347.056 304.628 348.848 305.598 347.327C306.567 345.805 309.17 341.691 302.543 338.4C295.916 335.109 289.796 338.4 287.238 335.853C284.679 333.306 286.483 323.354 277.556 322.847C268.63 322.34 263.536 325.394 261.777 322.34C260.019 319.285 254.891 318.26 254.891 318.26C254.891 318.26 255.455 325.845 257.743 328.437Z"
               fill="#263238"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="Vector_150">
               <path
@@ -3071,37 +3071,37 @@ export const Facial = () => {
               <path
                 d="M195.754 448.694C195.754 448.694 232.271 378.242 285.536 355.903C338.801 333.565 358.141 336.574 374.033 341.725C389.924 346.876 414.843 366.216 414.843 366.216C414.843 366.216 534.842 390.087 567.008 451.49"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
               id="Vector_151"
               d="M380.581 371.299C383.106 370.837 385.698 370.42 388.346 370.071"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_152"
               d="M290.269 430.053C290.269 430.053 311.683 388.351 369.941 373.598"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_153"
               d="M304.03 397.593C308.813 393.58 313.93 389.983 319.325 386.841"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               id="Vector_154"
               d="M274.175 432.634C280.827 421.499 289.006 411.351 298.474 402.485"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <g id="arm">
               <path
@@ -3109,15 +3109,15 @@ export const Facial = () => {
                 d="M156.82 315.694C156.82 315.694 175.698 308.853 177.557 307.805C179.417 306.756 190.406 300.772 193.787 299.318C197.168 297.864 210.377 297.244 214.074 296.41C217.771 295.576 220.51 291.902 221.547 293.513C222.584 295.125 221.547 297.864 220.296 299.149C219.045 300.434 212.215 303.082 211.595 303.296C210.975 303.51 225.48 303.082 231.499 302.462C237.517 301.842 242.69 303.082 242.487 304.716C242.285 306.351 241.236 307.207 239.377 307.624C237.517 308.041 229.233 308.661 226.314 309.078C223.395 309.495 217.805 310.735 217.805 310.735C217.805 310.735 227.137 310.938 231.702 310.938C236.266 310.938 243.727 309.698 244.764 310.735C245.801 311.772 246.218 313.226 243.524 314.466C239.229 316.067 234.768 317.186 230.225 317.802C226.709 318.219 215.089 319.875 215.089 319.875C218.781 321.348 222.735 322.053 226.709 321.949C233.967 321.949 237.483 321.126 237.697 322.783C237.912 324.44 237.28 325.691 236.244 326.097C232.415 327.29 228.431 327.913 224.421 327.945H213.229C216.701 328.981 220.231 329.813 223.801 330.436C226.494 330.639 231.893 331.056 232.299 332.296C232.705 333.535 230.642 334.369 227.791 334.786C224.939 335.203 210.693 333.738 208.664 333.58C206.636 333.423 203.897 333.783 199.535 333.783C195.173 333.783 181.288 330.47 181.288 330.47C181.288 330.47 138.572 343.995 137.13 344.355C135.687 344.716 132.565 345.606 132.565 345.606C132.565 345.606 113.281 348.503 94.245 352.03C75.209 355.558 35.1532 360.123 33.2823 358.669C31.4113 357.215 16.8948 288.374 15.4521 280.902L58.7877 279.876C58.7877 279.876 60.2416 306.407 62.7324 312.223C62.7324 312.223 72.6843 311.806 93.411 314.477C114.138 317.148 143.971 320.056 156.82 315.694Z"
                 fill="white"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 id="Vector_156"
                 d="M65.6234 312.32C61.4847 313.379 57.7394 315.61 54.8374 318.745"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <g id="Vector_157">
@@ -3128,8 +3128,8 @@ export const Facial = () => {
               <path
                 d="M62.1293 187.487C62.1293 187.487 27.8553 183.677 17.9485 215.923C8.0416 248.168 14.139 285.271 14.139 285.271C14.139 285.271 25.049 287.525 42.0563 286.026C59.0637 284.527 62.8844 283.49 62.8844 283.49L67.449 263.203C67.449 263.203 72.78 255.077 72.78 238.069"
                 stroke="#263238"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
             <path
@@ -3137,8 +3137,8 @@ export const Facial = () => {
               d="M64.1358 277.9C45.9901 282.059 24.2265 280.999 13.418 280.086C13.7786 283.355 14.0942 285.237 14.0942 285.237C14.0942 285.237 25.0042 287.491 42.0115 285.992C59.0189 284.493 62.8396 283.456 62.8396 283.456L64.1358 277.9Z"
               fill="white"
               stroke="#263238"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </g>
         </g>

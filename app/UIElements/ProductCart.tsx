@@ -5,7 +5,7 @@ import style from "./ProductCart.module.css";
 
 const ProductCart = () => {
   return (
-    <div className={"w-full  cursor-pointer " + style.sh_card}>
+    <a className={"w-full block  cursor-pointer " + style.sh_card}>
       <div className="aspect-square rounded overflow-hidden ">
         <Image
           className="object-cover h-full transition-transform duration-500 ease-in-out"
@@ -18,7 +18,7 @@ const ProductCart = () => {
       </p>
 
       <p className="text-center text-primary font-medium">$16.99</p>
-    </div>
+    </a>
   );
 };
 

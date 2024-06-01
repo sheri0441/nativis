@@ -1,0 +1,15 @@
+/* .hamburger > span > svg > rect:first-child {
+} */
+.hamburger > span > svg > rect {
+  transition: all 0.25s ease-in-out;
+}
+.hamburger > span > svg > rect:nth-child(2) {
+  transform: translateY(30%);
+}
+.hamburger > span > svg > rect:last-child {
+  transform: translateY(-27%);
+}
+
+.hamburger:hover > span > svg > rect {
+  transform: translate(0);
+}

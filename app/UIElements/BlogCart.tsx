@@ -4,13 +4,14 @@ import Link from "next/link";
 import blogImage from "../assets/blogImage.jpg";
 import { BookMarkIcon, HeartIcon } from "./Icons";
 import style from "./BlogCart.module.css";
+import { color } from "./colors";
 
-const BlogCart = () => {
+const BlogCart = ({ isSelected = false }: { isSelected?: boolean }) => {
   return (
     <Link
       href="/"
       className={
-        "block relative overflow-hidden text-neutral rounded transition-shadow duration-500 ease-in-out sm:rounded-lg lg:rounded-2xl " +
+        "block relative overflow-hidden text-neutral rounded transition-shadow duration-500 ease-in-out sm:rounded-lg lg:rounded-xl " +
         style.blogCart
       }
     >
@@ -26,10 +27,10 @@ const BlogCart = () => {
           <span className="text-[10px] font-light">August 28, 2024</span>
           <div className="flex gap-2">
             <div className="w-[14px]">
-              <HeartIcon />
+              <HeartIcon fill={isSelected ? color.accent : color.neutral} />
             </div>
             <div className="w-[10px]">
-              <BookMarkIcon />
+              <BookMarkIcon fill={isSelected ? color.accent : color.neutral} />
             </div>
           </div>
         </div>
