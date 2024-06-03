@@ -1,16 +1,18 @@
 "use client";
-import React, { useState } from "react";
-import { Cart, Logo, MenuBurger, Trash, User } from "../../UIElements/Icons";
+import React, { useEffect, useState } from "react";
+import { Cart, Logo, MenuBurger, User } from "../../UIElements/Icons";
 import IconsBtn from "../../UIElements/IconsBtn";
 import { color } from "../../UIElements/colors";
 import CentralMenuBtn from "./CentralMenuBtn";
 import Navigation from "./Navigation";
 import CartList from "./Cart/Cart";
 import LoggedBtn from "./LoggedBtn";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -19,6 +21,10 @@ const Navbar = () => {
   const toggleCart = () => {
     setShowCart(!showCart);
   };
+
+  useEffect(() => {
+    toggleMenu();
+  }, [pathname]);
   return (
     <header className="pt-4 px-6 pb-2 bg-primary  sm:pt-6 sm:px-8 sm:pb-4 lg:pt-6 lg:px-14 lg:pb-6 fixed w-full z-50">
       <div className="container flex justify-between items-center mx-auto sm:grid sm:grid-cols-3">

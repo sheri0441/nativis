@@ -1,8 +1,3 @@
-.sh_illustration_animation > svg {
-  height: 100%;
-  aspect-ratio: 1/1;
-}
-
 .sh_illustration_animation > svg > g > #Cloudleft {
   animation: cloudleft 10s linear alternate infinite;
 }
@@ -85,5 +80,59 @@
   }
   to {
     transform: rotate(10deg);
+  }
+}
+
+.sh_illustration_animation > svg > g > g[id="Board"] {
+  animation: upDown 5s linear infinite alternate;
+}
+
+@keyframes upDown {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-50px);
+  }
+}
+
+.sh_illustration_animation > svg > g > g[id="topRightCloud"] {
+  animation: traveling 25s linear infinite alternate;
+}
+
+@keyframes traveling {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-70%);
+  }
+}
+
+.sh_illustration_animation > svg > g > g[id="leftCloud"] {
+  animation: travelingleft 40s linear infinite alternate;
+}
+
+@keyframes travelingleft {
+  from {
+    transform: translateX(-30%);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+.sh_illustration_animation > svg > g > g[id="centerCloud"] {
+  animation: travelingcenter 100s linear infinite alternate;
+}
+
+@keyframes travelingcenter {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(40%);
   }
 }
