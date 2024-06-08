@@ -1,0 +1,16 @@
+.dot_animation > div:not([id="form"]) {
+  animation: scaling 1s infinite alternate;
+}
+
+.dot_animation > div:last-child:not([id="form"]) {
+  animation: scaling 1s infinite alternate-reverse;
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}

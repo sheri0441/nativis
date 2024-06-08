@@ -22,9 +22,9 @@ const Navbar = () => {
     setShowCart(!showCart);
   };
 
-  useEffect(() => {
-    toggleMenu();
-  }, [pathname]);
+  // useEffect(() => {
+  //   toggleMenu();
+  // }, [pathname]);
   return (
     <header className="pt-4 px-6 pb-2 bg-primary  sm:pt-6 sm:px-8 sm:pb-4 lg:pt-6 lg:px-14 lg:pb-6 fixed w-full z-50">
       <div className="container flex justify-between items-center mx-auto sm:grid sm:grid-cols-3">
