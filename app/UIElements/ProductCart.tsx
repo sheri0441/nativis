@@ -3,9 +3,11 @@ import Image from "next/image";
 import productImage from "../assets/productImage.png";
 import style from "./ProductCart.module.css";
 
-const ProductCart = () => {
+const ProductCart = ({ extraStyle }: { extraStyle?: string }) => {
   return (
-    <a className={"w-full block  cursor-pointer " + style.sh_card}>
+    <a
+      className={`w-full block  cursor-pointer ${extraStyle} ` + style.sh_card}
+    >
       <div className="aspect-square rounded overflow-hidden ">
         <Image
           className="object-cover h-full transition-transform duration-500 ease-in-out"

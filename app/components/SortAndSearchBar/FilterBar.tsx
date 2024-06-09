@@ -1,8 +1,8 @@
 "use client";
+import CategoryFilterTab from "@/app/UIElements/CategoryFilterTab";
+import { ArrowIcon } from "@/app/UIElements/Icons";
+import { color } from "@/app/UIElements/colors";
 import React, { useEffect, useState } from "react";
-import { ArrowIcon } from "../UIElements/Icons";
-import { color } from "../UIElements/colors";
-import CategoryFilterTab from "../UIElements/CategoryFilterTab";
 
 const FilterBar = () => {
   const [showScrollArrow, setShowScrollArrow] = useState<boolean>(false);
@@ -31,10 +31,10 @@ const FilterBar = () => {
         } items-center z-10`}
       >
         <button
-          className=" w-6 aspect-square p-1 bg-secondary bg-opacity-20 rounded-full hover:bg-opacity-50"
+          className="group  w-6 aspect-square p-1 bg-secondary bg-opacity-20 rounded-full hover:bg-opacity-50"
           onClick={scrollLeft}
         >
-          <ArrowIcon fill={color.primary} />
+          <ArrowIcon hoverFill="fill-primary" fill={color.primary} />
         </button>
       </div>
       <div
@@ -58,10 +58,10 @@ const FilterBar = () => {
         } items-center absolute top-1/2 right-0 -translate-y-1/2 bg-gradient-to-l from-neutral w-9 h-full   z-10`}
       >
         <button
-          className="w-6 aspect-square p-1 bg-secondary bg-opacity-20 rounded-full rotate-180 hover:bg-opacity-50 block ml-auto"
+          className="group w-6 aspect-square p-1 bg-secondary bg-opacity-20 rounded-full rotate-180 hover:bg-opacity-50 block ml-auto"
           onClick={scrollRight}
         >
-          <ArrowIcon fill={color.primary} />
+          <ArrowIcon hoverFill="fill-primary" fill={color.primary} />
         </button>
       </div>
     </div>

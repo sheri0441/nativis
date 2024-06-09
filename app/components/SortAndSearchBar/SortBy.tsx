@@ -1,17 +1,36 @@
 "use client";
-import React, { useState } from "react";
-import { ArrowIcon } from "../UIElements/Icons";
-import { color } from "../UIElements/colors";
+import React, { useEffect, useState } from "react";
+import { ArrowIcon } from "../../UIElements/Icons";
+import { color } from "../../UIElements/colors";
 import style from "./SortBy.module.css";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const SortBy = () => {
   const [showSort, setShowSort] = useState<boolean>(false);
   const [sortInnerText, setSortInnerText] = useState<string>("Newest");
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const page = searchParams.get("page");
+  const sort = searchParams.get("sort");
+  const search = searchParams.get("search");
 
   const changeSortValue = (e: any) => {
     setSortInnerText((pervState) => (pervState = e.target!.innerHTML));
     setShowSort((pervState) => !pervState);
+    router.push(
+      pathname +
+        "?" +
+        `sort=${e.target!.innerHTML.toLowerCase()}` +
+        `${page !== null ? `&page={${page}}` : ""}` +
+        `${search !== null ? `&search={${search}}` : ""}`
+    );
   };
+
+  useEffect(() => {
+    console.log(sort);
+  }, [sort]);
+
   return (
     <div className="flex items-center gap-2 text-sm mx-auto w-fit sm:mx-0">
       <span>Sort By:</span>
@@ -29,12 +48,12 @@ const SortBy = () => {
               showSort ? " rotate-90" : "-rotate-90"
             }`}
           >
-            <ArrowIcon fill={color.primary} />
+            <ArrowIcon hoverFill="fill-neutral" fill={color.primary} />
           </div>
         </button>
 
         <ul
-          className={`absolute flex flex-col items-start *:py-1 *:px-2 bg-neutral w-full shadow-[0px_0px_4px_0px_rgb(40,54,24)] rounded  duration-1000 ease-in-out top-11 overflow-hidden *:cursor-pointer transition-[height]  ${
+          className={`absolute z-20 flex flex-col items-start *:py-1 *:px-2 bg-neutral w-full shadow-[0px_0px_4px_0px_rgb(40,54,24)] rounded  duration-1000 ease-in-out top-11 overflow-hidden *:cursor-pointer transition-[height]  ${
             !showSort ? "h-0 " : "h-28"
           }`}
         >

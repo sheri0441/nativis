@@ -6,6 +6,7 @@ import HomeSection from "./Home/HomeSection";
 import WhySection from "./Home/WhySection/WhySection";
 import BlogCart from "./UIElements/BlogCart";
 import Newsletter from "./Home/Newsletter/Newsletter";
+import ProductCardGrid from "./UIElements/ProductCardGrid";
 
 export const metadata: Metadata = {
   title: "Nativis | Home",
@@ -16,18 +17,19 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <div className="container mx-auto">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-14">
         <HomeSection
           title="Our Latest Additions"
           subtitle="Discover our newest skincare solutions enriched with the goodness of
             neem."
         >
-          <div className="grid max-w-[272px] grid-cols-2 sm:max-w-[680px] sm:grid-cols-4 lg:max-w-full w-fit mx-auto  gap-x-4 gap-y-5 mt-5 sm:mt-8 sm:gap-12">
+          <ProductCardGrid>
             <ProductCart />
             <ProductCart />
             <ProductCart />
-            <ProductCart />
-          </div>
+            <ProductCart extraStyle="sm:col-start-2 lg:col-auto" />
+          </ProductCardGrid>
+
           <Link
             href={"/"}
             className="text-primary hover:bg-primary hover:text-neutral transition-colors duration-500 ease-in-out border rounded-full py-2 px-4 block w-fit mx-auto mt-8"
@@ -55,7 +57,7 @@ export default function Home() {
         </HomeSection>
       </div>
       <Newsletter />
-      <div className="container mx-auto">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-14">
         <HomeSection
           title="Testimonies"
           subtitle="How much people love our products"
