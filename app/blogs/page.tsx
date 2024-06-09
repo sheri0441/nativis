@@ -4,13 +4,8 @@ import BlogCart from "../UIElements/BlogCart";
 import Pagination from "../components/Pagination";
 import FilterBar from "../components/SortAndSearchBar/FilterBar";
 import SortAndSearchBar from "../components/SortAndSearchBar/SortAndSearchBar";
-import { useSearchParams } from "next/navigation";
 
 const page = () => {
-  const searchParams = useSearchParams();
-  const sort = searchParams.get("sort");
-  const page = searchParams.get("page");
-
   return (
     <main className="container pt-24  mx-auto px-6 sm:px-8 lg:px-14 sm:pt-32 lg:pt-40">
       <h1 className="text-[32px] font-bold text-center sm:text-5xl lg:text-6xl">
