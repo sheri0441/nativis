@@ -2,10 +2,12 @@ import React from "react";
 import Image from "next/image";
 import productImage from "../assets/productImage.png";
 import style from "./ProductCart.module.css";
+import Link from "next/link";
 
 const ProductCart = ({ extraStyle }: { extraStyle?: string }) => {
   return (
-    <a
+    <Link
+      href={"/products/id/1"}
       className={`w-full block  cursor-pointer ${extraStyle} ` + style.sh_card}
     >
       <div className="aspect-square rounded overflow-hidden ">
@@ -20,7 +22,7 @@ const ProductCart = ({ extraStyle }: { extraStyle?: string }) => {
       </p>
 
       <p className="text-center text-primary font-medium">$16.99</p>
-    </a>
+    </Link>
   );
 };
 

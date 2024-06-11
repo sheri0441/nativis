@@ -23,7 +23,7 @@ const Navigation = ({
           <Link href={"/"} className="hover:after:w-4 hover:before:w-4">
             Home
           </Link>
-          <Link href={"/"} className="hover:after:w-4 hover:before:w-4">
+          <Link href={"/products"} className="hover:after:w-4 hover:before:w-4">
             Products
           </Link>
           <Link href={"/blogs"} className="hover:after:w-4 hover:before:w-4">

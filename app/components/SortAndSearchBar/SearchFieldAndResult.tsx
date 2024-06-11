@@ -23,7 +23,6 @@ const SearchFieldAndResult = ({
     const textLoading = setTimeout(() => {
       setIsLoading((pervState) => (pervState = false));
     }, 10000);
-    console.log(pathname.includes("products"));
 
     return () => {
       clearTimeout(textLoading);

@@ -27,10 +27,6 @@ const SortBy = () => {
     );
   };
 
-  useEffect(() => {
-    console.log(sort);
-  }, [sort]);
-
   return (
     <div className="flex items-center gap-2 text-sm mx-auto w-fit sm:mx-0">
       <span>Sort By:</span>
@@ -48,7 +44,7 @@ const SortBy = () => {
               showSort ? " rotate-90" : "-rotate-90"
             }`}
           >
-            <ArrowIcon hoverFill="fill-neutral" fill={color.primary} />
+            <ArrowIcon style="group-hover:fill-neutral" fill={color.primary} />
           </div>
         </button>
 

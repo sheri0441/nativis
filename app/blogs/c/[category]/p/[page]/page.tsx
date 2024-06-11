@@ -1,15 +1,18 @@
-"use client";
+import BlogCart from "@/app/UIElements/BlogCart";
+import Pagination from "@/app/components/Pagination";
+import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
+import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
 import React from "react";
-import BlogCart from "../UIElements/BlogCart";
-import Pagination from "../components/Pagination";
-import FilterBar from "../components/SortAndSearchBar/FilterBar";
-import SortAndSearchBar from "../components/SortAndSearchBar/SortAndSearchBar";
 
-const page = () => {
+const page = ({
+  params: { category, page },
+}: {
+  params: { category: string; page: string };
+}) => {
   return (
     <main className="container pt-24  mx-auto px-6 sm:px-8 lg:px-14 sm:pt-32 lg:pt-40">
       <h1 className="text-[32px] font-bold text-center sm:text-5xl lg:text-6xl">
-        Blogs
+        Category: {category} {page}
       </h1>
       <FilterBar />
       <SortAndSearchBar />
@@ -27,7 +30,7 @@ const page = () => {
         <BlogCart />
         <BlogCart />
       </div>
-      <Pagination baseURL="blogs/p/" current={1} />
+      <Pagination baseURL={`blogs/c/${category}/p/`} current={Number(page)} />
     </main>
   );
 };

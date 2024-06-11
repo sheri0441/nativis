@@ -123,19 +123,13 @@ export const BookMarkIcon = ({ fill }: { fill: string }) => {
   );
 };
 
-export const ArrowIcon = ({
-  fill,
-  hoverFill,
-}: {
-  fill: string;
-  hoverFill: string;
-}) => {
+export const ArrowIcon = ({ fill, style }: { fill: string; style: string }) => {
   return (
     <svg viewBox="0 0 7 15" fill="none">
       <path
         d="M3.01002e-06 7.5C-0.000436144 7.20634 0.0489442 6.91548 0.145305 6.64412C0.241666 6.37277 0.383107 6.12628 0.5615 5.91882L5.64281 -5.93247e-08L7 1.58118L1.91965 7.5L7 13.4188L5.64281 15L0.56246 9.08118C0.383894 8.87381 0.242275 8.62736 0.145748 8.35601C0.0492212 8.08465 -0.000310285 7.79374 3.01002e-06 7.5Z"
         fill={fill}
-        className={`group-hover:${hoverFill}`}
+        className={style}
       />
     </svg>
   );
@@ -154,6 +148,26 @@ export const SearchIcon = ({
         d="M21 19.7628L15.5251 14.287C16.9456 12.5489 17.6438 10.3313 17.4752 8.09288C17.3067 5.85446 16.2842 3.76644 14.6194 2.26066C12.9546 0.754874 10.7748 -0.0534891 8.53076 0.00274932C6.2867 0.0589877 4.15009 0.975525 2.56281 2.56281C0.975525 4.15009 0.0589877 6.2867 0.00274932 8.53076C-0.0534891 10.7748 0.754874 12.9546 2.26066 14.6194C3.76644 16.2842 5.85446 17.3067 8.09288 17.4752C10.3313 17.6438 12.5489 16.9456 14.287 15.5251L19.7628 21L21 19.7628Z"
         fill={fill}
         className={`group-hover:${hoverFill}`}
+      />
+    </svg>
+  );
+};
+
+export const MinusIcon = ({ fill, style }: { fill: string; style: string }) => {
+  return (
+    <svg viewBox="0 0 24 24">
+      <rect y="11" width="24" height="2" fill={fill} className={style} />
+    </svg>
+  );
+};
+
+export const PlusIcon = ({ fill, style }: { fill: string; style: string }) => {
+  return (
+    <svg viewBox="0 0 24 24">
+      <polygon
+        points="24 11 13 11 13 0 11 0 11 11 0 11 0 13 11 13 11 24 13 24 13 13 24 13 24 11"
+        fill={fill}
+        className={style}
       />
     </svg>
   );
