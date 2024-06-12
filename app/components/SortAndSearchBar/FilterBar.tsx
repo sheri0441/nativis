@@ -34,7 +34,7 @@ const FilterBar = () => {
           className="group  w-6 aspect-square p-1 bg-secondary bg-opacity-20 rounded-full hover:bg-opacity-50"
           onClick={scrollLeft}
         >
-          <ArrowIcon hoverFill="fill-primary" fill={color.primary} />
+          <ArrowIcon style="group-hover:fill-neutral" fill={color.primary} />
         </button>
       </div>
       <div
@@ -61,7 +61,7 @@ const FilterBar = () => {
           className="group w-6 aspect-square p-1 bg-secondary bg-opacity-20 rounded-full rotate-180 hover:bg-opacity-50 block ml-auto"
           onClick={scrollRight}
         >
-          <ArrowIcon hoverFill="fill-primary" fill={color.primary} />
+          <ArrowIcon style="group-hover:fill-neutral" fill={color.primary} />
         </button>
       </div>
     </div>

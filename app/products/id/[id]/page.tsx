@@ -1,6 +1,4 @@
-import Image from "next/image";
 import React from "react";
-import productImage from "../../../assets/productImage.png";
 import ProductImage from "./ProductImage";
 import Link from "next/link";
 import { MinusIcon, PlusIcon } from "@/app/UIElements/Icons";
