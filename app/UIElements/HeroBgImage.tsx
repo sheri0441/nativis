@@ -1,10 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import heroImage from "../../assets/heroBgImage.jpg";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-const HeroBgImage = () => {
+const HeroBgImage = ({ imageLink }: { imageLink: string | any }) => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -22,12 +22,14 @@ const HeroBgImage = () => {
   }, []);
 
   return (
-    <div className="absolute top-0 left-0 inset-0 object-cover -z-10 h-full overflow-hidden">
+    <div className="absolute top-0 left-0 w-full inset-0 object-cover -z-10 h-full overflow-hidden">
       <Image
-        src={heroImage}
-        alt="hero background image"
-        className=" inset-0 object-cover object-center h-full"
+        src={imageLink}
+        alt={"hello"}
+        className=" inset-0 w-full object-cover object-center h-full"
         id="heroBg"
+        width={100}
+        height={100}
       />
     </div>
   );

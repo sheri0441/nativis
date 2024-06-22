@@ -9,7 +9,7 @@ import { color } from "./colors";
 const BlogCart = ({ isSelected = false }: { isSelected?: boolean }) => {
   return (
     <Link
-      href="/"
+      href="/blogs/id/1"
       className={
         "block relative overflow-hidden text-neutral rounded transition-shadow duration-500 ease-in-out sm:rounded-lg lg:rounded-xl " +
         style.blogCart

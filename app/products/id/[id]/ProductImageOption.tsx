@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import productImage from "../../../assets/productImage.png";
 
 const ProductImageOption = ({
   image,
@@ -24,8 +23,10 @@ const ProductImageOption = ({
       >
         <Image
           className="w-full h-full object-cover object-center"
-          src={productImage}
+          src={image}
           alt={image}
+          width={100}
+          height={100}
         />
       </label>
       <input

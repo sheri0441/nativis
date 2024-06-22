@@ -1,60 +1,84 @@
 import React from "react";
 import ProductImage from "./ProductImage";
 import Link from "next/link";
-import { MinusIcon, PlusIcon } from "@/app/UIElements/Icons";
-import { color } from "@/app/UIElements/colors";
+import data from "./sample.json";
+import ProductDescription from "./ProductDescription";
+import { productData } from "@/app/utils/Interfaces";
+import ProductForm from "./ProductForm";
+import ProductCardGrid from "@/app/UIElements/ProductCardGrid";
+import ProductCart from "@/app/UIElements/ProductCart";
 
-const page = () => {
+const page = ({ params: { id } }: { params: { id: string } }) => {
+  console.log(id);
+
+  const productData: productData = data[0];
   return (
-    <main className="container pt-24  mx-auto px-6 sm:px-8 lg:px-14 sm:pt-32 lg:pt-40">
-      <div className="flex flex-col gap-5">
-        <ProductImage />
+    <main className="container pt-24 mx-auto px-6 sm:px-8 lg:px-14 sm:pt-32 lg:pt-40">
+      <div className="flex flex-col gap-5 sm:gap-10 lg:grid lg:grid-cols-2">
+        <ProductImage images={productData.images} />
         <div>
           <Link
-            className="text-xs leading-4 text-center block text-accent"
-            href={"/products/c/hairoil"}
+            className="text-xs leading-4 text-center block sm:text-xl lg:text-left text-accent"
+            href={`/products/c/${productData.category
+              .toLowerCase()
+              .split(" ")
+              .join("")}/p/1`}
           >
-            Hair Oil
+            {productData.category}
           </Link>
-
-          <h1 className="text-[32px] font-medium text-center text-primary">
-            Almond Hair Oil
+          <h1
+            className="text-[32px] font-medium text-center sm:mt-1 text-primary sm:text-5xl lg:text-[64px] lg:text-left
+          "
+          >
+            {productData.name}
           </h1>
-          <p className="text-xs text-center opacity-70  text-primary line-clamp-3 mt-2">
-            Nativis Neem Almond Hair Oil blends the potent benefits of neem and
-            almond oil to provide comprehensive care for your hair. This unique
-            formula nourishes, strengthens, and revitalizes hair strands from
-            root to tip, promoting healthier, more lustrous hair.
-          </p>
-          <div className="flex gap-2 w-fit mx-auto mt-5">
-            <button className="text-xs px-3 py-2 text-primary bg-primary bg-opacity-25 hover:bg-opacity-100 hover:text-neutral rounded-3xl">
-              20g
-            </button>
-            <button className="text-xs px-3 py-2 text-primary bg-primary bg-opacity-25 hover:bg-opacity-100 hover:text-neutral rounded-3xl">
-              70g
-            </button>
-          </div>
-          <div className="w-44 flex justify-between items-center bg-primary bg-opacity-25 rounded-full mx-auto mt-4">
-            <button className="group bg-primary w-10 aspect-square rounded-full p-3 hover:bg-accent">
-              <MinusIcon fill={color.neutral} style="group-hover:fill-neural" />
-            </button>
-            <span>1</span>
-            <button className="group bg-primary w-10 aspect-square rounded-full p-3 hover:bg-accent">
-              <PlusIcon fill={color.neutral} style="group-hover:fill-neural" />
-            </button>
-          </div>
-          <span className="block text-[40px] font-medium text-center mt-5">
-            $14.99
-          </span>
-          <div className="flex flex-col gap-4">
-            <button className="font-medium capitalize py-3 w-full bg-primary text-neutral rounded-full hover:bg-accent">
-              Add to Cart
-            </button>
-            <button className="font-medium capitalize py-3 w-full bg-primary bg-opacity-50  text-primary hover:text-neutral rounded-full hover:bg-opacity-100">
-              Buy now
-            </button>
-          </div>
+          <ProductDescription text={productData.description} />
+          <ProductForm productData={productData} />
         </div>
+      </div>
+      <div className="text-primary lg:text-xl leading-6 flex flex-col gap-4 mt-8 lg:mt-10 ">
+        {productData.guide && (
+          <p>
+            <b>How to use: </b>
+            <span className="opacity-75">{productData.guide}</span>
+          </p>
+        )}
+        {productData.ingredients && (
+          <p>
+            <b>Ingredient & Composition: </b>
+            <span className="opacity-75">{productData.ingredients}</span>
+          </p>
+        )}
+        {productData.suitable && (
+          <p>
+            <b>Suitable for: </b>
+            <span className="opacity-75">{productData.suitable}</span>
+          </p>
+        )}
+      </div>
+      <div className="mt-8 sm:mt-12">
+        <h2 className="text-2xl font-medium text-primary sm:text-[2rem]">
+          {productData.category.toLowerCase() === "bundle"
+            ? "Bundle Individual Product"
+            : "Product Included in Bundles"}
+        </h2>
+        <ProductCardGrid>
+          <ProductCart />
+          <ProductCart />
+          <ProductCart />
+          <ProductCart />
+        </ProductCardGrid>
+      </div>
+      <div className="mt-8 sm:mt-12">
+        <h2 className="text-2xl font-medium text-primary sm:text-[2rem]">
+          Other Products
+        </h2>
+        <ProductCardGrid>
+          <ProductCart />
+          <ProductCart />
+          <ProductCart />
+          <ProductCart />
+        </ProductCardGrid>
       </div>
     </main>
   );
