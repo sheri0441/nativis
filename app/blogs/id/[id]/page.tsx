@@ -7,6 +7,9 @@ import { ArrowIcon, HeartIcon, ShareIcon } from "@/app/UIElements/Icons";
 import { color } from "@/app/UIElements/colors";
 import Image from "next/image";
 import avataar from "../../../assets/avaatar.png";
+import BlogCart from "@/app/UIElements/BlogCart";
+import ProductCardGrid from "@/app/UIElements/ProductCardGrid";
+import ProductCart from "@/app/UIElements/ProductCart";
 
 const page = ({ params: { id } }: { params: { id: string } }) => {
   console.log(id);
@@ -37,16 +40,20 @@ const page = ({ params: { id } }: { params: { id: string } }) => {
         <BlogPostContent content={data.content} />
         {/* LIke & share button */}
         <div className="border-t border-t-primary mt-3  pt-3  flex justify-center gap-4">
-          <button className=" flex h-10 gap-2 items-center py-2 px-4 font-medium fill-primary hover:fill-neutral bg-primary bg-opacity-25 rounded-lg hover:bg-accent hover:text-neutral">
-            <HeartIcon fill={color.primary} /> Like
+          <button className="group flex h-10 gap-2 items-center py-2 px-4 font-medium  bg-primary bg-opacity-25 rounded-lg hover:bg-accent hover:text-neutral">
+            <HeartIcon
+              fill={color.primary}
+              style={"group-hover:fill-neutral"}
+            />
+            Like
           </button>
-          <button className=" flex h-10 gap-2 items-center py-2 px-4 font-medium fill-primary hover:fill-neutral bg-primary bg-opacity-25 rounded-lg hover:bg-accent hover:text-neutral">
+          <button className="flex h-10 gap-2 items-center py-2 px-4 font-medium fill-primary hover:fill-neutral bg-primary bg-opacity-25 rounded-lg hover:bg-accent hover:text-neutral">
             <ShareIcon />
             Share
           </button>
         </div>
         {/* comments section */}
-        <div className="px-6 mt-5">
+        <div className="px-6 mt-5 pb-2 sm:pb-3 lg:pb-4">
           <div className="sm:flex sm:justify-between">
             <h2 className="capitalize text-primary text-[2rem] font-bold sm:text-5xl">
               comments
@@ -144,6 +151,64 @@ const page = ({ params: { id } }: { params: { id: string } }) => {
               Login
             </Link>
           </div>
+          <div className="flex flex-col gap-4 mt-5 sm:grid sm:grid-cols-[80px_auto] sm:items-start">
+            <div className="flex items-center gap-2">
+              <Image
+                className="h-11 w-11 rounded-full sm:h-20 sm:w-20"
+                src={avataar}
+                alt=""
+              />
+              <div className="sm:hidden">
+                <p className="font-medium ">{data.comments[0].author_name}</p>
+                <p className=" font-light text-xs">
+                  {data.comments[0].created_at}
+                </p>
+              </div>
+            </div>
+            <div className="">
+              <div className="hidden sm:flex sm:justify-between sm:items-center">
+                <p className="font-medium ">{data.comments[0].author_name}</p>
+                <p className=" font-light text-xs">
+                  {data.comments[0].created_at}
+                </p>
+              </div>
+              <form className="flex flex-col gap-4 w-full">
+                <textarea
+                  className="bg-neutral border-2 border-primary  rounded-lg p-1 sm:p-2  hover:outline-accent focus:outline-accent"
+                  rows={5}
+                  name=""
+                  id=""
+                ></textarea>
+                <input
+                  type="submit"
+                  className="py-2 px-4 bg-primary text-neutral hover:bg-accent w-fit ml-auto rounded-full capitalize cursor-pointer"
+                  value="submit"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container px-6 mx-auto pt-10 lg:pt-12 border-t border-t-primary flex flex-col gap-10">
+        <div className="">
+          <h2 className="text-2xl font-medium text-primary">
+            Recommended Blogs
+          </h2>
+          <div className="max-w-72 mx-auto grid grid-cols-1 gap-4 mt-5 sm:max-w-[680px] sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:mt-8 lg:max-w-full lg:grid-cols-4">
+            <BlogCart />
+            <BlogCart />
+            <BlogCart />
+            <BlogCart />
+          </div>
+        </div>
+        <div>
+          <h2 className="text-2xl font-medium text-primary">Our Products</h2>
+          <ProductCardGrid>
+            <ProductCart />
+            <ProductCart />
+            <ProductCart />
+            <ProductCart />
+          </ProductCardGrid>
         </div>
       </div>
     </main>

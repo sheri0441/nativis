@@ -4,12 +4,9 @@
   font-weight: 500;
 }
 
-.postContentStyling > p > img {
-  margin-top: 16px;
-  display: block;
-}
-.postContentStyling > p {
+.postContentStyling > img {
   margin-top: 8px;
+  display: block;
 }
 
 .postContentStyling > p > a {
@@ -40,11 +37,6 @@
     margin-top: 32px;
   }
 
-  .postContentStyling > p {
-    margin-top: 12px;
-    font-size: 20px;
-  }
-
   .postContentStyling > blockquote {
     margin-top: 12px;
     font-size: 20px;
@@ -58,6 +50,6 @@
     margin-top: 28px;
   }
   .postContentStyling > img {
-    margin-top: 40px;
+    margin-top: 16px;
   }
 }

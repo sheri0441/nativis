@@ -51,7 +51,7 @@ const BlogPostContent = ({ content }: { content: any }) => {
   };
 
   return (
-    <div className={`${style.postContentStyling} px-6`}>
+    <div className={`${style.postContentStyling} px-6 lg:px-0`}>
       {content.map((item: any, index: number) => renderContent(item, index))}
     </div>
   );
