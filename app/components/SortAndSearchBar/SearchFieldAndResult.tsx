@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import SearchResultItem from "./SearchResultItem";
 import Link from "next/link";
 import { CrossIcon } from "../../utils/Icons";
-import { color } from "../../utils/colors";
 import style from "./SearchFieldAndResult.module.css";
 import { usePathname } from "next/navigation";
 

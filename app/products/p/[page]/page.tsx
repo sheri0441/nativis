@@ -1,9 +1,15 @@
 import React from "react";
+import { Metadata } from "next";
 import ProductCard from "@/app/UIElements/Card/ProductCard";
 import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
 import Pagination from "@/app/components/Pagination";
 import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
 import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
+
+export const metadata: Metadata = {
+  title: "Products | Nativis",
+  description: "Thousand of Blogs to get education about your self",
+};
 
 const page = ({ params: { page } }: { params: { page: string } }) => {
   return (

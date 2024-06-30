@@ -1,7 +1,13 @@
 import React from "react";
+import { Metadata } from "next";
 import RichTextRenderer from "../components/RichTextRenderer";
 import ContactForm from "./ContactForm";
 import faq from "./faqSample.json";
+
+export const metadata: Metadata = {
+  title: "Contact | Nativis",
+  description: "Thousand of Blogs to get education about your self",
+};
 
 const page = () => {
   return (

@@ -1,10 +1,18 @@
 import React from "react";
+import { Metadata } from "next";
 import BlogCard from "@/app/UIElements/Card/BlogCard";
 import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
 import PageTitle from "@/app/UIElements/Miscellaneous/PageTitle";
 import Pagination from "@/app/components/Pagination";
 import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
 import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `Search: search | Nativis`,
+    description: "Search: search | Nativis",
+  };
+}
 
 const page = ({
   params: { page, search },

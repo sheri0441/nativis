@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ArrowIcon } from "../../utils/Icons";
-import { color } from "../../utils/colors";
 import style from "./SortBy.module.css";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 

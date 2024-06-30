@@ -1,7 +1,13 @@
 import React from "react";
+import { Metadata } from "next";
 import MainTag from "../UIElements/Miscellaneous/MainTag";
 import Image from "next/image";
 import avataar from "../assets/avaatar.png";
+
+export const metadata: Metadata = {
+  title: "Profile | Nativis",
+  description: "Thousand of Blogs to get education about your self",
+};
 
 const page = () => {
   return (

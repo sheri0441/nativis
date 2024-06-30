@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { MinusIcon, PlusIcon } from "../utils/Icons";
-import { color } from "../utils/colors";
 
 const DetailsSummary = ({
   question,

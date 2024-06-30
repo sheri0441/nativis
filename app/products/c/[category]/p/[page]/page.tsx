@@ -1,9 +1,17 @@
 import React from "react";
+import { Metadata } from "next";
 import ProductCard from "@/app/UIElements/Card/ProductCard";
 import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
 import Pagination from "@/app/components/Pagination";
 import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
 import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: `Category: category | Nativis`,
+    description: "terms&policy | Nativis",
+  };
+}
 
 const page = ({
   params: { category, page },

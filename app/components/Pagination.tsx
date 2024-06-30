@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { ArrowIcon } from "../utils/Icons";
-import { color } from "../utils/colors";
 import { useRouter, useSearchParams } from "next/navigation";
 import PaginationPageButton from "../UIElements/Miscellaneous/PaginationPageButton";
 

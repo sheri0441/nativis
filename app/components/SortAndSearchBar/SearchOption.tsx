@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { SearchIcon } from "../../utils/Icons";
-import { color } from "../../utils/colors";
 
 import SearchFieldAndResult from "./SearchFieldAndResult";
 
