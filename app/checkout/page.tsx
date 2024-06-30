@@ -22,7 +22,7 @@ type Inputs = {
   Instructions?: string;
 };
 
-const page = () => {
+const Page = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const { register, handleSubmit, watch } = useForm<Inputs>({
@@ -160,4 +160,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

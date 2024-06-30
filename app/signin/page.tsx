@@ -1,16 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import MainTag from "../UIElements/Miscellaneous/MainTag";
-// import { useForm } from "react-hook-form";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
-
-// type Inputs = {
-//   name: string;
-//   email: string;
-//   password: string;
-//   confirm: string;
-// };
 
 const page = () => {
   const [isSignIn, setIsSignIn] = useState<boolean>(true);

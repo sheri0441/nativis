@@ -63,7 +63,7 @@ const SignIn = ({ openSignUp }: { openSignUp: Function }) => {
         className="font-medium text-xl mt-8 block mx-auto text-primary hover:underline"
         onClick={() => openSignUp()}
       >
-        Don't have an account?
+        Don&apos;t have an account?
       </button>
     </div>
   );
