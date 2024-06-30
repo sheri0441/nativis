@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { Metadata } from "next";
 import MainTag from "../../../UIElements/Miscellaneous/MainTag";
 import PageTitle from "../../../UIElements/Miscellaneous/PageTitle";
 import CartItem from "../../../components/CartItem";
@@ -10,11 +9,6 @@ import TextArea from "../../../UIElements/FormElements/TextArea";
 import Radio from "../../../UIElements/FormElements/Radio";
 import { FlashTruckIcon, TruckIcon } from "../../../utils/Icons";
 import SubmitButton from "../../../UIElements/FormElements/SubmitButton";
-
-export const metadata: Metadata = {
-  title: "Checkout | Nativis",
-  description: "Thousand of Blogs to get education about your self",
-};
 
 type Inputs = {
   name: string;
