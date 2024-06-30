@@ -4,7 +4,7 @@ import MainTag from "../UIElements/Miscellaneous/MainTag";
 import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 
-const page = () => {
+const Page = () => {
   const [isSignIn, setIsSignIn] = useState<boolean>(true);
 
   const toggleSignIn = () => {
@@ -27,4 +27,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
