@@ -1,0 +1,16 @@
+.scalingAnimation > div {
+  animation: upScaling 0.5s alternate infinite;
+}
+
+.scalingAnimation > div:first-child {
+  animation-direction: alternate-reverse;
+}
+
+@keyframes upScaling {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}

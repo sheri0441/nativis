@@ -1,7 +1,8 @@
 "use client";
-import CategoryFilterTab from "@/app/UIElements/CategoryFilterTab";
-import { ArrowIcon } from "@/app/UIElements/Icons";
-import { color } from "@/app/UIElements/colors";
+
+import CategoryFilterTab from "@/app/UIElements/Miscellaneous/CategoryFilterTab";
+import { ArrowIcon } from "@/app/utils/Icons";
+
 import React, { useEffect, useState } from "react";
 
 const FilterBar = () => {
@@ -34,7 +35,7 @@ const FilterBar = () => {
           className="group  w-6 aspect-square p-1 bg-secondary bg-opacity-20 rounded-full hover:bg-opacity-50"
           onClick={scrollLeft}
         >
-          <ArrowIcon style="group-hover:fill-neutral" fill={color.primary} />
+          <ArrowIcon style="fill-primary group-hover:fill-neutral" />
         </button>
       </div>
       <div
@@ -43,14 +44,14 @@ const FilterBar = () => {
         }`}
         id="filterBar"
       >
-        <CategoryFilterTab />
-        <CategoryFilterTab />
-        <CategoryFilterTab />
-        <CategoryFilterTab />
-        <CategoryFilterTab />
-        <CategoryFilterTab />
-        <CategoryFilterTab />
-        <CategoryFilterTab />
+        <CategoryFilterTab category="all" />
+        <CategoryFilterTab category="skin" />
+        <CategoryFilterTab category="hair" />
+        <CategoryFilterTab category="" />
+        <CategoryFilterTab category="" />
+        <CategoryFilterTab category="" />
+        <CategoryFilterTab category="" />
+        <CategoryFilterTab category="" />
       </div>
       <div
         className={`hidden ${
@@ -61,7 +62,7 @@ const FilterBar = () => {
           className="group w-6 aspect-square p-1 bg-secondary bg-opacity-20 rounded-full rotate-180 hover:bg-opacity-50 block ml-auto"
           onClick={scrollRight}
         >
-          <ArrowIcon style="group-hover:fill-neutral" fill={color.primary} />
+          <ArrowIcon style="fill-primary group-hover:fill-neutral" />
         </button>
       </div>
     </div>

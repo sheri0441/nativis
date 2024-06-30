@@ -1,9 +1,11 @@
-import ProductCardGrid from "@/app/UIElements/ProductCardGrid";
-import ProductCart from "@/app/UIElements/ProductCart";
+import React from "react";
+import ProductCard from "@/app/UIElements/Card/ProductCard";
+import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
+import PageTitle from "@/app/UIElements/Miscellaneous/PageTitle";
+import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
 import Pagination from "@/app/components/Pagination";
 import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
 import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
-import React from "react";
 
 const page = ({
   params: { page, search },
@@ -11,29 +13,28 @@ const page = ({
   params: { page: string; search: string };
 }) => {
   return (
-    <main className="container pt-24  mx-auto px-6 sm:px-8 lg:px-14 sm:pt-32 lg:pt-40">
-      <h1 className="text-[32px] font-bold text-center sm:text-5xl lg:text-6xl">
+    <MainTag>
+      <PageTitle>
         Search: {search} {page}
-      </h1>
+      </PageTitle>
       <FilterBar />
       <SortAndSearchBar />
       <ProductCardGrid>
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
       </ProductCardGrid>
-
       <Pagination baseURL={`/blogs/s/${search}/p/`} current={Number(page)} />
-    </main>
+    </MainTag>
   );
 };
 

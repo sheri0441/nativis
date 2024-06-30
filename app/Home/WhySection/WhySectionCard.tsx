@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import AnimationIllustrations from "../../UIElements/AnimationIllustrations";
+import AnimationIllustrations from "../../components/AnimationIllustrations";
 
 const WhySectionCard = ({
   children,

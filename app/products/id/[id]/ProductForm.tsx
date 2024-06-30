@@ -1,11 +1,10 @@
 "use client";
-import React, { useEffect } from "react";
-import { MinusIcon, PlusIcon } from "@/app/UIElements/Icons";
-import { color } from "@/app/UIElements/colors";
-import ProductQuantityButton from "./ProductQuantityButton";
-import { productData } from "@/app/utils/Interfaces";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import { MinusIcon, PlusIcon } from "@/app/utils/Icons";
+import { productData } from "@/app/utils/Interfaces";
+import SubmitButton from "@/app/UIElements/FormElements/SubmitButton";
+import ProductQuantityButton from "./ProductQuantityButton";
 import ProductSizeButton from "./ProductSizeButton";
 
 type FormData = {
@@ -14,7 +13,11 @@ type FormData = {
 };
 
 const ProductForm = ({ productData }: { productData: productData }) => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const sizeOfProduct = Object.keys(productData.prices);
+
+  const toggleLoading = () => setIsLoading((perv) => !perv);
 
   const { register, setValue, handleSubmit, watch, getValues, reset } =
     useForm<FormData>({
@@ -26,6 +29,8 @@ const ProductForm = ({ productData }: { productData: productData }) => {
 
   const onSubmit = handleSubmit((data) => {
     console.log(data);
+    setIsLoading(true);
+    setTimeout(toggleLoading, 1000);
     reset({ size: sizeOfProduct[0], quantity: 1 });
   });
 
@@ -48,8 +53,7 @@ const ProductForm = ({ productData }: { productData: productData }) => {
             );
           })}
       </div>
-      {/* <div className="lg:flex lg:items-center"> */}
-      {/* quantity control panel */}
+
       <div className="w-44 sm:w-60 flex justify-between items-center bg-primary bg-opacity-25 rounded-full mx-auto mt-4 sm:mt-8 lg:ml-0">
         <ProductQuantityButton
           clickEvent={() =>
@@ -57,28 +61,27 @@ const ProductForm = ({ productData }: { productData: productData }) => {
             setValue("quantity", getValues("quantity") - 1)
           }
         >
-          <MinusIcon fill={color.neutral} style="group-hover:fill-neural" />
+          <MinusIcon style="fill-neutral group-hover:fill-neural" />
         </ProductQuantityButton>
         <span className="sm:text-xl">{watch("quantity")}</span>
         <ProductQuantityButton
           clickEvent={() => setValue("quantity", getValues("quantity") + 1)}
         >
-          <PlusIcon fill={color.neutral} style="group-hover:fill-neural" />
+          <PlusIcon style="fill-neutral group-hover:fill-neural" />
         </ProductQuantityButton>
       </div>
       {/* Price panel */}
       <span className="block text-[40px] font-medium text-center mt-4 sm:text-[64px] lg:text-left">
         ${(price * getValues("quantity")).toFixed(2)}
       </span>
-      {/* </div> */}
+
       {/* Button panel */}
       <div className="flex flex-col gap-4 mt-4 sm:mt-6 sm:flex-row max-w-[540px] mx-auto lg:ml-0 lg:max-w-full">
-        <button
-          className="font-medium capitalize py-3 w-full sm:text-xl sm:py-[18px] bg-primary text-neutral rounded-full hover:bg-accent"
-          type="submit"
-        >
-          Add to Cart
-        </button>
+        <SubmitButton
+          extraStyle="w-full"
+          loading={isLoading}
+          text="Add to cart"
+        />
         <button
           className="font-medium capitalize py-3 w-full bg-primary bg-opacity-50 sm:text-xl  sm:py-[18px] text-primary hover:text-neutral rounded-full hover:bg-opacity-100 "
           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {

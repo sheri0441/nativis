@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { Facial, Natural, Quality } from "@/app/utils/Illustrations";
 import HomeSection from "../HomeSection";
 import TimerButton from "./TimerButton";
-import { Facial, Natural, Quality } from "@/app/UIElements/Illustrations";
 import WhySectionCard from "./WhySectionCard";
 
 const WhySection = () => {

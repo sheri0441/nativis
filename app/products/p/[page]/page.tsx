@@ -1,9 +1,9 @@
-import ProductCardGrid from "@/app/UIElements/ProductCardGrid";
-import ProductCart from "@/app/UIElements/ProductCart";
+import React from "react";
+import ProductCard from "@/app/UIElements/Card/ProductCard";
+import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
 import Pagination from "@/app/components/Pagination";
 import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
 import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
-import React from "react";
 
 const page = ({ params: { page } }: { params: { page: string } }) => {
   return (
@@ -14,18 +14,18 @@ const page = ({ params: { page } }: { params: { page: string } }) => {
       <FilterBar />
       <SortAndSearchBar />
       <ProductCardGrid>
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
-        <ProductCart />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
       </ProductCardGrid>
       <Pagination baseURL={`/products/p/`} current={Number(page)} />
     </main>

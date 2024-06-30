@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { SearchIcon } from "../../UIElements/Icons";
-import { color } from "../../UIElements/colors";
+import { SearchIcon } from "../../utils/Icons";
+import { color } from "../../utils/colors";
 
 import SearchFieldAndResult from "./SearchFieldAndResult";
 
@@ -20,7 +20,7 @@ const SearchOption = () => {
         }`}
         onClick={() => setShowSearch((pervState) => (pervState = true))}
       >
-        <SearchIcon fill={color.primary} hoverFill="fill-neutral" />
+        <SearchIcon style="fill-primary group-hover:fill-neutral" />
       </button>
 
       <SearchFieldAndResult

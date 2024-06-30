@@ -1,7 +1,6 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
-import { Logo } from "../../UIElements/Icons";
+import { LogoIcon } from "../../utils/Icons";
 import style from "./LoadingScreen.module.css";
 
 const LoadingScreen = () => {
@@ -22,7 +21,7 @@ const LoadingScreen = () => {
       <div
         className={`w-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 md:w-24 ${style.sh_logoAnimation}`}
       >
-        <Logo />
+        <LogoIcon />
       </div>
     </div>
   );

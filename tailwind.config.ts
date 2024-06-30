@@ -12,6 +12,7 @@ const config: Config = {
       secondary: "#606C38",
       neutral: "#FEFAE0",
       accent: "#BC6C25",
+      danger: "#dc2626",
     },
     extend: {
       gridTemplateRows: {

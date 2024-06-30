@@ -1,9 +1,8 @@
-import { Cross } from "@/app/UIElements/Icons";
-import IconsBtn from "@/app/UIElements/IconsBtn";
-import { color } from "@/app/UIElements/colors";
 import React from "react";
-import CartItem from "../../../components/CartItem";
 import Link from "next/link";
+import { CrossIcon } from "@/app/utils/Icons";
+import IconsBtn from "@/app/UIElements/Miscellaneous/IconsBtn";
+import CartItem from "../../../components/CartItem";
 
 const CartList = ({
   showCart,
@@ -26,7 +25,7 @@ const CartList = ({
         <span className="text-xl sm:text-3xl font-medium text-neutral uppercase row-start-1">
           Shopping Cart
         </span>
-        <div className="w-full px-4 sm:px-0  mx-auto flex flex-col gap-3 max-h-[420px] overflow-y-scroll ">
+        <div className="w-full px-4 sm:px-0  mx-auto flex flex-col gap-3 max-h-[420px] overflow-y-scroll">
           <CartItem />
           <CartItem />
           <CartItem />
@@ -55,8 +54,11 @@ const CartList = ({
           Checkout
         </Link>
         <div className=" row-start-5">
-          <IconsBtn clickEvent={() => toggleCart()}>
-            <Cross color={color.primary} />
+          <IconsBtn
+            style="bg-secondary hover:bg-neutral"
+            clickEvent={() => toggleCart()}
+          >
+            <CrossIcon style="fill-primary" />
           </IconsBtn>
         </div>
       </div>

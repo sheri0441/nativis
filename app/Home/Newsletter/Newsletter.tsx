@@ -1,10 +1,10 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect } from "react";
-import bg from "../../assets/newsletterBg.jpg";
-import NewsletterForm from "./NewsletterForm";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import NewsletterForm from "./NewsletterForm";
+import bg from "../../assets/newsletterBg.jpg";
 
 const Newsletter = () => {
   useEffect(() => {

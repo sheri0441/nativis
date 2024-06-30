@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { ArrowIcon } from "../../UIElements/Icons";
-import { color } from "../../UIElements/colors";
+import { ArrowIcon } from "../../utils/Icons";
+import { color } from "../../utils/colors";
 import style from "./SortBy.module.css";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
@@ -44,7 +44,7 @@ const SortBy = () => {
               showSort ? " rotate-90" : "-rotate-90"
             }`}
           >
-            <ArrowIcon style="group-hover:fill-neutral" fill={color.primary} />
+            <ArrowIcon style="fill-primary group-hover:fill-neutral" />
           </div>
         </button>
 

@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import SearchResultItem from "./SearchResultItem";
 import Link from "next/link";
-import { Cross } from "../../UIElements/Icons";
-import { color } from "../../UIElements/colors";
+import { CrossIcon } from "../../utils/Icons";
+import { color } from "../../utils/colors";
 import style from "./SearchFieldAndResult.module.css";
 import { usePathname } from "next/navigation";
 
@@ -50,7 +50,7 @@ const SearchFieldAndResult = ({
             onClick={() => closeSearchField()}
             type="button"
           >
-            <Cross color={color.neutral} />
+            <CrossIcon style="fill-neutral" />
           </button>
           <input
             className="bg-primary focus:outline-none  text-neutral w-full p-2 text-sm pl-4 placeholder:text-neutral placeholder:opacity-50 autofill:bg-primary autofill:focus:bg-primary autofill:hover:bg-primary appearance-none"

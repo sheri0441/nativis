@@ -1,4 +1,4 @@
-import { Logo } from "./UIElements/Icons";
+import { LogoIcon } from "./utils/Icons";
 import style from "./loading.module.css";
 
 export default function Loading() {
@@ -7,7 +7,7 @@ export default function Loading() {
       <div
         className={`w-20 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-3/4 md:w-24 ${style.sh_logoAnimation}`}
       >
-        <Logo />
+        <LogoIcon />
       </div>
     </div>
   );

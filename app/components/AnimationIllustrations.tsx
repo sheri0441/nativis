@@ -1,0 +1,22 @@
+import React, { ReactNode } from "react";
+import "./AnimationIllustration.css";
+
+const AnimationIllustrations = ({
+  children,
+  isSquare = true,
+}: {
+  children: ReactNode;
+  isSquare?: boolean;
+}) => {
+  return (
+    <div
+      className={`w-full mx-auto sh_illustration_animation ${
+        isSquare ? "*:aspect-square" : ""
+      }`}
+    >
+      {children}
+    </div>
+  );
+};
+
+export default AnimationIllustrations;

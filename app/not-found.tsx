@@ -1,7 +1,7 @@
 import React from "react";
-import AnimationIllustrations from "./UIElements/AnimationIllustrations";
-import { NotFoundIllustration } from "./UIElements/Illustrations";
 import Link from "next/link";
+import { NotFoundIllustration } from "./utils/Illustrations";
+import AnimationIllustrations from "./components/AnimationIllustrations";
 
 const NotFound = () => {
   return (

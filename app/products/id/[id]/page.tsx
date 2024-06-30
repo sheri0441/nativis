@@ -1,19 +1,29 @@
 import React from "react";
-import ProductImage from "./ProductImage";
+import { Metadata } from "next";
 import Link from "next/link";
-import data from "./sample.json";
-import ProductDescription from "./ProductDescription";
 import { productData } from "@/app/utils/Interfaces";
+import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
+import ProductCard from "@/app/UIElements/Card/ProductCard";
+import ProductImage from "./ProductImage";
+import ProductDescription from "./ProductDescription";
 import ProductForm from "./ProductForm";
-import ProductCardGrid from "@/app/UIElements/ProductCardGrid";
-import ProductCart from "@/app/UIElements/ProductCart";
+import data from "./sample.json";
+import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const productData: productData = data[0];
+  return {
+    title: ` ${productData.name} | Products`,
+    description: productData.description,
+  };
+}
 
 const page = ({ params: { id } }: { params: { id: string } }) => {
   console.log(id);
 
   const productData: productData = data[0];
   return (
-    <main className="container pt-24 mx-auto px-6 sm:px-8 lg:px-14 sm:pt-32 lg:pt-40">
+    <MainTag>
       <div className="flex flex-col gap-5 sm:gap-10 lg:grid lg:grid-cols-2">
         <ProductImage images={productData.images} />
         <div>
@@ -63,10 +73,10 @@ const page = ({ params: { id } }: { params: { id: string } }) => {
             : "Product Included in Bundles"}
         </h2>
         <ProductCardGrid>
-          <ProductCart />
-          <ProductCart />
-          <ProductCart />
-          <ProductCart />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </ProductCardGrid>
       </div>
       <div className="mt-8 sm:mt-12">
@@ -74,13 +84,13 @@ const page = ({ params: { id } }: { params: { id: string } }) => {
           Other Products
         </h2>
         <ProductCardGrid>
-          <ProductCart />
-          <ProductCart />
-          <ProductCart />
-          <ProductCart />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </ProductCardGrid>
       </div>
-    </main>
+    </MainTag>
   );
 };
 

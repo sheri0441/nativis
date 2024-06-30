@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import ProductCart from "./UIElements/Card/ProductCard";
+import BlogCart from "./UIElements/Card/BlogCard";
+import ProductCardGrid from "./UIElements/Miscellaneous/ProductCardGrid";
 import HeroSection from "./Home/HeroSection/HeroSection";
-import ProductCart from "./UIElements/ProductCart";
 import HomeSection from "./Home/HomeSection";
 import WhySection from "./Home/WhySection/WhySection";
-import BlogCart from "./UIElements/BlogCart";
 import Newsletter from "./Home/Newsletter/Newsletter";
-import ProductCardGrid from "./UIElements/ProductCardGrid";
 
 export const metadata: Metadata = {
   title: "Nativis | Home",

@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import productImage from "../../../assets/productImage.png";
 import Image from "next/image";
 import ProductImageOption from "./ProductImageOption";
 

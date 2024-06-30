@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Logo } from "../UIElements/Icons";
+import { LogoIcon } from "../utils/Icons";
 
 const Footer = () => {
   return (
@@ -13,24 +13,24 @@ const Footer = () => {
               <Link href={"/"} className="hover:text-accent">
                 Home
               </Link>
-              <Link href={"/"} className="hover:text-accent">
+              <Link href={"/products"} className="hover:text-accent">
                 Products
               </Link>
-              <Link href={"/"} className="hover:text-accent">
+              <Link href={"/blogs"} className="hover:text-accent">
                 Blogs
               </Link>
-              <Link href={"/"} className="hover:text-accent">
+              <Link href={"/about"} className="hover:text-accent">
                 About
               </Link>
-              <Link href={"/"} className="hover:text-accent">
+              <Link href={"/contact"} className="hover:text-accent">
                 Contact
               </Link>
             </div>
             <div className="">
-              <Link href={"/"} className="hover:text-accent">
+              <Link href={"/terms&policy"} className="hover:text-accent">
                 Terms &#38; Policy
               </Link>
-              <Link href={"/"} className="hover:text-accent">
+              <Link href={"/contact#faq"} className="hover:text-accent">
                 FAQs
               </Link>
             </div>
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
         <div className="flex items-center gap-2 mx-auto w-fit mt-6 sm:mt-0 sm:mx-0 sm:ml-auto h-fit mb-4 sm:mb-0">
           <div className="w-14 sm:w-20 lg:w-32">
-            <Logo />
+            <LogoIcon />
           </div>
           <span className="text-[10px] block  sm:text-base lg:text-2xl">
             Revitalize <br />

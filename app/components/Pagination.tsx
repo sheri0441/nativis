@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import { ArrowIcon } from "../UIElements/Icons";
-import { color } from "../UIElements/colors";
+import { ArrowIcon } from "../utils/Icons";
+import { color } from "../utils/colors";
 import { useRouter, useSearchParams } from "next/navigation";
-import PaginationPageButton from "../UIElements/PaginationPageButton";
+import PaginationPageButton from "../UIElements/Miscellaneous/PaginationPageButton";
 
 const Pagination = ({
   current = 4,
@@ -40,7 +40,7 @@ const Pagination = ({
         onClick={() => router.push(baseURL + `${sort ? `?sort=${sort}` : ""}`)}
         disabled={current === 1}
       >
-        <ArrowIcon style="group-hover:fill-neutral" fill={color.primary} />
+        <ArrowIcon style="fill-primary group-hover:fill-neutral" />
       </button>
       {numberRow.map((num) => {
         return (
@@ -58,7 +58,7 @@ const Pagination = ({
         onClick={() => router.push(baseURL + `${sort ? `?sort=${sort}` : ""}`)}
         disabled={current === maximum}
       >
-        <ArrowIcon style="group-hover:fill-neutral" fill={color.primary} />
+        <ArrowIcon style="fill-primary group-hover:fill-neutral" />
       </button>
     </div>
   );

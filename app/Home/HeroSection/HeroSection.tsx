@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
-import { Logo } from "@/app/UIElements/Icons";
-import HeroBgImage from "../../UIElements/HeroBgImage";
+import { LogoIcon } from "@/app/utils/Icons";
+import HeroBgImage from "../../UIElements/Miscellaneous/HeroBgImage";
 import heroImage from "../../assets/heroBgImage.jpg";
 
 const HeroSection = () => {
@@ -9,7 +9,7 @@ const HeroSection = () => {
     <div className="bg-primary px-6 pt-28 pb-10 sm:pt-48 sm:pb-16 lg:pb-20 text-neutral bg-opacity-50 relative">
       <HeroBgImage imageLink={heroImage} />
       <div className="w-14 sm:mx-auto sm:w-16">
-        <Logo />
+        <LogoIcon />
       </div>
 
       <div className="border-l-2 border-neutral pl-2  mt-6 sm:mx-auto sm:grid sm:grid-cols-2 sm:border-none sm:justify-center sm:items-center">

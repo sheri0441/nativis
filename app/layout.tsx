@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import Navbar from "./layout/Navbar/Navbar";
 import LoadingScreen from "./components/LoadingScreen/LoadingScreen";
+import Navbar from "./layout/Navbar/Navbar";
 import Footer from "./layout/Footer";
 import "./globals.css";
 

@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import avataar from "../../assets/avaatar.png";
-import Link from "next/link";
 
 const LoggedBtn = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
