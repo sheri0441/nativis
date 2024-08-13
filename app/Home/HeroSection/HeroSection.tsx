@@ -32,7 +32,7 @@ const HeroSection = () => {
       </div>
 
       <Link
-        href="/"
+        href="/products/p/1"
         className="block w-fit py-4 px-5 border-2 border-neutral rounded-full mt-6 hover:bg-neutral hover:text-primary transition-colors duration-500 ease-in-out sm:mx-auto"
       >
         Explore Our Products

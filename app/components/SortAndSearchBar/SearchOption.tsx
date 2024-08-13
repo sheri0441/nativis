@@ -4,7 +4,13 @@ import { SearchIcon } from "../../utils/Icons";
 
 import SearchFieldAndResult from "./SearchFieldAndResult";
 
-const SearchOption = () => {
+const SearchOption = ({
+  baseResultPageURL,
+  baseSearchURL,
+}: {
+  baseSearchURL: string;
+  baseResultPageURL: string;
+}) => {
   const [showSearch, setShowSearch] = useState<boolean>(false);
 
   const closeSearchField = () => {
@@ -25,6 +31,8 @@ const SearchOption = () => {
       <SearchFieldAndResult
         closeSearchField={closeSearchField}
         showSearch={showSearch}
+        baseResultPageURL={baseResultPageURL}
+        baseSearchURL={baseSearchURL}
       />
     </div>
   );

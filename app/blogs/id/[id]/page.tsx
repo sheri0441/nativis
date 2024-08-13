@@ -6,6 +6,7 @@ import CommentSection from "./CommentSection";
 import LikeAndShare from "./LikeAndShare";
 import BlogBanner from "./BlogBanner";
 import data from "./sample.json";
+import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -14,9 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const page = ({ params: { id } }: { params: { id: string } }) => {
-  console.log(id);
-
+const page = async ({ params: { id } }: { params: { id: string } }) => {
   return (
     <main>
       <BlogBanner

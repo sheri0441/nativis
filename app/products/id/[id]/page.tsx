@@ -1,27 +1,31 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { productData } from "@/app/utils/Interfaces";
+import { productData, ProductDetailPageData } from "@/app/utils/Interfaces";
 import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
 import ProductCard from "@/app/UIElements/Card/ProductCard";
 import ProductImage from "./ProductImage";
 import ProductDescription from "./ProductDescription";
 import ProductForm from "./ProductForm";
-import data from "./sample.json";
+// import data from "./sample.json";
 import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
+import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const productData: productData = data[0];
+  // const productData: productData = data[0];
   return {
-    title: ` ${productData.name} | Products`,
-    description: productData.description,
+    title: `product name | Products`,
+    description: `product description`,
   };
 }
 
-const page = ({ params: { id } }: { params: { id: string } }) => {
-  console.log(id);
+const page = async ({ params: { id } }: { params: { id: string } }) => {
+  const url = process.env.BASE_URL + `/api/products/id/${id}`;
 
-  const productData: productData = data[0];
+  const data: ProductDetailPageData = await axiosFetcher(url);
+
+  const productData = data.product;
+
   return (
     <MainTag>
       <div className="flex flex-col gap-5 sm:gap-10 lg:grid lg:grid-cols-2">
@@ -53,10 +57,10 @@ const page = ({ params: { id } }: { params: { id: string } }) => {
             <span className="opacity-75">{productData.guide}</span>
           </p>
         )}
-        {productData.ingredients && (
+        {productData.ingredient && (
           <p>
             <b>Ingredient & Composition: </b>
-            <span className="opacity-75">{productData.ingredients}</span>
+            <span className="opacity-75">{productData.ingredient}</span>
           </p>
         )}
         {productData.suitable && (
@@ -66,28 +70,28 @@ const page = ({ params: { id } }: { params: { id: string } }) => {
           </p>
         )}
       </div>
-      <div className="mt-8 sm:mt-12">
-        <h2 className="text-2xl font-medium text-primary sm:text-[2rem]">
-          {productData.category.toLowerCase() === "bundle"
-            ? "Bundle Individual Product"
-            : "Product Included in Bundles"}
-        </h2>
-        <ProductCardGrid>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </ProductCardGrid>
-      </div>
+      {data.relatedProducts && (
+        <div className="mt-8 sm:mt-12">
+          <h2 className="text-2xl font-medium text-primary sm:text-[2rem]">
+            {productData.category.toLowerCase() === "bundle"
+              ? "Bundle Individual Product"
+              : "Product Included in Bundles"}
+          </h2>
+          <ProductCardGrid>
+            {data.relatedProducts.map((product) => (
+              <ProductCard product={product} key={product.id} />
+            ))}
+          </ProductCardGrid>
+        </div>
+      )}
       <div className="mt-8 sm:mt-12">
         <h2 className="text-2xl font-medium text-primary sm:text-[2rem]">
           Other Products
         </h2>
         <ProductCardGrid>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {data.otherProducts.map((product) => (
+            <ProductCard product={product} key={product.id} />
+          ))}
         </ProductCardGrid>
       </div>
     </MainTag>

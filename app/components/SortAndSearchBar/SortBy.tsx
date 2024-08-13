@@ -1,29 +1,32 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ArrowIcon } from "../../utils/Icons";
 import style from "./SortBy.module.css";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const SortBy = () => {
-  const [showSort, setShowSort] = useState<boolean>(false);
-  const [sortInnerText, setSortInnerText] = useState<string>("Newest");
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const page = searchParams.get("page");
   const sort = searchParams.get("sort");
-  const search = searchParams.get("search");
+  const [showSort, setShowSort] = useState<boolean>(false);
+  let sortValue;
+  if (
+    sort?.toLowerCase() !== "newest" &&
+    sort?.toLowerCase() !== "oldest" &&
+    sort?.toLowerCase() !== "z-a" &&
+    sort?.toLowerCase() !== "a-z"
+  ) {
+    sortValue = "newest";
+  } else {
+    sortValue = sort;
+  }
+  const [sortInnerText, setSortInnerText] = useState<string>(sortValue);
 
   const changeSortValue = (e: any) => {
     setSortInnerText((pervState) => (pervState = e.target!.innerHTML));
     setShowSort((pervState) => !pervState);
-    router.push(
-      pathname +
-        "?" +
-        `sort=${e.target!.innerHTML.toLowerCase()}` +
-        `${page !== null ? `&page={${page}}` : ""}` +
-        `${search !== null ? `&search={${search}}` : ""}`
-    );
+    router.push(pathname + "?" + `sort=${e.target!.innerHTML.toLowerCase()}`);
   };
 
   return (
@@ -32,7 +35,7 @@ const SortBy = () => {
       <div className="relative">
         <button
           className={
-            "border border-primary bg-neutral py-1 px-2 rounded-full flex  items-center hover:bg-primary hover:text-neutral transition-colors duration-500 ease-in-out w-28  justify-between  " +
+            "border border-primary bg-neutral py-1 px-2 rounded-full flex  items-center hover:bg-primary hover:text-neutral transition-colors duration-500 ease-in-out w-28  justify-between capitalize " +
             style.sortby
           }
           onClick={() => setShowSort((pervState) => !pervState)}

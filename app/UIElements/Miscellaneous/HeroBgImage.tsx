@@ -28,8 +28,8 @@ const HeroBgImage = ({ imageLink }: { imageLink: string | any }) => {
         alt={"hello"}
         className=" inset-0 w-full object-cover object-center h-full"
         id="heroBg"
-        width={100}
-        height={100}
+        width={1000}
+        height={1000}
       />
     </div>
   );

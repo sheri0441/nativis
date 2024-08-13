@@ -1,19 +1,24 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import ProductCart from "./UIElements/Card/ProductCard";
-import BlogCart from "./UIElements/Card/BlogCard";
+import ProductCard from "./UIElements/Card/ProductCard";
 import ProductCardGrid from "./UIElements/Miscellaneous/ProductCardGrid";
 import HeroSection from "./Home/HeroSection/HeroSection";
 import HomeSection from "./Home/HomeSection";
 import WhySection from "./Home/WhySection/WhySection";
 import Newsletter from "./Home/Newsletter/Newsletter";
+import { BlogCardType, ProductCardType } from "./utils/Interfaces";
+import BlogCard from "./UIElements/Card/BlogCard";
+import { axiosFetcher } from "./UIElements/Miscellaneous/axiosFetcher";
 
 export const metadata: Metadata = {
-  title: "Nativis | Home",
+  title: "Home | Nativis",
   description: `Revitalize with Nature&apos;s Touch`,
 };
 
-export default function Home() {
+export default async function Home() {
+  const url = process.env.BASE_URL + "/api" || "";
+  const data = await axiosFetcher(url);
+
   return (
     <main>
       <HeroSection />
@@ -24,14 +29,17 @@ export default function Home() {
             neem."
         >
           <ProductCardGrid>
-            <ProductCart />
-            <ProductCart />
-            <ProductCart />
-            <ProductCart extraStyle="sm:col-start-2 lg:col-auto" />
+            {data.products.map((product: ProductCardType, index: number) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                extraStyle={index + 1 === 4 ? "sm:col-start-2 lg:col-auto" : ""}
+              />
+            ))}
           </ProductCardGrid>
 
           <Link
-            href={"/"}
+            href={"/products/p/1"}
             className="text-primary hover:bg-primary hover:text-neutral transition-colors duration-500 ease-in-out border rounded-full py-2 px-4 block w-fit mx-auto mt-8"
           >
             View All
@@ -43,13 +51,12 @@ export default function Home() {
           subtitle="Stay informed with our curated selection of articles on neem, skincare tips, and more"
         >
           <div className="max-w-72 mx-auto grid grid-cols-1 gap-4 mt-5 sm:max-w-[680px] sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:mt-8 lg:max-w-full lg:grid-cols-4">
-            <BlogCart />
-            <BlogCart />
-            <BlogCart />
-            <BlogCart />
+            {data.blogs.map((blog: BlogCardType) => (
+              <BlogCard key={blog.id} blog={blog} />
+            ))}
           </div>
           <Link
-            href={"/"}
+            href={"/blogs/p/1"}
             className="text-primary hover:bg-primary hover:text-neutral transition-colors duration-500 ease-in-out border rounded-full py-2 px-4 block w-fit mx-auto mt-8"
           >
             View All

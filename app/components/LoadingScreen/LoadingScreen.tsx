@@ -1,20 +1,17 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { LogoIcon } from "../../utils/Icons";
 import style from "./LoadingScreen.module.css";
+import { useAppSelector } from "@/app/app/hookes";
 
 const LoadingScreen = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const loader = document.getElementById("loader");
-      if (loader) setIsLoaded(true);
-    }
-  }, []);
+  const isLoading = useAppSelector((store) => store.loading.isLoading);
+
+  console.log("Loading state:", isLoading);
   return (
     <div
       className={`bg-primary w-screen h-screen fixed top-0 left-0 z-[99] transition-all duration-1000 ${
-        isLoaded && "-translate-x-full"
+        !isLoading ? "-translate-x-full" : "translate-x-0"
       }`}
       id="loader"
     >

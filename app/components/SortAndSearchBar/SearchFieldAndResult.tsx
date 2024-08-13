@@ -5,27 +5,44 @@ import Link from "next/link";
 import { CrossIcon } from "../../utils/Icons";
 import style from "./SearchFieldAndResult.module.css";
 import { usePathname } from "next/navigation";
+import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
+import { SearchResultList } from "@/app/utils/Interfaces";
 
 const SearchFieldAndResult = ({
   closeSearchField,
   showSearch,
+  baseSearchURL,
+  baseResultPageURL,
 }: {
   closeSearchField: Function;
   showSearch: boolean;
+  baseSearchURL: string;
+  baseResultPageURL: string;
 }) => {
   const [searchField, setSearchField] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [resultList, setResultList] = useState<SearchResultList | null>(null);
   const pathname = usePathname();
+  const toggleLoading = () => {
+    setIsLoading(!isLoading);
+  };
 
   useEffect(() => {
-    setIsLoading((prevState) => (prevState = true));
-    const textLoading = setTimeout(() => {
-      setIsLoading((pervState) => (pervState = false));
-    }, 10000);
+    if (searchField.length > 0) {
+      const url =
+        process.env.NEXT_PUBLIC_BASE_URL + baseSearchURL + searchField;
+      const fetchDate = async () => {
+        setIsLoading(true);
+        const result = await axiosFetcher(url);
 
-    return () => {
-      clearTimeout(textLoading);
-    };
+        console.log(result);
+
+        setResultList(result);
+
+        setIsLoading(false);
+      };
+      fetchDate();
+    }
   }, [searchField]);
   return (
     <div
@@ -63,29 +80,48 @@ const SearchFieldAndResult = ({
             }
           />
         </form>
-        <div
-          className={`w-full bg-neutral absolute top-[110%] rounded overflow-hidden shadow-[0px_0px_4px_rgb(40,54,24)] transition-[height] duration-500 ease-in-out ${
-            showSearch && searchField.length > 0 ? "h-[232px]" : "h-0"
-          }`}
-        >
-          <div className="bg-primary text-neutral px-2 ">
-            <span className="font-bold text-sm opacity-50">Result 26</span>
-          </div>
-          <div>
-            <SearchResultItem />
-            <SearchResultItem />
-            <SearchResultItem />
-          </div>
-          <Link
-            href={
-              `${pathname.includes("products") ? "/products" : "/blogs"}` +
-              `/search?search=${searchField}`
-            }
-            className="w-full text-center block bg-primary text-neutral hover:bg-accent py-2"
+        {resultList !== null && (
+          <div
+            className={`w-full bg-neutral absolute top-[110%] rounded overflow-hidden shadow-[0px_0px_4px_rgb(40,54,24)] transition-[height] duration-500 ease-in-out flex flex-col ${
+              showSearch && searchField.length > 0 && !isLoading
+                ? "h-[232px]"
+                : "h-0"
+            }`}
           >
-            View All
-          </Link>
-        </div>
+            <div className="bg-primary text-neutral px-2 ">
+              <span className="text-sm opacity-50">
+                Result <strong> {resultList?.total}</strong>
+              </span>
+            </div>
+            {resultList.list.length > 0 ? (
+              <>
+                <div>
+                  {resultList.list.map((item) => (
+                    <SearchResultItem
+                      key={item.id}
+                      item={item}
+                      url={baseResultPageURL + item.id}
+                    />
+                  ))}
+                </div>
+                <Link
+                  href={
+                    `${
+                      pathname.includes("products") ? "/products" : "/blogs"
+                    }` + `/s/${searchField}/p/1`
+                  }
+                  className="w-full text-center block bg-primary text-neutral hover:bg-accent py-2 mt-auto"
+                >
+                  View All
+                </Link>
+              </>
+            ) : (
+              <span className="block text-center font-medium text-primary opacity-50 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                No Result Found
+              </span>
+            )}
+          </div>
+        )}
       </div>
       {isLoading && (
         <div className="w-2 aspect-square bg-primary rounded-full col-start-3 sm:col-start-3 row-start-1"></div>

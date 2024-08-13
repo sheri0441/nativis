@@ -1,30 +1,14 @@
-"use client";
-import React, { useState } from "react";
-import MainTag from "../UIElements/Miscellaneous/MainTag";
-import SignUp from "./SignUp";
-import SignIn from "./SignIn";
+import React from "react";
+import { Metadata } from "next";
+import PageContent from "./pageContent";
 
-const Page = () => {
-  const [isSignIn, setIsSignIn] = useState<boolean>(true);
-
-  const toggleSignIn = () => {
-    setIsSignIn(!isSignIn);
-  };
-
-  return (
-    <MainTag>
-      <div>
-        <div className="hidden sm:block"></div>
-        <div className="max-w-[434px] mx-auto sm:text-center">
-          {isSignIn ? (
-            <SignIn openSignUp={toggleSignIn} />
-          ) : (
-            <SignUp openSignIn={toggleSignIn} />
-          )}
-        </div>
-      </div>
-    </MainTag>
-  );
+export const metadata: Metadata = {
+  title: "SignIn | Nativis",
+  description: `Sign-IN and Sign-UP page for nativis website.`,
 };
 
-export default Page;
+const page = () => {
+  return <PageContent />;
+};
+
+export default page;

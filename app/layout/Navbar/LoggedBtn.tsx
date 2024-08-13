@@ -3,12 +3,21 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import avataar from "../../assets/avaatar.png";
+import { useAppDispatch, useAppSelector } from "@/app/app/hookes";
+import { logout } from "@/app/app/features/user/userSlice";
 
 const LoggedBtn = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
+  const { name, image } = useAppSelector((store) => store.user);
+  const dispatch = useAppDispatch();
 
   const toggleIsActive = () => {
     setIsActive((isActive) => !isActive);
+  };
+
+  const singOut = () => {
+    localStorage.removeItem("token");
+    dispatch(logout());
   };
 
   useEffect(() => {
@@ -37,18 +46,24 @@ const LoggedBtn = () => {
         }`}
         onClick={toggleIsActive}
       >
-        <Image src={avataar} alt="" />
+        <Image width={200} height={200} src={image || ""} alt={name || ""} />
       </button>
       {isActive && (
         <div
           className="w-52 bg-neutral absolute right-0 after:content-[''] after:w-0 after:h-0  after:absolute  after:-top-4 lg:after:right-[14px] after:right-3 after:border-neutral after:border-8 after:border-r-[transparent] after:border-t-[transparent] after:border-l-[transparent] shadow-[0px_0px_4px_0px_rgb(40,54,24,0.59)] rounded flex flex-col items-center *:py-3 *:w-full *:text-center"
           id="profileBox"
         >
-          <Link href="/" className="hover:bg-accent hover:text-neutral rounded">
+          <Link
+            href="./user"
+            className="hover:bg-accent hover:text-neutral rounded"
+          >
             Profile
           </Link>
 
-          <button className="hover:bg-accent hover:text-neutral rounded">
+          <button
+            className="hover:bg-accent hover:text-neutral rounded"
+            onClick={singOut}
+          >
             Logout
           </button>
         </div>

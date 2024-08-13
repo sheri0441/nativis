@@ -1,12 +1,5 @@
-import React from "react";
 import { Metadata } from "next";
-import ProductCardGrid from "../UIElements/Miscellaneous/ProductCardGrid";
-import ProductCard from "../UIElements/Card/ProductCard";
-import PageTitle from "../UIElements/Miscellaneous/PageTitle";
-import MainTag from "../UIElements/Miscellaneous/MainTag";
-import Pagination from "../components/Pagination";
-import FilterBar from "../components/SortAndSearchBar/FilterBar";
-import SortAndSearchBar from "../components/SortAndSearchBar/SortAndSearchBar";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Nativis | Products",
@@ -14,28 +7,7 @@ export const metadata: Metadata = {
 };
 
 const page = () => {
-  return (
-    <MainTag>
-      <PageTitle>Products</PageTitle>
-      <FilterBar />
-      <SortAndSearchBar />
-      <ProductCardGrid>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </ProductCardGrid>
-      <Pagination baseURL={`/products/p/`} current={1} />
-    </MainTag>
-  );
+  redirect(`/products/p/1`);
 };
 
 export default page;

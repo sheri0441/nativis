@@ -1,16 +1,15 @@
 import React from "react";
 import { Metadata } from "next";
-import BlogCard from "@/app/UIElements/Card/BlogCard";
-import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
-import PageTitle from "@/app/UIElements/Miscellaneous/PageTitle";
-import Pagination from "@/app/components/Pagination";
-import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
-import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
+import PageContent from "./PageContent";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { search },
+}: {
+  params: { search: string };
+}): Promise<Metadata> {
   return {
-    title: `Search: search | Nativis`,
-    description: "Search: search | Nativis",
+    title: `Search: ${search} | Nativis`,
+    description: `Search result blogs related to ${search}`,
   };
 }
 
@@ -19,30 +18,7 @@ const page = ({
 }: {
   params: { page: string; search: string };
 }) => {
-  return (
-    <MainTag>
-      <PageTitle>
-        Search: {search} {page}
-      </PageTitle>
-      <FilterBar />
-      <SortAndSearchBar />
-      <div className="max-w-72 mx-auto grid grid-cols-1 gap-4 mt-5 sm:max-w-[680px] sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:mt-8 lg:max-w-full lg:grid-cols-4">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-      </div>
-      <Pagination baseURL={`/blogs/s/${search}/p/`} current={Number(page)} />
-    </MainTag>
-  );
+  return <PageContent page={page} search={search} />;
 };
 
 export default page;

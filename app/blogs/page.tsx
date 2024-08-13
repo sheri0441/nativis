@@ -4,7 +4,7 @@ import PageTitle from "../UIElements/Miscellaneous/PageTitle";
 import MainTag from "../UIElements/Miscellaneous/MainTag";
 import BlogCard from "../UIElements/Card/BlogCard";
 import Pagination from "../components/Pagination";
-import FilterBar from "../components/SortAndSearchBar/FilterBar";
+import FilterBar from "../components/SortAndSearchBar/CategoryBar";
 import SortAndSearchBar from "../components/SortAndSearchBar/SortAndSearchBar";
 
 export const metadata: Metadata = {

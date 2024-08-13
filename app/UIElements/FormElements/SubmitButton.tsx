@@ -1,5 +1,6 @@
 import React from "react";
-import InButtonLoading from "./InButtonLoading";
+
+import DotLoading from "../Miscellaneous/DotLoading";
 
 const SubmitButton = ({
   text,
@@ -17,7 +18,7 @@ const SubmitButton = ({
       disabled={loading}
     >
       <span className={loading ? "opacity-0" : ""}>{text}</span>
-      {loading && <InButtonLoading />}
+      {loading && <DotLoading />}
     </button>
   );
 };

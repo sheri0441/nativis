@@ -2,9 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { TrashIcon } from "@/app/utils/Icons";
 import IconsBtn from "@/app/UIElements/Miscellaneous/IconsBtn";
-import productImage from "../assets/productImage.png";
+import { CartItemFetchType } from "../utils/Interfaces";
+import { useAppDispatch, useAppSelector } from "../app/hookes";
+import { removeProduct } from "../app/features/cart/cartSlice";
 
-const CartItem = ({ colorReverse = false }: { colorReverse?: boolean }) => {
+const CartItem = ({
+  colorReverse = false,
+  product,
+}: {
+  colorReverse?: boolean;
+  product: CartItemFetchType;
+}) => {
+  const dispatch = useAppDispatch();
+  const isLogin = useAppSelector((store) => store.user.isLogin);
   return (
     <div
       className={`w-full ${
@@ -15,11 +25,13 @@ const CartItem = ({ colorReverse = false }: { colorReverse?: boolean }) => {
         <div className="w-12 aspect-square rounded bg-neutral">
           <Image
             className="w-full h-full object-cover object-center"
-            src={productImage}
-            alt=""
+            src={product.thumbnail}
+            alt={product.name}
+            width={500}
+            height={500}
           />
         </div>
-        <span className=" capitalize ">Cocoa Butter Moisturizer</span>
+        <span className=" capitalize ">{product.name}</span>
       </div>
       <div className="flex justify-between items-center mt-2 sm:col-span-2">
         <IconsBtn
@@ -28,12 +40,15 @@ const CartItem = ({ colorReverse = false }: { colorReverse?: boolean }) => {
               ? "bg-secondary hover:bg-accent"
               : "bg-secondary hover:bg-neutral"
           }
-          clickEvent={() => console.log("delete item")}
+          clickEvent={() =>
+            dispatch(removeProduct({ isLogin, id: product.id }))
+          }
         >
           <TrashIcon style="fill-danger" />
         </IconsBtn>
         <span className="">
-          <span>299</span>$ X <span>10</span> = <span>2990</span>$
+          <span>{product.price}</span>$ X <span>{product.quantity}</span> ={" "}
+          <span>{(Number(product.price) * product.quantity).toFixed(2)}</span>$
         </span>
       </div>
     </div>

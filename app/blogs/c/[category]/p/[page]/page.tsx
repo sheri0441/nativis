@@ -1,16 +1,21 @@
 import React from "react";
 import { Metadata } from "next";
-import BlogCard from "@/app/UIElements/Card/BlogCard";
-import PageTitle from "@/app/UIElements/Miscellaneous/PageTitle";
-import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
-import Pagination from "@/app/components/Pagination";
-import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
-import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
+import PageContent from "./PageContent";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { category },
+}: {
+  params: { category: string };
+}): Promise<Metadata> {
+  const words = category.replaceAll("-", " ").split(" ");
+  const mainWord = words
+    .map((word) => {
+      return word[0].toUpperCase() + word.substring(1);
+    })
+    .join(" ");
   return {
-    title: `Category: category | Nativis`,
-    description: "Category: category | Nativis",
+    title: `Category: ${mainWord} | Nativis`,
+    description: `Our blogs related to ${mainWord} category`,
   };
 }
 
@@ -19,30 +24,7 @@ const page = ({
 }: {
   params: { category: string; page: string };
 }) => {
-  return (
-    <MainTag>
-      <PageTitle>
-        Category: {category} {page}
-      </PageTitle>
-      <FilterBar />
-      <SortAndSearchBar />
-      <div className="max-w-72 mx-auto grid grid-cols-1 gap-4 mt-5 sm:max-w-[680px] sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:mt-8 lg:max-w-full lg:grid-cols-4">
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
-      </div>
-      <Pagination baseURL={`blogs/c/${category}/p/`} current={Number(page)} />
-    </MainTag>
-  );
+  return <PageContent category={category} page={page} />;
 };
 
 export default page;

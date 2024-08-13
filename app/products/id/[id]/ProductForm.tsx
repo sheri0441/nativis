@@ -6,6 +6,8 @@ import { productData } from "@/app/utils/Interfaces";
 import SubmitButton from "@/app/UIElements/FormElements/SubmitButton";
 import ProductQuantityButton from "./ProductQuantityButton";
 import ProductSizeButton from "./ProductSizeButton";
+import { useAppDispatch, useAppSelector } from "@/app/app/hookes";
+import { addProduct } from "@/app/app/features/cart/cartSlice";
 
 type FormData = {
   size: string;
@@ -14,8 +16,10 @@ type FormData = {
 
 const ProductForm = ({ productData }: { productData: productData }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const isLogin = useAppSelector((store) => store.user.isLogin);
 
-  const sizeOfProduct = Object.keys(productData.prices);
+  const sizeOfProduct = Object.keys(productData.price);
 
   const toggleLoading = () => setIsLoading((perv) => !perv);
 
@@ -28,21 +32,43 @@ const ProductForm = ({ productData }: { productData: productData }) => {
     });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
     setIsLoading(true);
+    if (sizeOfProduct.length === 1) {
+      console.log({
+        id: productData.id,
+        quantity: data.quantity,
+      });
+      dispatch(
+        addProduct({
+          isLogin: isLogin,
+          id: productData.id,
+          quantity: data.quantity,
+        })
+      );
+    } else {
+      dispatch(
+        addProduct({
+          isLogin: isLogin,
+          id: productData.id,
+          quantity: data.quantity,
+          size: data.size,
+        })
+      );
+    }
+
     setTimeout(toggleLoading, 1000);
     reset({ size: sizeOfProduct[0], quantity: 1 });
   });
 
-  const size = getValues("size") as keyof typeof productData.prices;
-  const price = productData.prices[size];
+  const size = getValues("size") as keyof typeof productData.price;
+  const price = productData.price[size];
 
   return (
     <form onSubmit={onSubmit}>
       {/* size control panel */}
       <div className="flex gap-2 w-fit mx-auto mt-5 sm:mt-6 sm:gap-6 lg:ml-0">
         {sizeOfProduct.length > 1 &&
-          Object.keys(productData.prices).map((size) => {
+          Object.keys(productData.price).map((size) => {
             return (
               <ProductSizeButton
                 key={size}

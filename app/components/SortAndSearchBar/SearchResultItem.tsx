@@ -1,24 +1,37 @@
 import Image from "next/image";
 import React from "react";
-import image from "../../assets/productImage.png";
+// import image from "../../assets/productImage.png";
 import Link from "next/link";
+import { SearchResultItem as SearchResultItemType } from "@/app/utils/Interfaces";
 
-const SearchResultItem = () => {
+const SearchResultItem = ({
+  item,
+  url,
+}: {
+  item: SearchResultItemType;
+  url: string;
+}) => {
   return (
     <Link
-      href=""
+      href={url}
       className="w-full flex p-2 items-center gap-2 text-primary hover:text-neutral hover:bg-accent"
     >
-      <div className="w-10 h-10 rounded overflow-hidden">
+      <div className="min-w-10 max-w-10 min-h-10 max-h-10 rounded overflow-hidden aspect-square">
         <Image
           className="w-full h-full object-cover object-center"
-          src={image}
+          src={item.thumbnail}
           alt="hello"
+          height={500}
+          width={500}
         />
       </div>
       <div className="flex flex-col">
-        <span className="text-xs font-light opacity-50">Category</span>
-        <span className="">name</span>
+        <span className="text-xs font-light opacity-50 capitalize">
+          {item.category}
+        </span>
+        <span className="line-clamp-1">
+          {item.name ? item.name : item.title}
+        </span>
       </div>
     </Link>
   );

@@ -1,17 +1,15 @@
 import React from "react";
 import { Metadata } from "next";
-import ProductCard from "@/app/UIElements/Card/ProductCard";
-import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
-import PageTitle from "@/app/UIElements/Miscellaneous/PageTitle";
-import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
-import Pagination from "@/app/components/Pagination";
-import FilterBar from "@/app/components/SortAndSearchBar/FilterBar";
-import SortAndSearchBar from "@/app/components/SortAndSearchBar/SortAndSearchBar";
+import PageContent from "./PageContent";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { search },
+}: {
+  params: { search: string };
+}): Promise<Metadata> {
   return {
-    title: `Search: search | Nativis`,
-    description: "terms&policy | Nativis",
+    title: `Search: ${search} | Nativis`,
+    description: `Search result product related to ${search}`,
   };
 }
 
@@ -20,30 +18,7 @@ const page = ({
 }: {
   params: { page: string; search: string };
 }) => {
-  return (
-    <MainTag>
-      <PageTitle>
-        Search: {search} {page}
-      </PageTitle>
-      <FilterBar />
-      <SortAndSearchBar />
-      <ProductCardGrid>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </ProductCardGrid>
-      <Pagination baseURL={`/blogs/s/${search}/p/`} current={Number(page)} />
-    </MainTag>
-  );
+  return <PageContent page={page} search={search} />;
 };
 
 export default page;

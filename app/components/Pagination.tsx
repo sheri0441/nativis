@@ -5,12 +5,12 @@ import { useRouter, useSearchParams } from "next/navigation";
 import PaginationPageButton from "../UIElements/Miscellaneous/PaginationPageButton";
 
 const Pagination = ({
-  current = 4,
-  maximum = 5,
+  current,
+  maximum,
   baseURL,
 }: {
-  current?: number;
-  maximum?: number;
+  current: number;
+  maximum: number;
   baseURL: string;
 }) => {
   const router = useRouter();
@@ -19,12 +19,24 @@ const Pagination = ({
 
   const numberRow = [];
   if (current === 1) {
-    for (let i = 0; i < 3; i++) {
-      numberRow.push(current + i);
+    if (maximum > 3) {
+      for (let i = 0; i < 3; i++) {
+        numberRow.push(current + i);
+      }
+    } else {
+      for (let i = 0; i < maximum; i++) {
+        numberRow.push(current + i);
+      }
     }
   } else if (current === maximum) {
-    for (let i = 0; i < 3; i++) {
-      numberRow.unshift(current - i);
+    if (maximum >= 3) {
+      for (let i = 0; i < 3; i++) {
+        numberRow.unshift(current - i);
+      }
+    } else {
+      for (let i = 0; i < maximum; i++) {
+        numberRow.unshift(current - i);
+      }
     }
   } else {
     for (let i = -1; i <= 1; i++) {
@@ -41,6 +53,7 @@ const Pagination = ({
       >
         <ArrowIcon style="fill-primary group-hover:fill-neutral" />
       </button>
+
       {numberRow.map((num) => {
         return (
           <PaginationPageButton

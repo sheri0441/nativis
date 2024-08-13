@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model BlogCategory {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  URL  String @unique
+  name String
+}
+
+model productCategory {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  URL  String @unique
+  name String
+}
+
+model product {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  thumbnail   String
+  images      String[]
+  description String
+  category    String
+  guide       String
+  ingredient  String
+  suitable    String
+  price       Json 
+  related     String[]
+  created_at  DateTime @default(now())
+}
+
+model blog {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  title      String
+  thumbnail  String
+  likes      Int
+  content    Json
+  category   String
+  main_image String
+  createdAt  DateTime @default(now())
+}
+
+model user {
+  id         String  @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  email      String  @unique
+  image      String?
+  fireBaseId String  @unique
+  providerId String
+  imageRef   String?
+  cart       Json   @default("[]")
+}
+
+model likes {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String
+  blogId String
+}
+
+model comment {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId    String
+  blogId    String
+  content   String
+  createdAt DateTime @default(now())
+}

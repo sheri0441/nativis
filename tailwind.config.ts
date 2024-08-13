@@ -19,6 +19,16 @@ const config: Config = {
         "custom-cart-layout":
           "min-content minmax(0px, 40%) min-content min-content min-content min-content",
       },
+      keyframes: {
+        bgLoading: {
+          "0%": { backgroundColor: "#606C38" },
+          "100%": { backgroundColor: "#606c3873" },
+        },
+      },
+      animation: {
+        bgPulse: "bgLoading 3s ease-in-out infinite alternate",
+        bgPulseAlter: "bgLoading 3s ease-in-out infinite alternate-reverse",
+      },
     },
   },
   plugins: [],

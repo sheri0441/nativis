@@ -1,16 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { CrossIcon } from "@/app/utils/Icons";
 import IconsBtn from "@/app/UIElements/Miscellaneous/IconsBtn";
 import CartItem from "../../../components/CartItem";
+import { useAppDispatch, useAppSelector } from "@/app/app/hookes";
+import { toggleCart } from "@/app/app/features/navigation/navigationSlice";
+import axios from "axios";
+import { CartItemFetchType } from "@/app/utils/Interfaces";
 
-const CartList = ({
-  showCart,
-  toggleCart,
-}: {
-  showCart: boolean;
-  toggleCart: Function;
-}) => {
+const CartList = () => {
+  const showCart = useAppSelector((store) => store.navigation.showCart);
+  const cart = useAppSelector((store) => store.cart);
+  const dispatch = useAppDispatch();
+  const [cartItems, setCartItems] = useState<CartItemFetchType[]>([]);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
+
+  const fetchCartItemDetails = async () => {
+    try {
+      const response = await axios.post("/api/products/cart", cart);
+      setCartItems(response.data);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    fetchCartItemDetails();
+  }, [cart]);
+
+  useEffect(() => {
+    let total: number = 0;
+    for (let i = 0; i < cartItems.length; i++) {
+      total += Number(cartItems[i].price) * cartItems[i].quantity;
+    }
+    setTotalPrice(total);
+  }, [cartItems]);
+
   return (
     <div
       className={`fixed top-0 left-0  inset-0 bg-primary z-10 transition-all duration-500 ease-in-out h-screen ${
@@ -26,37 +49,35 @@ const CartList = ({
           Shopping Cart
         </span>
         <div className="w-full px-4 sm:px-0  mx-auto flex flex-col gap-3 max-h-[420px] overflow-y-scroll">
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {cartItems.length === 0 ? (
+            <p className="text-neutral">Your cart is empty right now!</p>
+          ) : (
+            cartItems.map((item: CartItemFetchType) => (
+              <CartItem key={item?.id} product={item} />
+            ))
+          )}
         </div>
         <div className="row-start-3">
           <hr className="border-neutral h-0.5 " />
           <div className="text-neutral flex flex-col mt-4">
-            <span className="text-4xl font-medium">3500$</span>
+            <span className="text-4xl font-medium">
+              {totalPrice.toFixed(2)}$
+            </span>
             <span>Total</span>
           </div>
         </div>
 
         <Link
-          href={"/"}
+          href={"/checkout"}
           className="  block border-2 border-neutral rounded-full w-fit px-4 py-2 text-neutral mx-auto hover:bg-neutral hover:text-primary transition-all duration-500 ease-in-out font-medium sm:text-2xl sm:px-6 sm:py-3 row-start-4"
+          onClick={() => dispatch(toggleCart())}
         >
           Checkout
         </Link>
         <div className=" row-start-5">
           <IconsBtn
             style="bg-secondary hover:bg-neutral"
-            clickEvent={() => toggleCart()}
+            clickEvent={() => dispatch(toggleCart())}
           >
             <CrossIcon style="fill-primary" />
           </IconsBtn>
