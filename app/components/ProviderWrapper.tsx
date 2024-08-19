@@ -8,6 +8,7 @@ import { UserType } from "../utils/Interfaces";
 import LoadingScreen from "./LoadingScreen/LoadingScreen";
 import { setLoadingPage } from "../app/features/pageLoading/loadingSlice";
 import { Poppins } from "next/font/google";
+import { retrieveUserCart } from "../app/features/cart/cartSlice";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -18,11 +19,14 @@ const ProviderWrapper = ({ children }: { children: ReactNode }) => {
   const verifyToken = async (token: string) => {
     let user;
     try {
-      const response = await axios.get("./api/user/verify", {
-        headers: {
-          Authorization: token,
-        },
-      });
+      const response = await axios.get(
+        process.env.NEXT_PUBLIC_BASE_URL + "/api/user/verify",
+        {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
 
       if (response.status !== 200) {
         localStorage.removeItem("token");
@@ -39,6 +43,7 @@ const ProviderWrapper = ({ children }: { children: ReactNode }) => {
     } else {
       const { name, image, id, email, provider } = user;
       store.dispatch(login({ name, image, id, email, provider }));
+      store.dispatch(retrieveUserCart());
     }
 
     store.dispatch(setLoadingPage(false));

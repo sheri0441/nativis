@@ -1,21 +1,27 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { productData, ProductDetailPageData } from "@/app/utils/Interfaces";
+import { ProductDetailPageData } from "@/app/utils/Interfaces";
 import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
 import ProductCard from "@/app/UIElements/Card/ProductCard";
 import ProductImage from "./ProductImage";
 import ProductDescription from "./ProductDescription";
 import ProductForm from "./ProductForm";
-// import data from "./sample.json";
 import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
 import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
 
-export async function generateMetadata(): Promise<Metadata> {
-  // const productData: productData = data[0];
+export async function generateMetadata({
+  params: { id },
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const url = process.env.BASE_URL + `/api/products/id/${id}/meta`;
+
+  let productMeta = await axiosFetcher(url);
+
   return {
-    title: `product name | Products`,
-    description: `product description`,
+    title: productMeta.name + " | Products",
+    description: productMeta.description,
   };
 }
 

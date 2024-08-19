@@ -7,7 +7,11 @@ import { useAppDispatch, useAppSelector } from "../app/hookes";
 import SubmitButton from "../UIElements/FormElements/SubmitButton";
 import { login } from "../app/features/user/userSlice";
 import PopUp from "../UIElements/Miscellaneous/PopUp";
-import { addToUserData, clearCart } from "../app/features/cart/cartSlice";
+import {
+  addToUserData,
+  clearCart,
+  retrieveUserCart,
+} from "../app/features/cart/cartSlice";
 
 const GoogleSignInButton = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -34,7 +38,7 @@ const GoogleSignInButton = () => {
   };
   const provider = new GoogleAuthProvider();
   const signInWithGoogle = async () => {
-    if (cartList.length > 0 && !addCartToUser) {
+    if (cartList.cart.length > 0 && !addCartToUser) {
       setShowPopUp(true);
       setIsLoading(false);
       return;
@@ -76,8 +80,10 @@ const GoogleSignInButton = () => {
     dispatch(login({ name, image, email, id, providedId }));
 
     if (addCartToUser) {
-      dispatch(addToUserData(cartList));
+      dispatch(addToUserData(cartList.cart));
     }
+
+    dispatch(retrieveUserCart());
 
     setIsLoading(false);
   };

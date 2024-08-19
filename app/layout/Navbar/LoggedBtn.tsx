@@ -2,22 +2,15 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import avataar from "../../assets/avaatar.png";
-import { useAppDispatch, useAppSelector } from "@/app/app/hookes";
-import { logout } from "@/app/app/features/user/userSlice";
+import { useAppSelector } from "@/app/app/hookes";
+import { logOut } from "@/app/app-lib";
 
 const LoggedBtn = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const { name, image } = useAppSelector((store) => store.user);
-  const dispatch = useAppDispatch();
 
   const toggleIsActive = () => {
     setIsActive((isActive) => !isActive);
-  };
-
-  const singOut = () => {
-    localStorage.removeItem("token");
-    dispatch(logout());
   };
 
   useEffect(() => {
@@ -62,7 +55,7 @@ const LoggedBtn = () => {
 
           <button
             className="hover:bg-accent hover:text-neutral rounded"
-            onClick={singOut}
+            onClick={logOut}
           >
             Logout
           </button>

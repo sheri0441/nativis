@@ -4,8 +4,8 @@ import MainTag from "../UIElements/Miscellaneous/MainTag";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "../app/hookes";
 import { redirect } from "next/navigation";
-import { logout } from "../app/features/user/userSlice";
 import PopUp from "../UIElements/Miscellaneous/PopUp";
+import { logOut } from "../app-lib";
 
 const PageContent = () => {
   const user = useAppSelector((store) => store.user);
@@ -16,21 +16,12 @@ const PageContent = () => {
 
   const [showPopUp, setShowPopUp] = useState<boolean>(false);
 
-  const dispatch = useAppDispatch();
-
-  const signOut = () => {
-    localStorage.removeItem("token");
-    dispatch(logout());
-  };
-
   const closePopUp = () => {
     setShowPopUp(false);
   };
 
   const deleteAccount = async () => {
     setShowPopUp(false);
-    // API call to delete account
-    // redirect("/signin");
   };
 
   return (
@@ -41,6 +32,8 @@ const PageContent = () => {
         mainFunction={deleteAccount}
         title="Are you sure?"
         body="You want to delete your account."
+        mainButtonText={"Yes"}
+        secondaryButtonText={"No"}
       />
       <div className="mx-auto sm:flex w-fit sm:gap-6">
         <div className="w-96 aspect-square overflow-hidden rounded sm:rounded-md lg:rounded-lg">
@@ -74,7 +67,7 @@ const PageContent = () => {
           </button>
           <button
             className="py-3 border border-danger text-danger hover:bg-danger hover:text-neutral transition-colors duration-500 ease-in-out rounded-full capitalize"
-            onClick={signOut}
+            onClick={logOut}
           >
             Log Out
           </button>

@@ -7,7 +7,8 @@ import SubmitButton from "@/app/UIElements/FormElements/SubmitButton";
 import ProductQuantityButton from "./ProductQuantityButton";
 import ProductSizeButton from "./ProductSizeButton";
 import { useAppDispatch, useAppSelector } from "@/app/app/hookes";
-import { addProduct } from "@/app/app/features/cart/cartSlice";
+import { addProduct, addToUserData } from "@/app/app/features/cart/cartSlice";
+import { singleDigitToDouble } from "@/app/app-lib";
 
 type FormData = {
   size: string;
@@ -31,32 +32,33 @@ const ProductForm = ({ productData }: { productData: productData }) => {
       },
     });
 
-  const onSubmit = handleSubmit((data) => {
-    setIsLoading(true);
-    if (sizeOfProduct.length === 1) {
-      console.log({
-        id: productData.id,
-        quantity: data.quantity,
-      });
-      dispatch(
-        addProduct({
-          isLogin: isLogin,
-          id: productData.id,
-          quantity: data.quantity,
-        })
-      );
-    } else {
-      dispatch(
-        addProduct({
-          isLogin: isLogin,
-          id: productData.id,
-          quantity: data.quantity,
-          size: data.size,
-        })
-      );
+  const onSubmit = handleSubmit(async (data) => {
+    if (data.quantity === 0) {
+      return;
     }
 
-    setTimeout(toggleLoading, 1000);
+    setIsLoading(true);
+
+    let product;
+
+    if (sizeOfProduct.length === 1) {
+      product = { id: productData.id, quantity: data.quantity };
+    } else {
+      product = {
+        id: productData.id,
+        quantity: data.quantity,
+        size: data.size,
+      };
+    }
+
+    if (isLogin) {
+      await dispatch(addToUserData(product));
+    } else {
+      dispatch(addProduct(product));
+    }
+
+    // setTimeout(toggleLoading, 1000);
+    setIsLoading(false);
     reset({ size: sizeOfProduct[0], quantity: 1 });
   });
 
@@ -89,9 +91,14 @@ const ProductForm = ({ productData }: { productData: productData }) => {
         >
           <MinusIcon style="fill-neutral group-hover:fill-neural" />
         </ProductQuantityButton>
-        <span className="sm:text-xl">{watch("quantity")}</span>
+        <span className="sm:text-xl">
+          {singleDigitToDouble(watch("quantity"))}
+        </span>
         <ProductQuantityButton
-          clickEvent={() => setValue("quantity", getValues("quantity") + 1)}
+          clickEvent={() =>
+            getValues("quantity") < 99 &&
+            setValue("quantity", getValues("quantity") + 1)
+          }
         >
           <PlusIcon style="fill-neutral group-hover:fill-neural" />
         </ProductQuantityButton>

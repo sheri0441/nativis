@@ -4,7 +4,11 @@ import { TrashIcon } from "@/app/utils/Icons";
 import IconsBtn from "@/app/UIElements/Miscellaneous/IconsBtn";
 import { CartItemFetchType } from "../utils/Interfaces";
 import { useAppDispatch, useAppSelector } from "../app/hookes";
-import { removeProduct } from "../app/features/cart/cartSlice";
+import {
+  removeFromUserData,
+  removeProduct,
+} from "../app/features/cart/cartSlice";
+import { singleDigitToDouble } from "../app-lib";
 
 const CartItem = ({
   colorReverse = false,
@@ -15,6 +19,15 @@ const CartItem = ({
 }) => {
   const dispatch = useAppDispatch();
   const isLogin = useAppSelector((store) => store.user.isLogin);
+
+  const removeItemFromCart = () => {
+    if (isLogin) {
+      dispatch(removeFromUserData(product.id));
+    } else {
+      dispatch(removeProduct(product.id));
+    }
+  };
+
   return (
     <div
       className={`w-full ${
@@ -40,14 +53,13 @@ const CartItem = ({
               ? "bg-secondary hover:bg-accent"
               : "bg-secondary hover:bg-neutral"
           }
-          clickEvent={() =>
-            dispatch(removeProduct({ isLogin, id: product.id }))
-          }
+          clickEvent={removeItemFromCart}
         >
           <TrashIcon style="fill-danger" />
         </IconsBtn>
         <span className="">
-          <span>{product.price}</span>$ X <span>{product.quantity}</span> ={" "}
+          <span>{product.price}</span>$ X{" "}
+          <span>{singleDigitToDouble(product.quantity)}</span> ={" "}
           <span>{(Number(product.price) * product.quantity).toFixed(2)}</span>$
         </span>
       </div>

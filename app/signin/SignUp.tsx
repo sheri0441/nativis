@@ -20,6 +20,7 @@ import {
   addProduct,
   addToUserData,
   clearCart,
+  retrieveUserCart,
 } from "../app/features/cart/cartSlice";
 
 type Inputs = {
@@ -100,7 +101,7 @@ const SignUp = ({ openSignIn }: { openSignIn: Function }) => {
       return;
     }
 
-    if (cartList.length > 0 && !addCartToUser) {
+    if (cartList.cart.length > 0 && !addCartToUser) {
       setShowPopUp(true);
       setIsLoading(false);
       return;
@@ -147,9 +148,11 @@ const SignUp = ({ openSignIn }: { openSignIn: Function }) => {
       );
 
       if (addCartToUser) {
-        dispatch(addToUserData(cartList));
+        dispatch(addToUserData(cartList.cart));
       }
     }
+
+    dispatch(retrieveUserCart());
 
     setIsLoading(false);
     setPreviewImage("");

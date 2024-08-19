@@ -1,10 +1,19 @@
 import { NextRequest, NextResponse } from "next/server";
-import { firebaseAdmin } from "../firebase_admin";
+import { firebaseAdmin } from "../../firebase_admin";
 import { FirebaseAuthError } from "firebase-admin/auth";
 import { prisma } from "@/prisma/prisma";
-import { extractedToken } from "../../api-lib";
+import { extractedToken } from "@/app/api/api-lib";
 
-export const GET = async (request: NextRequest) => {
+type Params = {
+  id: string;
+};
+
+export const DELETE = async (
+  request: NextRequest,
+  context: { params: Params }
+) => {
+  let id = context.params.id;
+
   const token = request.headers.get("authorization");
   if (token === null || token === "") {
     return NextResponse.json(
@@ -14,7 +23,6 @@ export const GET = async (request: NextRequest) => {
   }
 
   let isTokenValid;
-
   try {
     isTokenValid = await firebaseAdmin
       .auth()
@@ -34,34 +42,26 @@ export const GET = async (request: NextRequest) => {
     }
   }
 
-  let user;
   try {
-    user = await prisma.user.findFirst({
+    let cartItem = await prisma.cartItem.findFirst({
       where: {
-        fireBaseId: isTokenValid.uid,
+        id: id,
+        userId: isTokenValid.uid,
       },
     });
-  } catch (error) {
-    return NextResponse.json(
-      { message: "Server internal issue." },
-      { status: 500 }
-    );
-  }
 
-  if (!user) {
-    return NextResponse.json(
-      { message: "Unauthorized Access. Due to token expiration." },
-      { status: 401 }
-    );
-  }
+    await prisma.cartItem.delete({
+      where: {
+        cartItemId: cartItem?.cartItemId,
+      },
+    });
+  } catch (error) {}
 
-  return NextResponse.json({
-    name: user.name,
-    image: user.image,
-    id: user.id,
-    email: user.email,
-    provider: user.providerId,
-    cart: user.cart,
-    token,
+  let cartList = await prisma.cartItem.findMany({
+    where: {
+      userId: isTokenValid.uid,
+    },
   });
+
+  return NextResponse.json(cartList);
 };

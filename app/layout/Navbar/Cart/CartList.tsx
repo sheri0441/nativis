@@ -10,14 +10,17 @@ import { CartItemFetchType } from "@/app/utils/Interfaces";
 
 const CartList = () => {
   const showCart = useAppSelector((store) => store.navigation.showCart);
-  const cart = useAppSelector((store) => store.cart);
+  const cart = useAppSelector((store) => store.cart.cart);
   const dispatch = useAppDispatch();
   const [cartItems, setCartItems] = useState<CartItemFetchType[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
   const fetchCartItemDetails = async () => {
     try {
-      const response = await axios.post("/api/products/cart", cart);
+      const response = await axios.post(
+        process.env.NEXT_PUBLIC_BASE_URL + "/api/products/cart",
+        cart
+      );
       setCartItems(response.data);
     } catch (error) {}
   };

@@ -80,7 +80,7 @@ export interface UserType {
 export interface CartItemType {
   id: string;
   quantity: number;
-  size?: string;
+  size?: string | null;
 }
 
 export interface CartItemFetchType {

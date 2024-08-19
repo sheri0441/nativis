@@ -7,7 +7,6 @@ import { useAppSelector } from "@/app/app/hookes";
 const LoadingScreen = () => {
   const isLoading = useAppSelector((store) => store.loading.isLoading);
 
-  console.log("Loading state:", isLoading);
   return (
     <div
       className={`bg-primary w-screen h-screen fixed top-0 left-0 z-[99] transition-all duration-1000 ${

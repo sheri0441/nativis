@@ -17,11 +17,12 @@ import {
   toggleCart,
   toggleMenu,
 } from "@/app/app/features/navigation/navigationSlice";
+import { singleDigitToDouble } from "@/app/app-lib";
 
 const Navbar = () => {
   const router = useRouter();
   const isLogin = useAppSelector((store) => store.user.isLogin);
-  const cart = useAppSelector((store) => store.cart);
+  const cart = useAppSelector((store) => store.cart.cart);
   const dispatch = useAppDispatch();
 
   return (
@@ -43,7 +44,7 @@ const Navbar = () => {
             </IconsBtn>
             <div className="absolute z-10 -top-1 -left-1 bg-neutral w-4 sm:5 aspect-square rounded-full text-primary ">
               <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[10px]">
-                {cart.length}
+                {cart.length <= 100 ? singleDigitToDouble(cart.length) : "9+"}
               </span>
             </div>
           </div>

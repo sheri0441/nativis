@@ -6,40 +6,66 @@ export const addToUserData = createAsyncThunk(
   "addItemToCart",
   async (data: CartItemType[], thunkAPI) => {
     try {
-      const response = await axios.post("./api/user/cart", data, {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      });
+      const response = await axios.post(
+        process.env.NEXT_PUBLIC_BASE_URL + "/api/user/cart",
+        data,
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
+      localStorage.removeItem("cart");
 
-      if (response.status !== 201) {
-        addToUserData(data);
-      }
-
-      return response.data.cart;
+      return response.data;
     } catch (error) {
       console.log(error);
     }
   }
 );
-const removeFromUserData = createAsyncThunk(
+
+export const retrieveUserCart = createAsyncThunk(
+  "retrieveUserCart",
+  async (thunkAPI) => {
+    try {
+      const response = await axios.get(
+        process.env.NEXT_PUBLIC_BASE_URL + "/api/user/cart",
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
+      localStorage.removeItem("cart");
+      console.log();
+
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
+export const removeFromUserData = createAsyncThunk(
   "removeItemFromCart",
   async (id: string, thunkAPI) => {
     try {
       const response = await axios.delete(`/api/user/cart/${id}`, {
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
 
-      return response.data.cart;
+      return response.data;
     } catch (error) {
       console.log(error);
     }
   }
 );
 
-const initialState: CartItemType[] = [];
+const initialState: { cart: CartItemType[] } = {
+  cart: [],
+};
 
 const cartSlice = createSlice({
   name: "cart",
@@ -59,44 +85,43 @@ const cartSlice = createSlice({
           quantity: action.payload.quantity,
         };
       }
-      if (action.payload.isLogin) {
-        addToUserData([cartItem]);
+
+      const itemIndex = state.cart.findIndex(
+        (single) => single.id === cartItem.id && single.size === cartItem.size
+      );
+      if (itemIndex === -1) {
+        state.cart.push(cartItem);
       } else {
-        const item = state.find((item) => item.id === cartItem.id);
-        const itemIndex = state.findIndex((item) => item.id === cartItem.id);
-        if (item && item.size === cartItem.size) {
-          state[itemIndex].quantity += cartItem.quantity;
-        } else {
-          state.push(cartItem);
-        }
-        localStorage.removeItem("cart");
-        localStorage.setItem("cart", JSON.stringify(state));
+        state.cart[itemIndex].quantity += cartItem.quantity;
       }
+
+      localStorage.removeItem("cart");
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     removeProduct(state, action) {
-      if (action.payload.isLogin) {
-        removeFromUserData(action.payload.id);
-      } else {
-        const index = state.findIndex((item) => item.id === action.payload.id);
-        if (index !== -1) {
-          state.splice(index, 1);
-        }
-        localStorage.removeItem("cart");
-        localStorage.setItem("cart", JSON.stringify(state));
+      const index = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index !== -1) {
+        state.cart.splice(index, 1);
       }
+      localStorage.removeItem("cart");
+      localStorage.setItem("cart", JSON.stringify(state));
     },
     clearCart(state) {
-      state = [];
+      state.cart = [];
       localStorage.removeItem("cart");
     },
   },
   extraReducers(builder) {
     builder.addCase(addToUserData.fulfilled, (state, action) => {
-      state = action.payload;
-      localStorage.removeItem("cart");
+      state.cart = action.payload;
     });
     builder.addCase(removeFromUserData.fulfilled, (state, action) => {
-      state = action.payload;
+      state.cart = action.payload;
+    });
+    builder.addCase(retrieveUserCart.fulfilled, (state, action) => {
+      state.cart = action.payload;
     });
   },
 });

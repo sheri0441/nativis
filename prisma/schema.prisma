@@ -35,7 +35,7 @@ model product {
   guide       String
   ingredient  String
   suitable    String
-  price       Json 
+  price       Json
   related     String[]
   created_at  DateTime @default(now())
 }
@@ -59,7 +59,14 @@ model user {
   fireBaseId String  @unique
   providerId String
   imageRef   String?
-  cart       Json   @default("[]")
+}
+
+model cartItem {
+  cartItemId        String  @id @default(auto()) @map("_id") @db.ObjectId
+  id String
+  quantity  Int
+  userId    String
+  size      String? 
 }
 
 model likes {

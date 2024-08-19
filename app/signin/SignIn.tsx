@@ -9,7 +9,11 @@ import { useAppDispatch, useAppSelector } from "../app/hookes";
 import { login } from "../app/features/user/userSlice";
 import axios, { AxiosError } from "axios";
 import PopUp from "../UIElements/Miscellaneous/PopUp";
-import { addToUserData, clearCart } from "../app/features/cart/cartSlice";
+import {
+  addToUserData,
+  clearCart,
+  retrieveUserCart,
+} from "../app/features/cart/cartSlice";
 import { signInSchema } from "../utils/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -53,7 +57,7 @@ const SignIn = ({ openSignUp }: { openSignUp: Function }) => {
   const onSubmit = handleSubmit(async (data) => {
     setIsLoading(true);
 
-    if (cartList.length > 0 && !addCartToUser) {
+    if (cartList.cart.length > 0 && !addCartToUser) {
       setShowPopUp(true);
       setIsLoading(false);
       return;
@@ -94,8 +98,10 @@ const SignIn = ({ openSignUp }: { openSignUp: Function }) => {
     );
 
     if (addCartToUser) {
-      dispatch(addToUserData(cartList));
+      dispatch(addToUserData(cartList.cart));
     }
+
+    dispatch(retrieveUserCart());
 
     setIsLoading(false);
     reset();
