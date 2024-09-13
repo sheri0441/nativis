@@ -1,18 +1,14 @@
 import React from "react";
 import { Metadata } from "next";
-import PageContent from "./PageContent";
+import PageContent from "@/app/products/PageContent";
+import { capitalizeWords } from "@/app/app-lib";
 
 export async function generateMetadata({
   params: { category },
 }: {
   params: { category: string };
 }): Promise<Metadata> {
-  const words = category.replaceAll("-", " ").split(" ");
-  const mainWord = words
-    .map((word) => {
-      return word[0].toUpperCase() + word.substring(1);
-    })
-    .join(" ");
+  const mainWord = capitalizeWords(category);
   return {
     title: `Category: ${mainWord} | Nativis`,
     description: `Our products related to ${mainWord} category.`,
@@ -24,7 +20,15 @@ const page = ({
 }: {
   params: { category: string; page: string };
 }) => {
-  return <PageContent page={page} category={category} />;
+  return (
+    <PageContent
+      apiURL={`/api/products/category/${category}/${page}`}
+      page={page}
+      pageTitle={"Category:" + category.replaceAll("-", " ")}
+      paginationURL={`/products/c/${category}/p/`}
+      additionRenderingCondition={[category]}
+    />
+  );
 };
 
 export default page;

@@ -53,8 +53,6 @@ export const POST = async (request: NextRequest) => {
     },
   });
 
-  console.log(user);
-
   return NextResponse.json(
     {
       name: user.name,
@@ -62,7 +60,6 @@ export const POST = async (request: NextRequest) => {
       image: user.image,
       id: user.id,
       token,
-      // cart: user.cart,
       provider: user.providerId,
     },
     { status: 201 }

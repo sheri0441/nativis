@@ -4,7 +4,7 @@ import axios from "axios";
 
 export const addToUserData = createAsyncThunk(
   "addItemToCart",
-  async (data: CartItemType[], thunkAPI) => {
+  async (data: CartItemType, thunkAPI) => {
     try {
       const response = await axios.post(
         process.env.NEXT_PUBLIC_BASE_URL + "/api/user/cart",
@@ -16,11 +16,8 @@ export const addToUserData = createAsyncThunk(
         }
       );
       localStorage.removeItem("cart");
-
       return response.data;
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 );
 
@@ -37,12 +34,8 @@ export const retrieveUserCart = createAsyncThunk(
         }
       );
       localStorage.removeItem("cart");
-      console.log();
-
       return response.data;
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 );
 
@@ -55,15 +48,27 @@ export const removeFromUserData = createAsyncThunk(
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
-
       return response.data;
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   }
 );
 
-const initialState: { cart: CartItemType[] } = {
+export const cleanUserCartData = createAsyncThunk(
+  "cleanUserCartData",
+  async (thunkAPI) => {
+    try {
+      const response = await axios.delete(`/api/user/cart`, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
+      return response.data;
+    } catch (error) {}
+  }
+);
+
+const initialState: { cart: CartItemType[]; cartLoading: boolean } = {
+  cartLoading: false,
   cart: [],
 };
 
@@ -72,6 +77,7 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct(state, action) {
+      state.cartLoading = true;
       let cartItem;
       if (action.payload.size) {
         cartItem = {
@@ -97,35 +103,77 @@ const cartSlice = createSlice({
 
       localStorage.removeItem("cart");
       localStorage.setItem("cart", JSON.stringify(state.cart));
+      state.cartLoading = false;
     },
     removeProduct(state, action) {
-      const index = state.cart.findIndex(
-        (item) => item.id === action.payload.id
+      state.cartLoading = true;
+
+      let cartItem;
+      if (action.payload.size) {
+        cartItem = {
+          id: action.payload.id,
+
+          size: action.payload.size,
+        };
+      } else {
+        cartItem = {
+          id: action.payload.id,
+        };
+      }
+
+      const itemIndex = state.cart.findIndex(
+        (single) => single.id === cartItem.id && single.size === cartItem.size
       );
-      if (index !== -1) {
-        state.cart.splice(index, 1);
+
+      if (itemIndex !== -1) {
+        state.cart.splice(itemIndex, 1);
       }
       localStorage.removeItem("cart");
-      localStorage.setItem("cart", JSON.stringify(state));
+      localStorage.setItem("cart", JSON.stringify(state.cart));
+      state.cartLoading = false;
     },
     clearCart(state) {
       state.cart = [];
       localStorage.removeItem("cart");
     },
+    updateCart(state, action) {
+      state.cart.push(...action.payload);
+    },
   },
   extraReducers(builder) {
+    builder.addCase(addToUserData.pending, (state, action) => {
+      state.cartLoading = true;
+    });
     builder.addCase(addToUserData.fulfilled, (state, action) => {
       state.cart = action.payload;
+      state.cartLoading = false;
+    });
+
+    builder.addCase(removeFromUserData.pending, (state, action) => {
+      state.cartLoading = true;
     });
     builder.addCase(removeFromUserData.fulfilled, (state, action) => {
       state.cart = action.payload;
+      state.cartLoading = false;
+    });
+    builder.addCase(retrieveUserCart.pending, (state, action) => {
+      state.cartLoading = true;
     });
     builder.addCase(retrieveUserCart.fulfilled, (state, action) => {
       state.cart = action.payload;
+      state.cartLoading = false;
+    });
+    builder.addCase(cleanUserCartData.pending, (state, action) => {
+      state.cartLoading = true;
+    });
+    builder.addCase(cleanUserCartData.fulfilled, (state, action) => {
+      state.cart = [];
+      state.cartLoading = false;
     });
   },
 });
 
-export const { addProduct, removeProduct, clearCart } = cartSlice.actions;
+export const { addProduct, removeProduct, clearCart, updateCart } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

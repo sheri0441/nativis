@@ -1,5 +1,4 @@
 import React from "react";
-import DotLoading from "../Miscellaneous/DotLoading";
 
 const ProductCardLoading = () => {
   return (

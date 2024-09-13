@@ -1,3 +1,4 @@
+import { convertDateToString } from "@/app/app-lib";
 import HeroBgImage from "@/app/UIElements/Miscellaneous/HeroBgImage";
 import Link from "next/link";
 import React from "react";
@@ -18,7 +19,7 @@ const BlogBanner = ({
       <HeroBgImage imageLink={main_image} />
       <div className="container mx-auto lg:max-w-[872px]">
         <div className="sm:flex sm:justify-between sm:flex-row-reverse">
-          <span className="block lg:text-xl">{date}</span>
+          <span className="block lg:text-xl">{convertDateToString(date)}</span>
           <Link
             href={`/blogs/c/${category.toLowerCase().split(" ").join("")}/p/1`}
             className="font-medium tracking-wider lg:text-xl"

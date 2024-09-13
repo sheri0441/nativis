@@ -5,6 +5,7 @@ import ProductCardGrid from "../UIElements/Miscellaneous/ProductCardGrid";
 import Pagination from "../components/Pagination";
 import { ProductCardType, ProductPageData } from "../utils/Interfaces";
 import ProductCard from "../UIElements/Card/ProductCard";
+import Banner from "../UIElements/Miscellaneous/Banner";
 
 const ProductAchieveLayout = ({
   data,
@@ -39,6 +40,10 @@ const ProductAchieveLayout = ({
           Product of such category is not available
         </p>
       )}
+      <Banner
+        body="Be the first one to get notify on latest addition and changes."
+        title="Our Products"
+      />
 
       <Pagination
         baseURL={paginationURL}

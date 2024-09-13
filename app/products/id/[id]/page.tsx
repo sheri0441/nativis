@@ -9,6 +9,7 @@ import ProductDescription from "./ProductDescription";
 import ProductForm from "./ProductForm";
 import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
 import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
+import Banner from "@/app/UIElements/Miscellaneous/Banner";
 
 export async function generateMetadata({
   params: { id },
@@ -76,6 +77,10 @@ const page = async ({ params: { id } }: { params: { id: string } }) => {
           </p>
         )}
       </div>
+      <Banner
+        body="Join the nativis family for latest discount and sales."
+        title="Sales Update"
+      />
       {data.relatedProducts && (
         <div className="mt-8 sm:mt-12">
           <h2 className="text-2xl font-medium text-primary sm:text-[2rem]">

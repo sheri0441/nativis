@@ -39,7 +39,6 @@ export const POST = async (req: NextRequest) => {
       return NextResponse.json({
         name: user.name,
         email: user.email,
-        cart: user.cart,
         id: user.id,
         image: user.image,
         provider: user.providerId,
@@ -56,7 +55,6 @@ export const POST = async (req: NextRequest) => {
       return NextResponse.json({
         name: userUpdate.name,
         email: userUpdate.email,
-        cart: userUpdate.cart,
         id: userUpdate.id,
         image: userUpdate.image,
         provider: userUpdate.providerId,
@@ -79,7 +77,6 @@ export const POST = async (req: NextRequest) => {
       image: userCreate.image,
       id: userCreate.id,
       provider: userCreate.providerId,
-      cart: userCreate.cart,
     });
   }
 };

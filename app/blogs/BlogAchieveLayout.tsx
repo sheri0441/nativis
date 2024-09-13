@@ -4,6 +4,7 @@ import SortAndSearchBar from "../components/SortAndSearchBar/SortAndSearchBar";
 import Pagination from "../components/Pagination";
 import { BlogCardType, BlogPageData } from "../utils/Interfaces";
 import BlogCard from "../UIElements/Card/BlogCard";
+import Banner from "../UIElements/Miscellaneous/Banner";
 
 const BlogAchieveLayout = ({
   data,
@@ -36,6 +37,11 @@ const BlogAchieveLayout = ({
       ) : (
         <p className="text-xl text-center mt-20 mb-20">Blogs not found</p>
       )}
+
+      <Banner
+        body="Stay informative about natural beauty stuff with our blogs."
+        title="Our Blogs"
+      />
 
       <Pagination
         baseURL={paginationURL}

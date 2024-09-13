@@ -1,0 +1,99 @@
+.errorMessageOpen {
+  animation: fadeIn 300ms ease-in forwards;
+}
+
+.errorMessageOpen > p {
+  opacity: 0;
+  width: 25px;
+  height: 25px;
+  animation: widthIn 500ms ease-in forwards 300ms;
+}
+
+.errorMessageClose > p {
+  opacity: 1;
+  width: 250px;
+  animation: widthOut 500ms ease-in forwards;
+}
+
+.errorMessageClose {
+  transform: translateY(100%) translateX(-50%);
+  animation: fadeOut 300ms ease-in forwards 300ms;
+}
+
+.errorMessageDefault {
+  transform: translateY(100%) translateX(-50%);
+  opacity: 0;
+}
+
+@keyframes widthIn {
+  0% {
+    width: 25px;
+    opacity: 0;
+    height: 25px;
+  }
+
+  40% {
+    width: 250px;
+    height: fit-content;
+  }
+
+  100% {
+    width: 250px;
+    opacity: 1;
+  }
+}
+
+@keyframes widthOut {
+  0% {
+    width: 250px;
+    opacity: 1;
+  }
+
+  60% {
+    width: 250px;
+    height: fit-content;
+  }
+
+  100% {
+    width: 25px;
+    opacity: 0;
+    height: 25px;
+  }
+}
+
+/* @keyframes widthOut {
+  from {
+    overflow: auto;
+    width: 250px;
+    opacity: 1;
+    height: fit-content;
+  }
+  to {
+    width: 25px;
+    opacity: 0;
+    overflow: hidden;
+    height: 25px;
+  }
+} */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(100%) translateX(-50%);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(100%) translateX(-50%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+  }
+}

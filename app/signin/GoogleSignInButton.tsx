@@ -6,12 +6,9 @@ import axios from "axios";
 import { useAppDispatch, useAppSelector } from "../app/hookes";
 import SubmitButton from "../UIElements/FormElements/SubmitButton";
 import { login } from "../app/features/user/userSlice";
-import PopUp from "../UIElements/Miscellaneous/PopUp";
-import {
-  addToUserData,
-  clearCart,
-  retrieveUserCart,
-} from "../app/features/cart/cartSlice";
+import { clearCart, retrieveUserCart } from "../app/features/cart/cartSlice";
+import SingleBtnOverLayerOption from "../UIElements/Miscellaneous/SingleBtnOverLayerOption";
+import ErrorMessage from "../UIElements/Miscellaneous/ErrorMessage";
 
 const GoogleSignInButton = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -36,6 +33,7 @@ const GoogleSignInButton = () => {
     setHasError({ error: true, message: text });
     setTimeout(closeErrorMessage, 3000);
   };
+
   const provider = new GoogleAuthProvider();
   const signInWithGoogle = async () => {
     if (cartList.cart.length > 0 && !addCartToUser) {
@@ -79,35 +77,30 @@ const GoogleSignInButton = () => {
 
     dispatch(login({ name, image, email, id, providedId }));
 
-    if (addCartToUser) {
-      dispatch(addToUserData(cartList.cart));
-    }
+    dispatch(clearCart());
 
     dispatch(retrieveUserCart());
 
     setIsLoading(false);
   };
 
-  const handlePopUpClose = (shouldAddCart: boolean) => {
-    setAddCartToUser(shouldAddCart);
-    if (!shouldAddCart) {
-      dispatch(clearCart());
-    }
+  const handlePopUpClose = () => {
     setShowPopUp(false);
     signInWithGoogle();
   };
 
   return (
     <>
-      <PopUp
-        body="Would you like to add current cart list to your data? Or Clean the Cart list?"
-        closePopUp={() => handlePopUpClose(false)}
-        mainFunction={() => handlePopUpClose(true)}
-        showPopUp={showPopUp}
-        title="Cart "
-        mainButtonText="Add"
-        secondaryButtonText="Clear"
-      />
+      <SingleBtnOverLayerOption
+        btnText="OK!"
+        closeFunction={handlePopUpClose}
+        mainFunction={handlePopUpClose}
+        show={showPopUp}
+        title="Clean Cart"
+      >
+        <p>The cart items in your current will be deleted.</p>
+      </SingleBtnOverLayerOption>
+      <ErrorMessage message={hasError.message} showError={hasError.error} />
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -117,13 +110,6 @@ const GoogleSignInButton = () => {
         <SubmitButton extraStyle="w-full" loading={isLoading} text="Google" />
       </form>
     </>
-    // <button
-    //   className="text-center bg-primary text-neutral w-full block py-3 rounded-full hover:bg-accent"
-    //   onClick={signInWithGoogle}
-    //   disabled={isLoading}
-    // >
-    //   Google
-    // </button>
   );
 };
 

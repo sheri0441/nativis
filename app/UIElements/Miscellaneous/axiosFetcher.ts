@@ -4,6 +4,7 @@ export const axiosFetcher = async (url: string) => {
   let result;
   try {
     const response = await axios.get(url);
+
     if (response.status === 200) {
       result = response.data;
     } else {
@@ -11,9 +12,9 @@ export const axiosFetcher = async (url: string) => {
     }
   } catch (error) {
     if (error instanceof AxiosError) {
-      console.log(error.cause);
+      throw new Error(error.code);
     } else {
-      console.log(error);
+      throw new Error("there is some error");
     }
   }
   return result;

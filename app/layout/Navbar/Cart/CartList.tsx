@@ -5,35 +5,28 @@ import IconsBtn from "@/app/UIElements/Miscellaneous/IconsBtn";
 import CartItem from "../../../components/CartItem";
 import { useAppDispatch, useAppSelector } from "@/app/app/hookes";
 import { toggleCart } from "@/app/app/features/navigation/navigationSlice";
-import axios from "axios";
 import { CartItemFetchType } from "@/app/utils/Interfaces";
+import { calculateCartItemsPrice, fetchCartItemDetails } from "@/app/app-lib";
 
 const CartList = () => {
   const showCart = useAppSelector((store) => store.navigation.showCart);
-  const cart = useAppSelector((store) => store.cart.cart);
+  const { cart, cartLoading } = useAppSelector((store) => store.cart);
+
   const dispatch = useAppDispatch();
   const [cartItems, setCartItems] = useState<CartItemFetchType[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
-  const fetchCartItemDetails = async () => {
-    try {
-      const response = await axios.post(
-        process.env.NEXT_PUBLIC_BASE_URL + "/api/products/cart",
-        cart
-      );
-      setCartItems(response.data);
-    } catch (error) {}
+  const fetchCartDetails = async () => {
+    const cartList = await fetchCartItemDetails(cart);
+    setCartItems(cartList.list);
   };
 
   useEffect(() => {
-    fetchCartItemDetails();
+    fetchCartDetails();
   }, [cart]);
 
   useEffect(() => {
-    let total: number = 0;
-    for (let i = 0; i < cartItems.length; i++) {
-      total += Number(cartItems[i].price) * cartItems[i].quantity;
-    }
+    const total = calculateCartItemsPrice(cartItems);
     setTotalPrice(total);
   }, [cartItems]);
 
@@ -51,12 +44,18 @@ const CartList = () => {
         <span className="text-xl sm:text-3xl font-medium text-neutral uppercase row-start-1">
           Shopping Cart
         </span>
-        <div className="w-full px-4 sm:px-0  mx-auto flex flex-col gap-3 max-h-[420px] overflow-y-scroll">
+        <div className="w-full px-4 sm:px-0  mx-auto flex flex-col max-h-[420px] overflow-y-scroll">
           {cartItems.length === 0 ? (
             <p className="text-neutral">Your cart is empty right now!</p>
           ) : (
-            cartItems.map((item: CartItemFetchType) => (
-              <CartItem key={item?.id} product={item} />
+            cartItems.map((item: CartItemFetchType, index = 1) => (
+              <CartItem
+                colorReverse={index % 2 === 0}
+                isLoading={cartLoading}
+                key={`${item?.id}-${item.size}`}
+                product={item}
+                disableDelete={false}
+              />
             ))
           )}
         </div>

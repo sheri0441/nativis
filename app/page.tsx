@@ -5,10 +5,10 @@ import ProductCardGrid from "./UIElements/Miscellaneous/ProductCardGrid";
 import HeroSection from "./Home/HeroSection/HeroSection";
 import HomeSection from "./Home/HomeSection";
 import WhySection from "./Home/WhySection/WhySection";
-import Newsletter from "./Home/Newsletter/Newsletter";
 import { BlogCardType, ProductCardType } from "./utils/Interfaces";
 import BlogCard from "./UIElements/Card/BlogCard";
 import { axiosFetcher } from "./UIElements/Miscellaneous/axiosFetcher";
+import Banner from "./UIElements/Miscellaneous/Banner";
 
 export const metadata: Metadata = {
   title: "Home | Nativis",
@@ -63,7 +63,12 @@ export default async function Home() {
           </Link>
         </HomeSection>
       </div>
-      <Newsletter />
+      <Banner
+        title={" Our Newsletter"}
+        body={
+          "Sign up to receive exclusive offers, skincare tips, and the latest news from Nativis."
+        }
+      />
       <div className="container mx-auto px-6 sm:px-8 lg:px-14">
         <HomeSection
           title="Testimonies"

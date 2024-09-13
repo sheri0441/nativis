@@ -8,7 +8,7 @@ import { UserType } from "../utils/Interfaces";
 import LoadingScreen from "./LoadingScreen/LoadingScreen";
 import { setLoadingPage } from "../app/features/pageLoading/loadingSlice";
 import { Poppins } from "next/font/google";
-import { retrieveUserCart } from "../app/features/cart/cartSlice";
+import { retrieveUserCart, updateCart } from "../app/features/cart/cartSlice";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -55,6 +55,12 @@ const ProviderWrapper = ({ children }: { children: ReactNode }) => {
       verifyToken(token);
     } else {
       store.dispatch(setLoadingPage(false));
+    }
+
+    const cartList = localStorage.getItem("cart");
+
+    if (cartList) {
+      store.dispatch(updateCart(JSON.parse(cartList)));
     }
   }, []);
 

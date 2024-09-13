@@ -1,0 +1,12 @@
+.overlayeroption :last-child {
+  animation: scale 300ms forwards;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}

@@ -1,25 +1,36 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { HeartIcon } from "../../utils/Icons";
 import style from "./BlogCard.module.css";
 import { BlogCardType } from "../../utils/Interfaces";
-import { convertDateToString } from "../Miscellaneous/convertDateToString";
 import { convertToAbbreviation } from "../Miscellaneous/convertToAbbreviation";
+import { checkLikeOfBlog, convertDateToString } from "@/app/app-lib";
+import { useAppSelector } from "@/app/app/hookes";
 
-const BlogCard = ({
-  isSelected = false,
-  blog,
-}: {
-  isSelected?: boolean;
-  blog: BlogCardType;
-}) => {
+const BlogCard = ({ blog }: { blog: BlogCardType }) => {
   const date = convertDateToString(blog.createdAt);
   const likes = convertToAbbreviation(blog.likes);
 
+  const isLogin = useAppSelector((store) => store.user.isLogin);
+
+  const [isLiked, setIsLiked] = useState<boolean>(false);
+
+  const checkLike = async () => {
+    const liked = await checkLikeOfBlog(blog.id);
+    setIsLiked((perv) => (perv = liked));
+  };
+
+  useEffect(() => {
+    if (isLogin) {
+      checkLike();
+    }
+  }, []);
+
   return (
     <Link
-      href="/blogs/id/1"
+      href={`/blogs/id/${blog.id}`}
       className={
         "block relative overflow-hidden text-neutral rounded transition-shadow duration-500 ease-in-out sm:rounded-lg lg:rounded-xl " +
         style.blogCart
@@ -41,7 +52,7 @@ const BlogCard = ({
             <span className="block text-xs opacity-50">({likes})</span>
             <div className="w-[14px]">
               <HeartIcon
-                style={`${isSelected ? "fill-accent" : "fill-neutral"}`}
+                style={`${isLiked ? "fill-accent" : "fill-neutral"}`}
               />
             </div>
           </div>

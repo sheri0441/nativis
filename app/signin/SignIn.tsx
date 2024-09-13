@@ -4,18 +4,14 @@ import { useForm } from "react-hook-form";
 import TextField from "../UIElements/FormElements/TextField";
 import SubmitButton from "../UIElements/FormElements/SubmitButton";
 import Link from "next/link";
-import ErrorMessage from "./ErrorMessage";
 import { useAppDispatch, useAppSelector } from "../app/hookes";
 import { login } from "../app/features/user/userSlice";
 import axios, { AxiosError } from "axios";
-import PopUp from "../UIElements/Miscellaneous/PopUp";
-import {
-  addToUserData,
-  clearCart,
-  retrieveUserCart,
-} from "../app/features/cart/cartSlice";
+import { clearCart, retrieveUserCart } from "../app/features/cart/cartSlice";
 import { signInSchema } from "../utils/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import ErrorMessage from "../UIElements/Miscellaneous/ErrorMessage";
+import SingleBtnOverLayerOption from "../UIElements/Miscellaneous/SingleBtnOverLayerOption";
 
 type Inputs = {
   email: string;
@@ -84,7 +80,7 @@ const SignIn = ({ openSignUp }: { openSignUp: Function }) => {
       return;
     }
 
-    const { name, email, id, image, token, cart, provider } = user;
+    const { name, email, id, image, token } = user;
 
     localStorage.setItem("token", token);
 
@@ -97,9 +93,7 @@ const SignIn = ({ openSignUp }: { openSignUp: Function }) => {
       })
     );
 
-    if (addCartToUser) {
-      dispatch(addToUserData(cartList.cart));
-    }
+    dispatch(clearCart());
 
     dispatch(retrieveUserCart());
 
@@ -107,11 +101,7 @@ const SignIn = ({ openSignUp }: { openSignUp: Function }) => {
     reset();
   });
 
-  const handlePopUpClose = (shouldAddCart: boolean) => {
-    setAddCartToUser(shouldAddCart);
-    if (!shouldAddCart) {
-      dispatch(clearCart());
-    }
+  const handlePopUpClose = () => {
     setShowPopUp(false);
     const data = getValues();
     onSubmit(data as unknown as BaseSyntheticEvent);
@@ -119,15 +109,15 @@ const SignIn = ({ openSignUp }: { openSignUp: Function }) => {
 
   return (
     <div>
-      <PopUp
-        body="Would you like to add current cart list to your data? Or Clean the Cart list?"
-        closePopUp={() => handlePopUpClose(false)}
-        mainFunction={() => handlePopUpClose(true)}
-        showPopUp={showPopUp}
-        title="Cart "
-        mainButtonText="Add"
-        secondaryButtonText="Clear"
-      />
+      <SingleBtnOverLayerOption
+        btnText="OK!"
+        closeFunction={handlePopUpClose}
+        mainFunction={handlePopUpClose}
+        show={showPopUp}
+        title="Clean Cart"
+      >
+        <p>The cart items in your current will be deleted.</p>
+      </SingleBtnOverLayerOption>
       <ErrorMessage showError={hasError.error} message={hasError.message} />
       <h1 className="text-5xl font-medium">Sign In</h1>
       <h2 className="text-xl mt-2 ">Welcome Back</h2>
@@ -164,6 +154,3 @@ const SignIn = ({ openSignUp }: { openSignUp: Function }) => {
 };
 
 export default SignIn;
-function getValues() {
-  throw new Error("Function not implemented.");
-}

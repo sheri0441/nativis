@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import Navbar from "./layout/Navbar/Navbar";
 import Footer from "./layout/Footer";
 import ProviderWrapper from "./components/ProviderWrapper";

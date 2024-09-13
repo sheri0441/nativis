@@ -14,8 +14,8 @@ const RichTextRenderer = ({ content }: { content: any }) => {
       case "list":
         return (
           <ul>
-            {item.text.map((a: string, index: number) => (
-              <li key={index}>{a}</li>
+            {item.items.map((a: { text: string }, index: number) => (
+              <li key={index}>{a.text}</li>
             ))}
           </ul>
         );
@@ -35,7 +35,13 @@ const RichTextRenderer = ({ content }: { content: any }) => {
       case "quote":
         return <blockquote key={index}>{item.text}</blockquote>;
       case "faq":
-        return <DetailsSummary answer={item.answer} question={item.question} />;
+        return (
+          <DetailsSummary
+            key={index}
+            answer={item.answer}
+            question={item.question}
+          />
+        );
       default:
         return null;
     }

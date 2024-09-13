@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import PageContent from "./PageContent";
+import PageContent from "@/app/blogs/PageContent";
 
 export async function generateMetadata({
   params: { search },
@@ -18,7 +18,16 @@ const page = ({
 }: {
   params: { page: string; search: string };
 }) => {
-  return <PageContent page={page} search={search} />;
+  return (
+    <PageContent
+      apiURL={`/api/blogs/searchPage/${search}/${page}`}
+      page={page}
+      pageTitle={"Search:" + search}
+      paginationURL={`/blogs/s/${search}/p/`}
+      additionRenderingConditions={[search]}
+      hideCategoryBar={true}
+    />
+  );
 };
 
 export default page;

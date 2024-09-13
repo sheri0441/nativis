@@ -31,8 +31,6 @@ export const GET = async (
     return NextResponse.error();
   }
 
-  console.log("call request");
-
   return NextResponse.json({
     current: page,
     total: totalPagesOfProduct,

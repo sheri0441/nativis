@@ -61,7 +61,6 @@ export const POST = async (req: NextRequest) => {
     email: userData.email,
     image: userData.image,
     id: userData.id,
-    cart: userData.cart,
     provider: userData.providerId,
     token,
   });

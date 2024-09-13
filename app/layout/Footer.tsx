@@ -27,7 +27,7 @@ const Footer = () => {
               </Link>
             </div>
             <div className="">
-              <Link href={"/terms&policy"} className="hover:text-accent">
+              <Link href={"/terms and policy"} className="hover:text-accent">
                 Terms &#38; Policy
               </Link>
               <Link href={"/contact#faq"} className="hover:text-accent">

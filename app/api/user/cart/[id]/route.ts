@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { firebaseAdmin } from "../../firebase_admin";
-import { FirebaseAuthError } from "firebase-admin/auth";
 import { prisma } from "@/prisma/prisma";
-import { extractedToken } from "@/app/api/api-lib";
+import { getUserFromFirebase, getUserPrismaId } from "@/app/api/api-lib";
+import { headers } from "next/headers";
 
 type Params = {
   id: string;
@@ -12,41 +11,24 @@ export const DELETE = async (
   request: NextRequest,
   context: { params: Params }
 ) => {
-  let id = context.params.id;
+  let cartId = context.params.id;
 
-  const token = request.headers.get("authorization");
-  if (token === null || token === "") {
+  const token = headers().get("authorization");
+
+  const { validUser, error } = await getUserFromFirebase(token);
+  const { id, userPrismaError } = await getUserPrismaId(validUser.uid);
+  if (error.hasError || userPrismaError) {
     return NextResponse.json(
-      { message: "Unauthorized Access." },
-      { status: 401 }
+      { message: "There is some issue in the server and database." },
+      { status: 500 }
     );
-  }
-
-  let isTokenValid;
-  try {
-    isTokenValid = await firebaseAdmin
-      .auth()
-      .verifyIdToken(extractedToken(token));
-  } catch (error) {
-    if (error instanceof FirebaseAuthError) {
-      const message = error.code.split("/")[1].replaceAll("-", " ");
-      return NextResponse.json(
-        { message: `Unauthorized Access. Due to ${message}.` },
-        { status: 401 }
-      );
-    } else {
-      return NextResponse.json(
-        { message: "Unauthorized Access. Due to token expiration." },
-        { status: 401 }
-      );
-    }
   }
 
   try {
     let cartItem = await prisma.cartItem.findFirst({
       where: {
-        id: id,
-        userId: isTokenValid.uid,
+        id: cartId,
+        userId: id,
       },
     });
 
@@ -59,7 +41,7 @@ export const DELETE = async (
 
   let cartList = await prisma.cartItem.findMany({
     where: {
-      userId: isTokenValid.uid,
+      userId: id,
     },
   });
 

@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import avataar from "../assets/defaultAvaatar.png";
-import { StorageReference, uploadBytes } from "firebase/storage";
 
 const ImageUploadButton = ({
   hasError,

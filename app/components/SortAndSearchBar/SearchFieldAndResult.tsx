@@ -35,15 +35,14 @@ const SearchFieldAndResult = ({
         setIsLoading(true);
         const result = await axiosFetcher(url);
 
-        console.log(result);
-
         setResultList(result);
 
         setIsLoading(false);
       };
       fetchDate();
     }
-  }, [searchField]);
+  }, [searchField, baseSearchURL]);
+
   return (
     <div
       className={`transition-all duration-500 ease-in-out absolute top-0 right-[350%]   sm:left-0   sm:translate-x-0 grid grid-cols-[8px_232px_8px] gap-2  sm:grid-cols-[232px_8px_8px] items-center z-20 ${

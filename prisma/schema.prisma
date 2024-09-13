@@ -55,24 +55,24 @@ model user {
   id         String  @id @default(auto()) @map("_id") @db.ObjectId
   name       String
   email      String  @unique
-  image      String?
+  image      String
   fireBaseId String  @unique
   providerId String
   imageRef   String?
 }
 
 model cartItem {
-  cartItemId        String  @id @default(auto()) @map("_id") @db.ObjectId
-  id String
-  quantity  Int
-  userId    String
-  size      String? 
+  cartItemId String  @id @default(auto()) @map("_id") @db.ObjectId
+  id         String
+  quantity   Int
+  userId     String
+  size       String?
 }
 
 model likes {
   id     String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String
   blogId String
+  userId String
 }
 
 model comment {
@@ -81,4 +81,43 @@ model comment {
   blogId    String
   content   String
   createdAt DateTime @default(now())
+}
+
+model StaticPages {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  title   String
+  meta    String
+  content Json
+}
+
+model FAQ {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  question String
+  answer   String
+  type     String @default("faq")
+}
+
+model Order {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  email        String
+  address      String
+  city         String
+  phone        String
+  zip          String
+  instructions String
+  delivery     String
+  name         String   @default("standard")
+  orderId      String   @unique()
+  list         Json
+  status       String   @default("pending")
+  totalPrice   String
+  paymentId    String   @unique()
+  date         DateTime @default(now())
+}
+
+model Contact {
+  id      String @id @default(auto()) @map("_id") @db.ObjectId
+  name    String
+  email   String
+  message String
 }

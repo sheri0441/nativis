@@ -2,6 +2,12 @@ import { prisma } from "@/prisma/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import { randomFourBlogsCard } from "@/app/api/util/blogs/RandomFourBlogsCard";
 import { randomFourProductsCard } from "@/app/api/util/misc/RandomFourProductsCard";
+import {
+  countBlogComments,
+  getBlogCommentsDetail,
+  getCommentListWithUserDetail,
+  getFiveComments,
+} from "@/app/api/api-lib";
 
 type Params = {
   id: string;
@@ -42,12 +48,28 @@ export const GET = async (
       },
     });
   } catch (error) {
-    return NextResponse.error();
+    return NextResponse.json(
+      { message: "There is some error in the server. Please try again." },
+      { status: 500 }
+    );
+  }
+
+  const { BlogCommentsDetail, BlogCommentsError } = await getBlogCommentsDetail(
+    blog.id,
+    1
+  );
+
+  if (BlogCommentsError) {
+    return NextResponse.json(
+      { message: "There is some error in the server. Please try again." },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({
-    mainBlog: blog,
+    main: blog,
     otherBlog: otherBlog,
     products: products,
+    comments: BlogCommentsDetail,
   });
 };

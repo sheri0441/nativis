@@ -1,6 +1,14 @@
 import React from "react";
 
-const TextArea = ({ register, name }: { register: Object; name: string }) => {
+const TextArea = ({
+  register,
+  name,
+  changeHandler,
+}: {
+  register: Object;
+  name: string;
+  changeHandler: Function;
+}) => {
   return (
     <div>
       <label
@@ -16,6 +24,7 @@ const TextArea = ({ register, name }: { register: Object; name: string }) => {
         rows={3}
         placeholder={name}
         {...register}
+        onChange={(e) => changeHandler(e)}
       ></textarea>
     </div>
   );

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-// import image from "../../assets/productImage.png";
 import Link from "next/link";
 import { SearchResultItem as SearchResultItemType } from "@/app/utils/Interfaces";
 

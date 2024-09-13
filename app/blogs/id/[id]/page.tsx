@@ -5,31 +5,44 @@ import RecommendedBlogsAndProducts from "./RecommendedBlogsAndProducts";
 import CommentSection from "./CommentSection";
 import LikeAndShare from "./LikeAndShare";
 import BlogBanner from "./BlogBanner";
-import data from "./sample.json";
 import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params: { id },
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const url = process.env.BASE_URL + `/api/blogs/id/${id}/meta`;
+  const blogMeta = await axiosFetcher(url);
   return {
-    title: ` ${data.title} | Blogs`,
-    description: data.title,
+    title: ` ${blogMeta.title} | Blogs`,
+    description: blogMeta.title,
   };
 }
 
 const page = async ({ params: { id } }: { params: { id: string } }) => {
+  const url = process.env.BASE_URL + `/api/blogs/id/${id}`;
+  const blogData = await axiosFetcher(url);
   return (
     <main>
       <BlogBanner
-        main_image={data.main_image}
-        title={data.title}
-        date={data.date}
-        category={data.category}
+        main_image={blogData.main.main_image}
+        title={blogData.main.title}
+        date={blogData.main.createdAt}
+        category={blogData.main.category}
       />
-      <div className={`container mx-auto lg:max-w-[872px] text-primary  `}>
-        <RichTextRenderer content={data.content} />
-        <LikeAndShare />
-        <CommentSection comments={data.comments} />
+      <div className={`container mx-auto lg:max-w-[872px] text-primary pt-10 `}>
+        <RichTextRenderer content={blogData.main.content} />
+        <LikeAndShare
+          likeNumber={blogData.main.likes}
+          blogId={blogData.main.id}
+        />
+        <CommentSection id={id} comment={blogData.comments} />
       </div>
-      <RecommendedBlogsAndProducts />
+      <RecommendedBlogsAndProducts
+        blogList={blogData.otherBlog}
+        productList={blogData.products}
+      />
     </main>
   );
 };

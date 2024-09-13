@@ -1,6 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
-import PageContent from "./PageContent";
+import PageContent from "../../PageContent";
 
 export const metadata: Metadata = {
   title: "Products | Nativis",
@@ -8,7 +8,14 @@ export const metadata: Metadata = {
 };
 
 const page = async ({ params: { page } }: { params: { page: string } }) => {
-  return <PageContent page={page} />;
+  return (
+    <PageContent
+      apiURL={`/api/products/${page}`}
+      page={page}
+      pageTitle="Products"
+      paginationURL="/products/p/"
+    />
+  );
 };
 
 export default page;

@@ -1,3 +1,7 @@
+.hamburger {
+  cursor: pointer;
+}
+
 .hamburger > span > svg > rect {
   transition: all 0.25s ease-in-out;
 }

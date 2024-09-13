@@ -1,17 +1,25 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { ProductPageData } from "@/app/utils/Interfaces";
-import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
 import { useSearchParams } from "next/navigation";
-import ProductAchieveLoading from "@/app/products/ProductAchieveLoading";
-import ProductAchieveLayout from "@/app/products/ProductAchieveLayout";
+import { useEffect, useState } from "react";
+import { ProductPageData } from "../utils/Interfaces";
+import { axiosFetcher } from "../UIElements/Miscellaneous/axiosFetcher";
+import ProductAchieveLoading from "./ProductAchieveLoading";
+import ProductAchieveLayout from "./ProductAchieveLayout";
 
 const PageContent = ({
   page,
-  category,
+  apiURL,
+  hideCategory = false,
+  paginationURL,
+  additionRenderingCondition = [],
+  pageTitle,
 }: {
   page: string;
-  category: string;
+  apiURL: string;
+  hideCategory?: boolean;
+  paginationURL: string;
+  additionRenderingCondition?: String[];
+  pageTitle: string;
 }) => {
   const searchParams = useSearchParams();
   const sort = searchParams.get("sort");
@@ -24,9 +32,7 @@ const PageContent = ({
       setIsLoading(true);
       const url =
         process.env.NEXT_PUBLIC_BASE_URL +
-          `/api/products/category/${category}/${page}?sort=${
-            sort ? sort : "newest"
-          }` || "";
+          `${apiURL}?sort=${sort ? sort : "newest"}` || "";
 
       const result = await axiosFetcher(url);
 
@@ -34,12 +40,13 @@ const PageContent = ({
       setIsLoading((pervState) => (pervState = false));
     };
     fetchData();
-  }, [page, sort]);
+  }, [page, apiURL, sort, ...additionRenderingCondition]);
 
   if (!data || isLoading) {
     return (
       <ProductAchieveLoading
-        pageTitle={"Category:" + category.replaceAll("-", " ")}
+        hideCategory={hideCategory}
+        pageTitle={pageTitle}
       />
     );
   }
@@ -47,8 +54,9 @@ const PageContent = ({
   return (
     <ProductAchieveLayout
       data={data}
-      pageTitle={"Category:" + category.replaceAll("-", " ")}
-      paginationURL={`/products/c/${category}/p/`}
+      pageTitle={pageTitle}
+      paginationURL={paginationURL}
+      hideCategory={hideCategory}
     />
   );
 };

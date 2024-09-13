@@ -1,3 +1,5 @@
+import { JsonValue } from "@prisma/client/runtime/library";
+
 export interface productData {
   name: string;
   category: string;
@@ -83,10 +85,67 @@ export interface CartItemType {
   size?: string | null;
 }
 
+export interface PrismaCartItemType {
+  id: string;
+  name: string;
+  price: JsonValue;
+  thumbnail: string;
+}
+
 export interface CartItemFetchType {
   name: string;
   id: string;
   thumbnail: string;
   quantity: number;
-  price: string;
+  price: number;
+  size: string | null;
+}
+
+export interface VerifyTokenResult {
+  validUser: { uid: string };
+  error: { hasError: boolean; text: string };
+}
+
+export interface CommentListBeforeUserDetail {
+  id: string;
+  createdAt: Date;
+  userId: string;
+  content: string;
+}
+
+export interface CommentListAfterUserDetail {
+  id: string;
+  createdAt: Date;
+  content: string;
+  userId: string;
+  user: {
+    name: string;
+    image: string;
+  };
+}
+
+export interface BlogCommentsDetail {
+  commentList: CommentListAfterUserDetail[];
+  totalPairNumber: number;
+  current: number;
+  totalComments: number;
+}
+
+export interface OrderDetail {
+  name: string;
+  email: string;
+  phone: string;
+  address: string;
+  city: string;
+  zip: string;
+  delivery: "express" | "standard";
+  instructions?: string | undefined;
+  list: CartItemType[];
+}
+
+export interface OrderCard {
+  date: Date;
+  orderId: string;
+  status: string;
+  totalPrice: string;
 }

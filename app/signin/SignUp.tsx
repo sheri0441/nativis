@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useAppDispatch, useAppSelector } from "../app/hookes";
 import { login } from "../app/features/user/userSlice";
-import ErrorMessage from "./ErrorMessage";
 import ImageUploadButton from "./ImageUploadButton";
 import generateUniqueId from "generate-unique-id";
 import { ref, uploadBytes } from "firebase/storage";
@@ -15,13 +14,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signUpSchema } from "../utils/schema";
 import { FirebaseError } from "firebase/app";
 import { passwordStrength } from "check-password-strength";
-import PopUp from "../UIElements/Miscellaneous/PopUp";
-import {
-  addProduct,
-  addToUserData,
-  clearCart,
-  retrieveUserCart,
-} from "../app/features/cart/cartSlice";
+import { clearCart, retrieveUserCart } from "../app/features/cart/cartSlice";
+import ErrorMessage from "../UIElements/Miscellaneous/ErrorMessage";
+import SingleBtnOverLayerOption from "../UIElements/Miscellaneous/SingleBtnOverLayerOption";
 
 type Inputs = {
   name: string;
@@ -136,7 +131,7 @@ const SignUp = ({ openSignIn }: { openSignIn: Function }) => {
     }
 
     if (user) {
-      const { name, email, id, image, token, provider, cart } = user.data;
+      const { name, email, id, image, token } = user.data;
       localStorage.setItem("token", token);
       dispatch(
         login({
@@ -147,9 +142,7 @@ const SignUp = ({ openSignIn }: { openSignIn: Function }) => {
         })
       );
 
-      if (addCartToUser) {
-        dispatch(addToUserData(cartList.cart));
-      }
+      dispatch(clearCart());
     }
 
     dispatch(retrieveUserCart());
@@ -163,11 +156,7 @@ const SignUp = ({ openSignIn }: { openSignIn: Function }) => {
     setHasError({ error: false, message: "" });
   };
 
-  const handlePopUpClose = (shouldAddCart: boolean) => {
-    setAddCartToUser(shouldAddCart);
-    if (!shouldAddCart) {
-      dispatch(clearCart());
-    }
+  const handlePopUpClose = () => {
     setShowPopUp(false);
     const data = getValues();
     onSubmit(data as unknown as BaseSyntheticEvent);
@@ -191,15 +180,15 @@ const SignUp = ({ openSignIn }: { openSignIn: Function }) => {
 
   return (
     <div>
-      <PopUp
-        body="Would you like to add current cart list to your data? Or Clean the Cart list?"
-        closePopUp={() => handlePopUpClose(false)}
-        mainFunction={() => handlePopUpClose(true)}
-        showPopUp={showPopUp}
-        title="Cart "
-        mainButtonText="Add"
-        secondaryButtonText="Clear"
-      />
+      <SingleBtnOverLayerOption
+        btnText="OK!"
+        closeFunction={handlePopUpClose}
+        mainFunction={handlePopUpClose}
+        show={showPopUp}
+        title="Clean Cart"
+      >
+        <p>The cart items in your current will be deleted.</p>
+      </SingleBtnOverLayerOption>
       <ErrorMessage showError={hasError.error} message={hasError.message} />
       <h1 className="text-5xl font-medium">Sign Up</h1>
       <h2 className="text-xl mt-2 ">Join the Natural club</h2>

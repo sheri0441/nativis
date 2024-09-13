@@ -9,6 +9,7 @@ import ProductSizeButton from "./ProductSizeButton";
 import { useAppDispatch, useAppSelector } from "@/app/app/hookes";
 import { addProduct, addToUserData } from "@/app/app/features/cart/cartSlice";
 import { singleDigitToDouble } from "@/app/app-lib";
+import { useRouter } from "next/navigation";
 
 type FormData = {
   size: string;
@@ -19,10 +20,9 @@ const ProductForm = ({ productData }: { productData: productData }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const isLogin = useAppSelector((store) => store.user.isLogin);
+  const router = useRouter();
 
   const sizeOfProduct = Object.keys(productData.price);
-
-  const toggleLoading = () => setIsLoading((perv) => !perv);
 
   const { register, setValue, handleSubmit, watch, getValues, reset } =
     useForm<FormData>({
@@ -42,11 +42,14 @@ const ProductForm = ({ productData }: { productData: productData }) => {
     let product;
 
     if (sizeOfProduct.length === 1) {
-      product = { id: productData.id, quantity: data.quantity };
+      product = {
+        id: productData.id,
+        quantity: Number(data.quantity),
+      };
     } else {
       product = {
         id: productData.id,
-        quantity: data.quantity,
+        quantity: Number(data.quantity),
         size: data.size,
       };
     }
@@ -56,8 +59,6 @@ const ProductForm = ({ productData }: { productData: productData }) => {
     } else {
       dispatch(addProduct(product));
     }
-
-    // setTimeout(toggleLoading, 1000);
     setIsLoading(false);
     reset({ size: sizeOfProduct[0], quantity: 1 });
   });
@@ -119,7 +120,11 @@ const ProductForm = ({ productData }: { productData: productData }) => {
           className="font-medium capitalize py-3 w-full bg-primary bg-opacity-50 sm:text-xl  sm:py-[18px] text-primary hover:text-neutral rounded-full hover:bg-opacity-100 "
           onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             e.preventDefault();
-            console.log("go to checkout page");
+            router.push(
+              `/checkout/${productData.id}/${getValues("quantity")}?size=${
+                sizeOfProduct.length > 1 ? getValues("size") : ""
+              }`
+            );
           }}
         >
           Buy now

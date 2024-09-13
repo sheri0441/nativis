@@ -1,44 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
-import { firebaseAdmin } from "../firebase_admin";
-import { FirebaseAuthError } from "firebase-admin/auth";
 import { prisma } from "@/prisma/prisma";
-import { extractedToken } from "../../api-lib";
+import { getUserFromFirebase } from "../../api-lib";
 
 export const GET = async (request: NextRequest) => {
   const token = request.headers.get("authorization");
-  if (token === null || token === "") {
-    return NextResponse.json(
-      { message: "Unauthorized Access." },
-      { status: 401 }
-    );
-  }
 
-  let isTokenValid;
+  const { validUser, error } = await getUserFromFirebase(token);
 
-  try {
-    isTokenValid = await firebaseAdmin
-      .auth()
-      .verifyIdToken(extractedToken(token));
-  } catch (error) {
-    if (error instanceof FirebaseAuthError) {
-      const message = error.code.split("/")[1].replaceAll("-", " ");
-      return NextResponse.json(
-        { message: `Unauthorized Access. Due to ${message}.` },
-        { status: 401 }
-      );
-    } else {
-      return NextResponse.json(
-        { message: "Unauthorized Access. Due to token expiration." },
-        { status: 401 }
-      );
-    }
+  if (error.hasError) {
+    const errorMessage = error.text;
+    return NextResponse.json({ message: errorMessage }, { status: 500 });
   }
 
   let user;
   try {
     user = await prisma.user.findFirst({
       where: {
-        fireBaseId: isTokenValid.uid,
+        fireBaseId: validUser.uid,
       },
     });
   } catch (error) {
@@ -61,7 +39,6 @@ export const GET = async (request: NextRequest) => {
     id: user.id,
     email: user.email,
     provider: user.providerId,
-    cart: user.cart,
     token,
   });
 };

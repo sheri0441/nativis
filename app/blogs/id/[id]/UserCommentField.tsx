@@ -1,18 +1,19 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
-import avataar from "../../../assets/avaatar.png";
-import TextArea from "@/app/UIElements/FormElements/TextArea";
-import SubmitButton from "@/app/UIElements/FormElements/SubmitButton";
-import { useForm } from "react-hook-form";
+import { useAppSelector } from "@/app/app/hookes";
+import CommentEditor from "./CommentEditor";
+import axios from "axios";
 
-type Inputs = {
-  id: string;
-  date: string;
-  comment: string;
-};
-
-const UserCommentField = () => {
+const UserCommentField = ({
+  updateCommentSection,
+  blogId,
+  currentPair,
+}: {
+  updateCommentSection: Function;
+  blogId: string;
+  currentPair: number;
+}) => {
   const dateNow = () => {
     const month = [
       "jan",
@@ -29,57 +30,54 @@ const UserCommentField = () => {
     ];
     const date = new Date();
 
-    return `${date.getDay()} ${month[
+    return `${date.getDate()} ${month[
       date.getMonth() - 1
     ].toUpperCase()} ${date.getFullYear()}`;
   };
+  const user = useAppSelector((store) => store.user);
 
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { register, handleSubmit, reset } = useForm<Inputs>({
-    defaultValues: {
-      id: "1",
-      date: dateNow(),
-      comment: "",
-    },
-  });
-
-  const toggleLoading = () => {
-    setIsLoading((perv) => !perv);
+  const sendRequestFunction = async (data: string) => {
+    const url =
+      process.env.NEXT_PUBLIC_BASE_URL +
+      `/api/blogs/comments/${blogId}/p/${currentPair}`;
+    const token = localStorage.getItem("token");
+    const response = await axios.post(
+      url,
+      { comment: data },
+      {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      }
+    );
+    if (response.status === 201) {
+      updateCommentSection(response.data);
+    } else {
+      throw new Error("There is some problem in the server. Please try again.");
+    }
   };
-
-  const onSubmit = handleSubmit((data) => {
-    setIsLoading(true);
-    setTimeout(toggleLoading, 1000);
-    console.log(data);
-    reset();
-  });
 
   return (
     <div className="flex flex-col gap-4 mt-5 sm:grid sm:grid-cols-[80px_auto] sm:items-start">
       <div className="flex items-center gap-2">
         <Image
           className="h-11 w-11 rounded-full sm:h-20 sm:w-20"
-          src={avataar}
-          alt=""
+          src={user.image || ""}
+          alt={user.name || ""}
+          width={200}
+          height={200}
         />
         <div className="sm:hidden">
-          <p className="font-medium ">Jane</p>
+          <p className="font-medium ">{user.name}</p>
           <p className=" font-light text-xs">{dateNow()}</p>
         </div>
       </div>
       <div className="">
         <div className="hidden sm:flex sm:justify-between sm:items-center">
-          <p className="font-medium ">Jane</p>
+          <p className="font-medium ">{user.name}</p>
           <p className=" font-light text-xs">{dateNow()}</p>
         </div>
-        <form className="flex flex-col gap-4 w-full" onSubmit={onSubmit}>
-          <TextArea register={{ ...register("comment") }} name="comment" />
-          <SubmitButton
-            loading={isLoading}
-            extraStyle="w-fit px-5 ml-auto"
-            text="Submit"
-          />
-        </form>
+        <CommentEditor sendRequestFunction={sendRequestFunction} />
       </div>
     </div>
   );

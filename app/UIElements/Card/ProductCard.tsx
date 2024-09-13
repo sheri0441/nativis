@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import style from "./ProductCard.module.css";
-import productImage from "../../assets/productImage.png";
 import { ProductCardType } from "@/app/utils/Interfaces";
 
 const ProductCard = ({

@@ -1,65 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
-import { firebaseAdmin } from "../firebase_admin";
-import { FirebaseAuthError } from "firebase-admin/auth";
 import { prisma } from "@/prisma/prisma";
-import { extractedToken } from "../../api-lib";
+import {
+  deleteUserCartItems,
+  getUserFromFirebase,
+  getUserPrismaId,
+} from "../../api-lib";
 import { CartItemType } from "@/app/utils/Interfaces";
+import { headers } from "next/headers";
 
 export const POST = async (request: NextRequest) => {
   const cart = await request.json();
 
-  const token = request.headers.get("authorization");
-  if (token === null || token === "") {
+  const token = headers().get("authorization");
+
+  const { validUser, error } = await getUserFromFirebase(token);
+
+  const { id, userPrismaError } = await getUserPrismaId(validUser.uid);
+
+  if (error.hasError || userPrismaError) {
     return NextResponse.json(
-      { message: "Unauthorized Access." },
-      { status: 401 }
+      { message: "There is some issue in the database." },
+      { status: 500 }
     );
   }
 
-  let isTokenValid;
   try {
-    isTokenValid = await firebaseAdmin
-      .auth()
-      .verifyIdToken(extractedToken(token));
-  } catch (error) {
-    if (error instanceof FirebaseAuthError) {
-      const message = error.code.split("/")[1].replaceAll("-", " ");
-      return NextResponse.json(
-        { message: `Unauthorized Access. Due to ${message}.` },
-        { status: 401 }
-      );
-    } else {
-      return NextResponse.json(
-        { message: "Unauthorized Access. Due to token expiration." },
-        { status: 401 }
-      );
-    }
-  }
-
-  let user;
-  try {
-    user = await prisma.user.findUnique({
-      where: {
-        fireBaseId: isTokenValid.uid,
-      },
-    });
-
-    if (!user) {
-      return NextResponse.json(
-        { message: "user didn't exist. Please contact customer support." },
-        { status: 404 }
-      );
-    }
-
     let isCartIemExisted = await prisma.cartItem.findFirst({
       where: {
-        userId: isTokenValid.uid,
+        userId: id,
         id: cart.id,
         size: cart.size,
       },
     });
-
-    console.log(isCartIemExisted);
 
     if (isCartIemExisted) {
       await prisma.cartItem.update({
@@ -73,7 +45,7 @@ export const POST = async (request: NextRequest) => {
     } else {
       await prisma.cartItem.create({
         data: {
-          userId: isTokenValid.uid,
+          userId: id,
           id: cart.id,
           size: cart.size,
           quantity: cart.quantity,
@@ -81,7 +53,6 @@ export const POST = async (request: NextRequest) => {
       });
     }
   } catch (error) {
-    console.error("Prisma error:", error);
     return NextResponse.json(
       { message: "Server internal issue. Please try again." },
       { status: 500 }
@@ -92,7 +63,7 @@ export const POST = async (request: NextRequest) => {
   try {
     userCart = await prisma.cartItem.findMany({
       where: {
-        userId: isTokenValid.uid,
+        userId: id,
       },
       select: {
         id: true,
@@ -100,12 +71,7 @@ export const POST = async (request: NextRequest) => {
         quantity: true,
       },
     });
-
-    if (userCart.length === 0) {
-      userCart = [];
-    }
   } catch (error) {
-    console.error("Prisma error:", error);
     return NextResponse.json(
       { message: "Server internal issue. Please try again." },
       { status: 500 }
@@ -115,40 +81,25 @@ export const POST = async (request: NextRequest) => {
   return NextResponse.json(userCart);
 };
 
-export const DELETE = () => {};
-
 export const GET = async (request: NextRequest) => {
-  const token = request.headers.get("authorization");
-  if (token === null || token === "") {
-    return NextResponse.json(
-      { message: "Unauthorized Access." },
-      { status: 401 }
-    );
-  }
+  const token = headers().get("authorization");
 
-  let user;
-  try {
-    user = await firebaseAdmin.auth().verifyIdToken(extractedToken(token));
-  } catch (error) {
-    if (error instanceof FirebaseAuthError) {
-      const message = error.code.split("/")[1].replaceAll("-", " ");
-      return NextResponse.json(
-        { message: `Unauthorized Access. Due to ${message}.` },
-        { status: 401 }
-      );
-    } else {
-      return NextResponse.json(
-        { message: "Unauthorized Access. Due to token expiration." },
-        { status: 401 }
-      );
-    }
+  const { validUser, error } = await getUserFromFirebase(token);
+
+  const { id, userPrismaError } = await getUserPrismaId(validUser.uid);
+
+  if (error.hasError || userPrismaError) {
+    return NextResponse.json(
+      { message: "There is some issue with database." },
+      { status: 500 }
+    );
   }
 
   let cartLIst;
   try {
     cartLIst = await prisma.cartItem.findMany({
       where: {
-        userId: user.uid,
+        userId: id,
       },
       select: {
         id: true,
@@ -164,4 +115,33 @@ export const GET = async (request: NextRequest) => {
   }
 
   return NextResponse.json(cartLIst);
+};
+
+export const DELETE = async (request: NextRequest) => {
+  const token = headers().get("authorization");
+
+  const { validUser, error } = await getUserFromFirebase(token);
+
+  const { id, userPrismaError } = await getUserPrismaId(validUser.uid);
+
+  if (error.hasError || userPrismaError) {
+    return NextResponse.json(
+      { message: "There is some issue in the database." },
+      { status: 500 }
+    );
+  }
+  const deleteUserCart = await deleteUserCartItems(id);
+
+  if (!deleteUserCart) {
+    return NextResponse.json(
+      {
+        message: "There is some issue in the database.",
+      },
+      {
+        status: 500,
+      }
+    );
+  }
+
+  return NextResponse.json({ status: 200 });
 };
