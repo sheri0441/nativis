@@ -33,11 +33,15 @@ const PageContent = ({
       const url =
         process.env.NEXT_PUBLIC_BASE_URL +
           `${apiURL}?sort=${sort ? sort : "newest"}` || "";
-
-      const result = await axiosFetcher(url);
+      let result;
+      try {
+        result = await axiosFetcher(url);
+      } catch (error) {
+        result = [];
+      }
 
       setData(result);
-      setIsLoading((pervState) => (pervState = false));
+      setIsLoading(false);
     };
     fetchData();
   }, [page, apiURL, sort, ...additionRenderingConditions]);
