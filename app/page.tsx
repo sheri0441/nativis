@@ -16,8 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const url = process.env.BASE_URL + "/api" || "";
-  const data = await axiosFetcher(url);
+  let data;
+  try {
+    const url = process.env.BASE_URL + "/api" || "";
+    data = await axiosFetcher(url);
+  } catch (error) {
+    data = null;
+  }
 
   return (
     <main>
@@ -29,13 +34,16 @@ export default async function Home() {
             neem."
         >
           <ProductCardGrid>
-            {data.products.map((product: ProductCardType, index: number) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                extraStyle={index + 1 === 4 ? "sm:col-start-2 lg:col-auto" : ""}
-              />
-            ))}
+            {data !== null &&
+              data.products.map((product: ProductCardType, index: number) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  extraStyle={
+                    index + 1 === 4 ? "sm:col-start-2 lg:col-auto" : ""
+                  }
+                />
+              ))}
           </ProductCardGrid>
 
           <Link
@@ -51,9 +59,10 @@ export default async function Home() {
           subtitle="Stay informed with our curated selection of articles on neem, skincare tips, and more"
         >
           <div className="max-w-72 mx-auto grid grid-cols-1 gap-4 mt-5 sm:max-w-[680px] sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:mt-8 lg:max-w-full lg:grid-cols-4">
-            {data.blogs.map((blog: BlogCardType) => (
-              <BlogCard key={blog.id} blog={blog} />
-            ))}
+            {data !== null &&
+              data.blogs.map((blog: BlogCardType) => (
+                <BlogCard key={blog.id} blog={blog} />
+              ))}
           </div>
           <Link
             href={"/blogs/p/1"}

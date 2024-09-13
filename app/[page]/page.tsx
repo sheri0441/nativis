@@ -18,15 +18,25 @@ export async function generateMetadata({
 }: {
   params: { page: string };
 }): Promise<Metadata> {
-  const response = await axios.get(
-    process.env.BASE_URL + `/api/page/${params.page}/meta`
-  );
+  let pageMeta, capitalizedTitle, pageMetaMeta;
 
-  const pageMeta = response.data;
-  const capitalizedTitle = capitalizeWords(pageMeta.title);
+  try {
+    const response = await axios.get(
+      process.env.BASE_URL + `/api/page/${params.page}/meta`
+    );
+
+    pageMeta = response.data;
+    capitalizedTitle = capitalizeWords(pageMeta.title);
+    pageMetaMeta = pageMeta.meta;
+  } catch (error) {
+    pageMeta = "page not found";
+    capitalizedTitle = capitalizeWords(pageMeta);
+    pageMetaMeta = pageMeta;
+  }
+
   return {
     title: `${capitalizedTitle} | Nativis`,
-    description: pageMeta.meta,
+    description: pageMetaMeta,
   };
 }
 
@@ -36,10 +46,6 @@ const page = async ({ params }: { params: { page: string } }) => {
       process.env.BASE_URL + `/api/page/${params.page}`
     );
     const pageContent = response.data;
-
-    if (!pageContent) {
-      redirect("/not-found");
-    }
 
     return (
       <MainTag extraStyle="lg:max-w-[872px]">
