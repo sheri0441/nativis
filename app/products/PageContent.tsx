@@ -2,9 +2,9 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ProductPageData } from "../utils/Interfaces";
-import { axiosFetcher } from "../UIElements/Miscellaneous/axiosFetcher";
 import ProductAchieveLoading from "./ProductAchieveLoading";
 import ProductAchieveLayout from "./ProductAchieveLayout";
+import axios from "axios";
 
 const PageContent = ({
   page,
@@ -34,9 +34,18 @@ const PageContent = ({
         process.env.NEXT_PUBLIC_BASE_URL +
           `${apiURL}?sort=${sort ? sort : "newest"}` || "";
 
-      const result = await axiosFetcher(url);
+      try {
+        const response = await axios.get(url);
+        if (response.status !== 200) {
+          throw new Error(response.data.message);
+        }
+        const result = response.data;
 
-      setData(result);
+        setData(result);
+      } catch (error) {
+        setData(undefined);
+      }
+
       setIsLoading((pervState) => (pervState = false));
     };
     fetchData();

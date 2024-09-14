@@ -7,7 +7,6 @@ export const GET = async (
 ) => {
   const { pageName } = context.params;
 
-
   let pageContent;
   try {
     pageContent = await prisma.staticPages.findFirst({

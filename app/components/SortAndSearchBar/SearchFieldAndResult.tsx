@@ -5,8 +5,8 @@ import Link from "next/link";
 import { CrossIcon } from "../../utils/Icons";
 import style from "./SearchFieldAndResult.module.css";
 import { usePathname } from "next/navigation";
-import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
 import { SearchResultList } from "@/app/utils/Interfaces";
+import axios from "axios";
 
 const SearchFieldAndResult = ({
   closeSearchField,
@@ -23,9 +23,6 @@ const SearchFieldAndResult = ({
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [resultList, setResultList] = useState<SearchResultList | null>(null);
   const pathname = usePathname();
-  const toggleLoading = () => {
-    setIsLoading(!isLoading);
-  };
 
   useEffect(() => {
     if (searchField.length > 0) {
@@ -33,9 +30,15 @@ const SearchFieldAndResult = ({
         process.env.NEXT_PUBLIC_BASE_URL + baseSearchURL + searchField;
       const fetchDate = async () => {
         setIsLoading(true);
-        const result = await axiosFetcher(url);
 
-        setResultList(result);
+        try {
+          const response = await axios.get(url);
+          if (response.status !== 200) {
+            throw new Error(response.data.message);
+          }
+          const result = response.data;
+          setResultList(result);
+        } catch (error) {}
 
         setIsLoading(false);
       };

@@ -7,8 +7,9 @@ import HomeSection from "./Home/HomeSection";
 import WhySection from "./Home/WhySection/WhySection";
 import { BlogCardType, ProductCardType } from "./utils/Interfaces";
 import BlogCard from "./UIElements/Card/BlogCard";
-import { axiosFetcher } from "./UIElements/Miscellaneous/axiosFetcher";
+
 import Banner from "./UIElements/Miscellaneous/Banner";
+import axios from "axios";
 
 export const metadata: Metadata = {
   title: "Home | Nativis",
@@ -19,7 +20,8 @@ export default async function Home() {
   let data;
   try {
     const url = process.env.BASE_URL + "/api" || "";
-    data = await axiosFetcher(url);
+    const response = await axios.get(url);
+    data = response.data;
   } catch (error) {
     data = null;
   }

@@ -2,9 +2,9 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BlogPageData } from "../utils/Interfaces";
-import { axiosFetcher } from "../UIElements/Miscellaneous/axiosFetcher";
 import BlogAchieveLoading from "./BlogAchieveLoading";
 import BlogAchieveLayout from "./BlogAchieveLayout";
+import axios from "axios";
 
 const PageContent = ({
   page,
@@ -35,7 +35,11 @@ const PageContent = ({
           `${apiURL}?sort=${sort ? sort : "newest"}` || "";
       let result;
       try {
-        result = await axiosFetcher(url);
+        const response = await axios.get(url);
+        if (response.status !== 200) {
+          throw new Error();
+        }
+        result = response.data;
       } catch (error) {
         result = [];
       }

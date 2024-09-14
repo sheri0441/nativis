@@ -3,10 +3,10 @@ import { ArrowIcon } from "@/app/utils/Icons";
 import React, { useState } from "react";
 import SingleComment from "./SingleComment";
 import UserCommentField from "./UserCommentField";
-import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
 import { BlogCommentsDetail } from "@/app/utils/Interfaces";
 import { useAppSelector } from "@/app/app/hookes";
 import Banner from "@/app/UIElements/Miscellaneous/Banner";
+import axios from "axios";
 
 interface comment {
   author_name: string;
@@ -37,7 +37,12 @@ const CommentSection = ({
       const url =
         process.env.NEXT_PUBLIC_BASE_URL +
         `/api/blogs/comments/${id}/p/${pair}`;
-      const comments = await axiosFetcher(url);
+
+      const response = await axios.get(url);
+      if (response.status !== 200) {
+        throw new Error(response.data.message);
+      }
+      const comments = response.data;
 
       updateCommentSection(comments);
     } catch (error) {}

@@ -3,15 +3,9 @@ import React from "react";
 import PageTitle from "../UIElements/Miscellaneous/PageTitle";
 import MainTag from "../UIElements/Miscellaneous/MainTag";
 import RichTextRenderer from "../components/RichTextRenderer";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { capitalizeWords } from "../app-lib";
 import { redirect } from "next/navigation";
-
-export async function generateStaticParams() {
-  const paths = [{ page: "about" }, { page: "terms and policy" }];
-
-  return paths;
-}
 
 export async function generateMetadata({
   params,
@@ -22,7 +16,7 @@ export async function generateMetadata({
 
   try {
     const response = await axios.get(
-      process.env.BASE_URL + `/api/page/${params.page}/meta`
+      process.env.NEXT_PUBLIC_BASE_URL + `/api/page/${params.page}/meta`
     );
 
     pageMeta = response.data;
@@ -41,22 +35,30 @@ export async function generateMetadata({
 }
 
 const page = async ({ params }: { params: { page: string } }) => {
+  if (params.page !== "about" && params.page !== "terms and policy") {
+    redirect("/about");
+  }
+  let pageContent;
   try {
     const response = await axios.get(
-      process.env.BASE_URL + `/api/page/${params.page}`
+      process.env.NEXT_PUBLIC_BASE_URL + `/api/page/${params.page}`
     );
-    const pageContent = response.data;
+    if (response.status !== 200) {
+      redirect("/404");
+    }
+    pageContent = response.data;
+  } catch (error) {}
 
-    return (
-      <MainTag extraStyle="lg:max-w-[872px]">
-        <PageTitle>{pageContent.title}</PageTitle>
-        <RichTextRenderer content={pageContent.content} />
-      </MainTag>
-    );
-  } catch (error) {
-    console.error("Error fetching FAQ:", error);
-    return <div>There is some error please try again.</div>;
-  }
+  return (
+    <MainTag extraStyle="lg:max-w-[872px]">
+      {pageContent && (
+        <>
+          <PageTitle>{pageContent.title}</PageTitle>
+          <RichTextRenderer content={pageContent.content} />
+        </>
+      )}
+    </MainTag>
+  );
 };
 
 export default page;

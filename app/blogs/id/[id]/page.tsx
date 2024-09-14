@@ -5,7 +5,7 @@ import RecommendedBlogsAndProducts from "./RecommendedBlogsAndProducts";
 import CommentSection from "./CommentSection";
 import LikeAndShare from "./LikeAndShare";
 import BlogBanner from "./BlogBanner";
-import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
+import axios from "axios";
 
 export async function generateMetadata({
   params: { id },
@@ -13,16 +13,30 @@ export async function generateMetadata({
   params: { id: string };
 }): Promise<Metadata> {
   const url = process.env.BASE_URL + `/api/blogs/id/${id}/meta`;
-  const blogMeta = await axiosFetcher(url);
+  // const blogMeta = await axiosFetcher(url);
+  let blogMetaTitle;
+  try {
+    const response = await axios.get(url);
+    blogMetaTitle = response.data.title;
+  } catch (error) {
+    blogMetaTitle = "page not found";
+  }
   return {
-    title: ` ${blogMeta.title} | Blogs`,
-    description: blogMeta.title,
+    title: ` ${blogMetaTitle} | Blogs`,
+    description: blogMetaTitle,
   };
 }
 
 const page = async ({ params: { id } }: { params: { id: string } }) => {
   const url = process.env.BASE_URL + `/api/blogs/id/${id}`;
-  const blogData = await axiosFetcher(url);
+  let blogData;
+  try {
+    const response = await axios.get(url);
+    blogData = response.data;
+  } catch (error) {
+    blogData = [];
+  }
+
   return (
     <main>
       <BlogBanner

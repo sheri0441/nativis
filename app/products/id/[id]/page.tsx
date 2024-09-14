@@ -1,15 +1,15 @@
 import React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { ProductDetailPageData } from "@/app/utils/Interfaces";
+import { ProductCardType, ProductDetailPageData } from "@/app/utils/Interfaces";
 import ProductCardGrid from "@/app/UIElements/Miscellaneous/ProductCardGrid";
 import ProductCard from "@/app/UIElements/Card/ProductCard";
 import ProductImage from "./ProductImage";
 import ProductDescription from "./ProductDescription";
 import ProductForm from "./ProductForm";
 import MainTag from "@/app/UIElements/Miscellaneous/MainTag";
-import { axiosFetcher } from "@/app/UIElements/Miscellaneous/axiosFetcher";
 import Banner from "@/app/UIElements/Miscellaneous/Banner";
+import axios from "axios";
 
 export async function generateMetadata({
   params: { id },
@@ -17,8 +17,13 @@ export async function generateMetadata({
   params: { id: string };
 }): Promise<Metadata> {
   const url = process.env.BASE_URL + `/api/products/id/${id}/meta`;
-
-  let productMeta = await axiosFetcher(url);
+  let productMeta;
+  try {
+    const response = await axios.get(url);
+    productMeta = response.data;
+  } catch (error) {
+    productMeta = { name: "not found.", description: "This page not found" };
+  }
 
   return {
     title: productMeta.name + " | Products",
@@ -28,8 +33,15 @@ export async function generateMetadata({
 
 const page = async ({ params: { id } }: { params: { id: string } }) => {
   const url = process.env.BASE_URL + `/api/products/id/${id}`;
+  let data;
+  try {
+    const response = await axios.get(url);
+    data = response.data;
+  } catch (error) {
+    data = undefined;
+  }
 
-  const data: ProductDetailPageData = await axiosFetcher(url);
+  // const data: ProductDetailPageData = await axiosFetcher(url);
 
   const productData = data.product;
 
@@ -89,7 +101,7 @@ const page = async ({ params: { id } }: { params: { id: string } }) => {
               : "Product Included in Bundles"}
           </h2>
           <ProductCardGrid>
-            {data.relatedProducts.map((product) => (
+            {data.relatedProducts.map((product: ProductCardType) => (
               <ProductCard product={product} key={product.id} />
             ))}
           </ProductCardGrid>
@@ -100,7 +112,7 @@ const page = async ({ params: { id } }: { params: { id: string } }) => {
           Other Products
         </h2>
         <ProductCardGrid>
-          {data.otherProducts.map((product) => (
+          {data.otherProducts.map((product: ProductCardType) => (
             <ProductCard product={product} key={product.id} />
           ))}
         </ProductCardGrid>
