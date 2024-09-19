@@ -10,6 +10,8 @@ import BlogCard from "./UIElements/Card/BlogCard";
 
 import Banner from "./UIElements/Miscellaneous/Banner";
 import axios from "axios";
+import BlogSection from "./Home/BlogSection";
+import ProductSection from "./Home/ProductSection";
 
 export const metadata: Metadata = {
   title: "Home | Nativis",
@@ -17,14 +19,8 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  let data;
-  try {
-    const url = process.env.BASE_URL + "/api" || "";
-    const response = await axios.get(url);
-    data = response.data;
-  } catch (error) {
-    data = null;
-  }
+ 
+  
 
   return (
     <main>
@@ -35,19 +31,7 @@ export default async function Home() {
           subtitle="Discover our newest skincare solutions enriched with the goodness of
             neem."
         >
-          <ProductCardGrid>
-            {data !== null &&
-              data.products.map((product: ProductCardType, index: number) => (
-                <ProductCard
-                  key={product.id}
-                  product={product}
-                  extraStyle={
-                    index + 1 === 4 ? "sm:col-start-2 lg:col-auto" : ""
-                  }
-                />
-              ))}
-          </ProductCardGrid>
-
+           <ProductSection/>
           <Link
             href={"/products/p/1"}
             className="text-primary hover:bg-primary hover:text-neutral transition-colors duration-500 ease-in-out border rounded-full py-2 px-4 block w-fit mx-auto mt-8"
@@ -60,12 +44,7 @@ export default async function Home() {
           title="Our Informative Articles"
           subtitle="Stay informed with our curated selection of articles on neem, skincare tips, and more"
         >
-          <div className="max-w-72 mx-auto grid grid-cols-1 gap-4 mt-5 sm:max-w-[680px] sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 sm:mt-8 lg:max-w-full lg:grid-cols-4">
-            {data !== null &&
-              data.blogs.map((blog: BlogCardType) => (
-                <BlogCard key={blog.id} blog={blog} />
-              ))}
-          </div>
+            <BlogSection />
           <Link
             href={"/blogs/p/1"}
             className="text-primary hover:bg-primary hover:text-neutral transition-colors duration-500 ease-in-out border rounded-full py-2 px-4 block w-fit mx-auto mt-8"
