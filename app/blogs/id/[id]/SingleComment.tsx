@@ -74,7 +74,7 @@ const SingleComment = ({
     if (edit) {
       setEdit((perv) => (perv = false));
     }
-  }, [current, edit]);
+  }, [current]);
 
   return (
     <>

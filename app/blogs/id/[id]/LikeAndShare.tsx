@@ -55,7 +55,9 @@ const LikeAndShare = ({
       } else {
         setLike((perv) => (perv = false));
       }
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const closeShareOption = () => {
@@ -72,8 +74,12 @@ const LikeAndShare = ({
   const url = process.env.NEXT_PUBLIC_BASE_URL + pathname;
 
   useEffect(() => {
-    checkLike();
-  });
+    if (isLogin) {
+      checkLike();
+      console.log("use effect get called.");
+      
+    }
+  },[]);
 
   return (
     <>
